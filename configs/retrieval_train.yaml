@@ -1,0 +1,23 @@
+INPUT:
+  NUM_CAPTIONS_PER_IMAGE_TRN: 5
+  NUM_CAPTIONS_PER_IMAGE_DEV: 20
+
+DATASET:
+  NAME: 'COCO'
+  DATA_DIR: 'data/coco_ir_paddle/'
+  FEAT_FILE: 'data/model_0060000/features.tsv'
+  TRAIN: 'train'
+  DEV: 'minival'
+  TEST: 'test'
+
+OUTPUT:
+  SAVE_NAME: 'finetune_retrieval'
+  NUM_LABELS: 2
+  CHECKPOINT_DIR: '/root/paddlejob/workspace/output/'
+
+PRETRAINED:
+  DIR: 'data/pretrained_model_paddle'
+
+EVAL:
+  EVAL_CAPTION_INDEX_FILE: 'minival_caption_indexs_top20.pd'
+

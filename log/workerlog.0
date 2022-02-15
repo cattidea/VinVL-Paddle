@@ -1,0 +1,1994 @@
+server not ready, wait 3 sec to retry...
+not ready endpoints:['127.0.0.1:59998', '127.0.0.1:35382']
+I0213 23:07:05.692358  4094 nccl_context.cc:74] init nccl context nranks: 4 local rank: 0 gpu id: 0 ring id: 0
+W0213 23:07:06.635774  4094 device_context.cc:447] Please NOTE: device: 0, GPU Compute Capability: 7.0, Driver API Version: 10.1, Runtime API Version: 10.1
+W0213 23:07:06.639875  4094 device_context.cc:465] device: 0, cuDNN Version: 7.6.
+02/13/2022 23:07:14 - INFO - Dump configs into /root/paddlejob/workspace/output/finetune_retrieval_22Y_02M_13D_23H/config.yaml
+02/13/2022 23:07:14 - INFO - Using configs: 
+02/13/2022 23:07:14 - INFO - DATASET:
+  DATA_DIR: data/coco_ir_paddle/
+  DEV: minival
+  FEAT_FILE: data/model_0060000/features.tsv
+  NAME: COCO
+  TEST: test
+  TRAIN: train
+EVAL:
+  CHECKPOINT_DIR: 
+  EVAL_CAPTION_INDEX_FILE: minival_caption_indexs_top20.pd
+  EVAL_CROSS_IMAGE: False
+  EVAL_IMG_KEYS_FILE: 
+INPUT:
+  ADD_OD_LABEL: True
+  ATT_MASK_TYPE: CLR
+  BERT_MODEL: bert-base-uncased
+  DO_LOWER_CASE: True
+  IMG_FEATURE_DIM: 2054
+  IMG_FEATURE_TYPE: frcnn
+  MAX_REGION: 70
+  MAX_SEQ_LEN: 70
+  NUM_CAPTIONS_PER_IMAGE_DEV: 20
+  NUM_CAPTIONS_PER_IMAGE_TRN: 5
+MISC:
+  NUM_WORKERS: 8
+  SEED: 123
+MONITOR:
+  EVAL_FREQ: 1
+  PRINT_STEP: 100
+OPTIMIZATION:
+  BATCH_SIZE: 32
+  CLIP_MAX_NORM: 1.0
+  EPOCHS: 30
+  EPSILON: 1e-08
+  GRADIENT_ACCUMULATION_STEPS: 1
+  LOSS_TYPE: sfmx
+  LR: 2e-05
+  LR_SCHEDULER: linear
+  OPTIMIZER: adamw
+  WARMUP_STEPS: 0
+  WEIGHT_DECAY: 0.05
+OUTPUT:
+  CHECKPOINT_DIR: /root/paddlejob/workspace/output/
+  NUM_LABELS: 2
+  SAVE_FREQ: 1
+  SAVE_NAME: finetune_retrieval
+PRETRAINED:
+  DIR: data/pretrained_model_paddle
+  RESUME: 
+[2022-02-13 23:07:14,217] [    INFO] - Downloading https://paddle-hapi.bj.bcebos.com/models/bert/bert-base-uncased-vocab.txt and saved to /root/.paddlenlp/models/bert-base-uncased
+[2022-02-13 23:07:14,218] [    INFO] - Downloading bert-base-uncased-vocab.txt from https://paddle-hapi.bj.bcebos.com/models/bert/bert-base-uncased-vocab.txt
+  0%|          | 0/227 [00:00<?, ?it/s]100%|██████████| 227/227 [00:00<00:00, 25410.53it/s]
+02/13/2022 23:07:17 - INFO - Loading line idx from data/model_0060000/predictions.lineidx
+02/13/2022 23:09:54 - INFO - Loading line idx from data/model_0060000/predictions.lineidx
+02/13/2022 23:10:01 - INFO - Load pretrained weights: data/pretrained_model_paddle
+02/13/2022 23:10:01 - INFO - Total parameters: 111.06 M.
+02/13/2022 23:10:01 - INFO - ** ** ** Running training ** ** **
+02/13/2022 23:10:01 - INFO - Num Iters: 4425
+02/13/2022 23:10:01 - INFO - Batch Size: 128
+02/13/2022 23:10:01 - INFO - Accum Steps: 1
+02/13/2022 23:10:01 - INFO - Optim Steps: 132750
+02/13/2022 23:10:01 - INFO - =====> Start epoch 1:
+02/13/2022 23:10:02 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/13/2022 23:10:02 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/13/2022 23:10:02 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/13/2022 23:10:02 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/13/2022 23:10:02 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/13/2022 23:10:02 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/13/2022 23:10:02 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/13/2022 23:10:02 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/13/2022 23:11:11 - INFO - Epoch: [1], step: [100], lr: 0.000020, batch_loss: 0.0052, avg_loss: 0.0849
+02/13/2022 23:12:17 - INFO - Epoch: [1], step: [200], lr: 0.000020, batch_loss: 0.0576, avg_loss: 0.0564
+02/13/2022 23:13:22 - INFO - Epoch: [1], step: [300], lr: 0.000020, batch_loss: 0.0092, avg_loss: 0.0466
+02/13/2022 23:14:28 - INFO - Epoch: [1], step: [400], lr: 0.000020, batch_loss: 0.0287, avg_loss: 0.0409
+02/13/2022 23:15:34 - INFO - Epoch: [1], step: [500], lr: 0.000020, batch_loss: 0.0026, avg_loss: 0.0381
+02/13/2022 23:16:40 - INFO - Epoch: [1], step: [600], lr: 0.000020, batch_loss: 0.0152, avg_loss: 0.0358
+02/13/2022 23:17:46 - INFO - Epoch: [1], step: [700], lr: 0.000020, batch_loss: 0.0033, avg_loss: 0.0344
+02/13/2022 23:18:53 - INFO - Epoch: [1], step: [800], lr: 0.000020, batch_loss: 0.0119, avg_loss: 0.0331
+02/13/2022 23:19:59 - INFO - Epoch: [1], step: [900], lr: 0.000020, batch_loss: 0.0042, avg_loss: 0.0317
+02/13/2022 23:21:05 - INFO - Epoch: [1], step: [1000], lr: 0.000020, batch_loss: 0.0057, avg_loss: 0.0310
+02/13/2022 23:22:11 - INFO - Epoch: [1], step: [1100], lr: 0.000020, batch_loss: 0.0439, avg_loss: 0.0304
+02/13/2022 23:23:17 - INFO - Epoch: [1], step: [1200], lr: 0.000020, batch_loss: 0.0029, avg_loss: 0.0296
+02/13/2022 23:24:23 - INFO - Epoch: [1], step: [1300], lr: 0.000020, batch_loss: 0.0470, avg_loss: 0.0288
+02/13/2022 23:25:29 - INFO - Epoch: [1], step: [1400], lr: 0.000020, batch_loss: 0.0116, avg_loss: 0.0284
+02/13/2022 23:26:34 - INFO - Epoch: [1], step: [1500], lr: 0.000020, batch_loss: 0.0021, avg_loss: 0.0282
+02/13/2022 23:27:40 - INFO - Epoch: [1], step: [1600], lr: 0.000020, batch_loss: 0.0047, avg_loss: 0.0276
+02/13/2022 23:28:46 - INFO - Epoch: [1], step: [1700], lr: 0.000020, batch_loss: 0.0941, avg_loss: 0.0274
+02/13/2022 23:29:52 - INFO - Epoch: [1], step: [1800], lr: 0.000020, batch_loss: 0.0047, avg_loss: 0.0269
+02/13/2022 23:30:58 - INFO - Epoch: [1], step: [1900], lr: 0.000020, batch_loss: 0.0033, avg_loss: 0.0265
+02/13/2022 23:32:04 - INFO - Epoch: [1], step: [2000], lr: 0.000020, batch_loss: 0.0675, avg_loss: 0.0265
+02/13/2022 23:33:09 - INFO - Epoch: [1], step: [2100], lr: 0.000020, batch_loss: 0.0019, avg_loss: 0.0262
+02/13/2022 23:34:15 - INFO - Epoch: [1], step: [2200], lr: 0.000020, batch_loss: 0.0027, avg_loss: 0.0258
+02/13/2022 23:35:21 - INFO - Epoch: [1], step: [2300], lr: 0.000020, batch_loss: 0.1029, avg_loss: 0.0258
+02/13/2022 23:36:27 - INFO - Epoch: [1], step: [2400], lr: 0.000020, batch_loss: 0.0134, avg_loss: 0.0258
+02/13/2022 23:37:33 - INFO - Epoch: [1], step: [2500], lr: 0.000020, batch_loss: 0.0021, avg_loss: 0.0255
+02/13/2022 23:38:39 - INFO - Epoch: [1], step: [2600], lr: 0.000020, batch_loss: 0.0662, avg_loss: 0.0254
+02/13/2022 23:39:45 - INFO - Epoch: [1], step: [2700], lr: 0.000020, batch_loss: 0.0949, avg_loss: 0.0251
+02/13/2022 23:40:51 - INFO - Epoch: [1], step: [2800], lr: 0.000020, batch_loss: 0.0709, avg_loss: 0.0250
+02/13/2022 23:41:57 - INFO - Epoch: [1], step: [2900], lr: 0.000020, batch_loss: 0.0102, avg_loss: 0.0249
+02/13/2022 23:43:02 - INFO - Epoch: [1], step: [3000], lr: 0.000020, batch_loss: 0.0125, avg_loss: 0.0249
+02/13/2022 23:44:09 - INFO - Epoch: [1], step: [3100], lr: 0.000020, batch_loss: 0.0714, avg_loss: 0.0248
+02/13/2022 23:45:15 - INFO - Epoch: [1], step: [3200], lr: 0.000020, batch_loss: 0.0026, avg_loss: 0.0245
+02/13/2022 23:46:21 - INFO - Epoch: [1], step: [3300], lr: 0.000020, batch_loss: 0.0257, avg_loss: 0.0243
+02/13/2022 23:47:27 - INFO - Epoch: [1], step: [3400], lr: 0.000019, batch_loss: 0.0098, avg_loss: 0.0243
+02/13/2022 23:48:32 - INFO - Epoch: [1], step: [3500], lr: 0.000019, batch_loss: 0.0072, avg_loss: 0.0242
+02/13/2022 23:49:38 - INFO - Epoch: [1], step: [3600], lr: 0.000019, batch_loss: 0.0046, avg_loss: 0.0243
+02/13/2022 23:50:44 - INFO - Epoch: [1], step: [3700], lr: 0.000019, batch_loss: 0.0104, avg_loss: 0.0241
+02/13/2022 23:51:50 - INFO - Epoch: [1], step: [3800], lr: 0.000019, batch_loss: 0.0131, avg_loss: 0.0241
+02/13/2022 23:52:56 - INFO - Epoch: [1], step: [3900], lr: 0.000019, batch_loss: 0.0499, avg_loss: 0.0240
+02/13/2022 23:54:02 - INFO - Epoch: [1], step: [4000], lr: 0.000019, batch_loss: 0.0043, avg_loss: 0.0241
+02/13/2022 23:55:08 - INFO - Epoch: [1], step: [4100], lr: 0.000019, batch_loss: 0.0018, avg_loss: 0.0240
+02/13/2022 23:56:14 - INFO - Epoch: [1], step: [4200], lr: 0.000019, batch_loss: 0.0167, avg_loss: 0.0239
+02/13/2022 23:57:20 - INFO - Epoch: [1], step: [4300], lr: 0.000019, batch_loss: 0.0043, avg_loss: 0.0239
+02/13/2022 23:58:26 - INFO - Epoch: [1], step: [4400], lr: 0.000019, batch_loss: 0.0348, avg_loss: 0.0239
+02/13/2022 23:58:43 - INFO - ** ** Epoch [1] done! Training loss: 0.02386 ** **
+02/13/2022 23:58:43 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/13/2022 23:58:43 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/13/2022 23:58:43 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/13/2022 23:58:43 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/13/2022 23:58:43 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/13/2022 23:58:43 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/13/2022 23:58:43 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/13/2022 23:58:43 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/13/2022 23:59:38 - INFO - ** * ** Eval at Epoch [1]! Eval Reults:  ** * **
+02/13/2022 23:59:38 - INFO - I2T Retrieval: 0.8480 @ R1, 0.9840 @ R5, 0.9950 @ R10
+02/13/2022 23:59:38 - INFO - =====> Start epoch 2:
+02/13/2022 23:59:40 - INFO - Loading line idx from data/model_0060000/features.lineidx02/13/2022 23:59:40 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/13/2022 23:59:40 - INFO - Loading line idx from data/model_0060000/features.lineidx02/13/2022 23:59:40 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/13/2022 23:59:40 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/13/2022 23:59:40 - INFO - Loading line idx from data/model_0060000/features.lineidx02/13/2022 23:59:40 - INFO - Loading line idx from data/model_0060000/features.lineidx02/13/2022 23:59:40 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+
+02/14/2022 00:00:47 - INFO - Epoch: [2], step: [100], lr: 0.000019, batch_loss: 0.0455, avg_loss: 0.0145
+02/14/2022 00:01:53 - INFO - Epoch: [2], step: [200], lr: 0.000019, batch_loss: 0.0050, avg_loss: 0.0157
+02/14/2022 00:02:59 - INFO - Epoch: [2], step: [300], lr: 0.000019, batch_loss: 0.0074, avg_loss: 0.0151
+02/14/2022 00:04:05 - INFO - Epoch: [2], step: [400], lr: 0.000019, batch_loss: 0.0014, avg_loss: 0.0156
+02/14/2022 00:05:11 - INFO - Epoch: [2], step: [500], lr: 0.000019, batch_loss: 0.0194, avg_loss: 0.0156
+02/14/2022 00:06:16 - INFO - Epoch: [2], step: [600], lr: 0.000019, batch_loss: 0.0055, avg_loss: 0.0162
+02/14/2022 00:07:22 - INFO - Epoch: [2], step: [700], lr: 0.000019, batch_loss: 0.0020, avg_loss: 0.0161
+02/14/2022 00:08:28 - INFO - Epoch: [2], step: [800], lr: 0.000019, batch_loss: 0.0214, avg_loss: 0.0166
+02/14/2022 00:09:34 - INFO - Epoch: [2], step: [900], lr: 0.000019, batch_loss: 0.0030, avg_loss: 0.0169
+02/14/2022 00:10:40 - INFO - Epoch: [2], step: [1000], lr: 0.000019, batch_loss: 0.0028, avg_loss: 0.0171
+02/14/2022 00:11:46 - INFO - Epoch: [2], step: [1100], lr: 0.000019, batch_loss: 0.0022, avg_loss: 0.0174
+02/14/2022 00:12:52 - INFO - Epoch: [2], step: [1200], lr: 0.000019, batch_loss: 0.0020, avg_loss: 0.0172
+02/14/2022 00:13:59 - INFO - Epoch: [2], step: [1300], lr: 0.000019, batch_loss: 0.0013, avg_loss: 0.0178
+02/14/2022 00:15:05 - INFO - Epoch: [2], step: [1400], lr: 0.000019, batch_loss: 0.0371, avg_loss: 0.0179
+02/14/2022 00:16:11 - INFO - Epoch: [2], step: [1500], lr: 0.000019, batch_loss: 0.0029, avg_loss: 0.0180
+02/14/2022 00:17:17 - INFO - Epoch: [2], step: [1600], lr: 0.000019, batch_loss: 0.0704, avg_loss: 0.0179
+02/14/2022 00:18:23 - INFO - Epoch: [2], step: [1700], lr: 0.000019, batch_loss: 0.0071, avg_loss: 0.0180
+02/14/2022 00:19:29 - INFO - Epoch: [2], step: [1800], lr: 0.000019, batch_loss: 0.0015, avg_loss: 0.0180
+02/14/2022 00:20:35 - INFO - Epoch: [2], step: [1900], lr: 0.000019, batch_loss: 0.0472, avg_loss: 0.0182
+02/14/2022 00:21:41 - INFO - Epoch: [2], step: [2000], lr: 0.000019, batch_loss: 0.0020, avg_loss: 0.0180
+02/14/2022 00:22:47 - INFO - Epoch: [2], step: [2100], lr: 0.000019, batch_loss: 0.0025, avg_loss: 0.0179
+02/14/2022 00:23:54 - INFO - Epoch: [2], step: [2200], lr: 0.000019, batch_loss: 0.0029, avg_loss: 0.0180
+02/14/2022 00:24:59 - INFO - Epoch: [2], step: [2300], lr: 0.000019, batch_loss: 0.0017, avg_loss: 0.0179
+02/14/2022 00:26:05 - INFO - Epoch: [2], step: [2400], lr: 0.000019, batch_loss: 0.0263, avg_loss: 0.0181
+02/14/2022 00:27:11 - INFO - Epoch: [2], step: [2500], lr: 0.000019, batch_loss: 0.0156, avg_loss: 0.0180
+02/14/2022 00:28:17 - INFO - Epoch: [2], step: [2600], lr: 0.000019, batch_loss: 0.1250, avg_loss: 0.0180
+02/14/2022 00:29:23 - INFO - Epoch: [2], step: [2700], lr: 0.000019, batch_loss: 0.0042, avg_loss: 0.0181
+02/14/2022 00:30:29 - INFO - Epoch: [2], step: [2800], lr: 0.000019, batch_loss: 0.0424, avg_loss: 0.0181
+02/14/2022 00:31:35 - INFO - Epoch: [2], step: [2900], lr: 0.000019, batch_loss: 0.0270, avg_loss: 0.0182
+02/14/2022 00:32:41 - INFO - Epoch: [2], step: [3000], lr: 0.000019, batch_loss: 0.0018, avg_loss: 0.0182
+02/14/2022 00:33:47 - INFO - Epoch: [2], step: [3100], lr: 0.000019, batch_loss: 0.0014, avg_loss: 0.0182
+02/14/2022 00:34:53 - INFO - Epoch: [2], step: [3200], lr: 0.000019, batch_loss: 0.1245, avg_loss: 0.0182
+02/14/2022 00:35:59 - INFO - Epoch: [2], step: [3300], lr: 0.000019, batch_loss: 0.0050, avg_loss: 0.0183
+02/14/2022 00:37:05 - INFO - Epoch: [2], step: [3400], lr: 0.000019, batch_loss: 0.0200, avg_loss: 0.0182
+02/14/2022 00:38:11 - INFO - Epoch: [2], step: [3500], lr: 0.000019, batch_loss: 0.0030, avg_loss: 0.0181
+02/14/2022 00:39:17 - INFO - Epoch: [2], step: [3600], lr: 0.000019, batch_loss: 0.0874, avg_loss: 0.0180
+02/14/2022 00:40:23 - INFO - Epoch: [2], step: [3700], lr: 0.000019, batch_loss: 0.0017, avg_loss: 0.0180
+02/14/2022 00:41:29 - INFO - Epoch: [2], step: [3800], lr: 0.000019, batch_loss: 0.0064, avg_loss: 0.0180
+02/14/2022 00:42:35 - INFO - Epoch: [2], step: [3900], lr: 0.000019, batch_loss: 0.0147, avg_loss: 0.0179
+02/14/2022 00:43:41 - INFO - Epoch: [2], step: [4000], lr: 0.000019, batch_loss: 0.0257, avg_loss: 0.0180
+02/14/2022 00:44:48 - INFO - Epoch: [2], step: [4100], lr: 0.000019, batch_loss: 0.0263, avg_loss: 0.0181
+02/14/2022 00:45:54 - INFO - Epoch: [2], step: [4200], lr: 0.000019, batch_loss: 0.0083, avg_loss: 0.0180
+02/14/2022 00:47:00 - INFO - Epoch: [2], step: [4300], lr: 0.000019, batch_loss: 0.0463, avg_loss: 0.0181
+02/14/2022 00:48:06 - INFO - Epoch: [2], step: [4400], lr: 0.000019, batch_loss: 0.0015, avg_loss: 0.0182
+02/14/2022 00:48:23 - INFO - ** ** Epoch [2] done! Training loss: 0.01823 ** **
+02/14/2022 00:48:23 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 00:48:23 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 00:48:23 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 00:48:23 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 00:48:23 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 00:48:23 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+
+02/14/2022 00:48:23 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 00:48:23 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 00:49:18 - INFO - ** * ** Eval at Epoch [2]! Eval Reults:  ** * **
+02/14/2022 00:49:18 - INFO - I2T Retrieval: 0.8600 @ R1, 0.9810 @ R5, 0.9950 @ R10
+02/14/2022 00:49:18 - INFO - =====> Start epoch 3:
+02/14/2022 00:49:19 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 00:49:19 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 00:49:19 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 00:49:19 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 00:49:19 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 00:49:19 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 00:49:19 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 00:49:19 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+
+02/14/2022 00:50:28 - INFO - Epoch: [3], step: [100], lr: 0.000019, batch_loss: 0.0007, avg_loss: 0.0106
+02/14/2022 00:51:34 - INFO - Epoch: [3], step: [200], lr: 0.000019, batch_loss: 0.0028, avg_loss: 0.0120
+02/14/2022 00:52:40 - INFO - Epoch: [3], step: [300], lr: 0.000019, batch_loss: 0.1024, avg_loss: 0.0127
+02/14/2022 00:53:46 - INFO - Epoch: [3], step: [400], lr: 0.000019, batch_loss: 0.0018, avg_loss: 0.0127
+02/14/2022 00:54:52 - INFO - Epoch: [3], step: [500], lr: 0.000019, batch_loss: 0.1106, avg_loss: 0.0129
+02/14/2022 00:55:58 - INFO - Epoch: [3], step: [600], lr: 0.000019, batch_loss: 0.0009, avg_loss: 0.0134
+02/14/2022 00:57:04 - INFO - Epoch: [3], step: [700], lr: 0.000019, batch_loss: 0.0919, avg_loss: 0.0139
+02/14/2022 00:58:10 - INFO - Epoch: [3], step: [800], lr: 0.000019, batch_loss: 0.0100, avg_loss: 0.0146
+02/14/2022 00:59:16 - INFO - Epoch: [3], step: [900], lr: 0.000019, batch_loss: 0.0082, avg_loss: 0.0146
+02/14/2022 01:00:22 - INFO - Epoch: [3], step: [1000], lr: 0.000019, batch_loss: 0.0020, avg_loss: 0.0149
+02/14/2022 01:01:28 - INFO - Epoch: [3], step: [1100], lr: 0.000019, batch_loss: 0.0030, avg_loss: 0.0151
+02/14/2022 01:02:34 - INFO - Epoch: [3], step: [1200], lr: 0.000018, batch_loss: 0.0028, avg_loss: 0.0155
+02/14/2022 01:03:39 - INFO - Epoch: [3], step: [1300], lr: 0.000018, batch_loss: 0.0084, avg_loss: 0.0155
+02/14/2022 01:04:45 - INFO - Epoch: [3], step: [1400], lr: 0.000018, batch_loss: 0.0008, avg_loss: 0.0158
+02/14/2022 01:05:51 - INFO - Epoch: [3], step: [1500], lr: 0.000018, batch_loss: 0.0027, avg_loss: 0.0161
+02/14/2022 01:06:57 - INFO - Epoch: [3], step: [1600], lr: 0.000018, batch_loss: 0.0025, avg_loss: 0.0164
+02/14/2022 01:08:03 - INFO - Epoch: [3], step: [1700], lr: 0.000018, batch_loss: 0.0019, avg_loss: 0.0164
+02/14/2022 01:09:09 - INFO - Epoch: [3], step: [1800], lr: 0.000018, batch_loss: 0.0044, avg_loss: 0.0163
+02/14/2022 01:10:15 - INFO - Epoch: [3], step: [1900], lr: 0.000018, batch_loss: 0.0033, avg_loss: 0.0164
+02/14/2022 01:11:21 - INFO - Epoch: [3], step: [2000], lr: 0.000018, batch_loss: 0.0634, avg_loss: 0.0163
+02/14/2022 01:12:27 - INFO - Epoch: [3], step: [2100], lr: 0.000018, batch_loss: 0.0026, avg_loss: 0.0163
+02/14/2022 01:13:33 - INFO - Epoch: [3], step: [2200], lr: 0.000018, batch_loss: 0.0146, avg_loss: 0.0165
+02/14/2022 01:14:39 - INFO - Epoch: [3], step: [2300], lr: 0.000018, batch_loss: 0.0736, avg_loss: 0.0163
+02/14/2022 01:15:45 - INFO - Epoch: [3], step: [2400], lr: 0.000018, batch_loss: 0.1672, avg_loss: 0.0162
+02/14/2022 01:16:50 - INFO - Epoch: [3], step: [2500], lr: 0.000018, batch_loss: 0.0110, avg_loss: 0.0161
+02/14/2022 01:17:56 - INFO - Epoch: [3], step: [2600], lr: 0.000018, batch_loss: 0.0795, avg_loss: 0.0163
+02/14/2022 01:19:02 - INFO - Epoch: [3], step: [2700], lr: 0.000018, batch_loss: 0.0008, avg_loss: 0.0165
+02/14/2022 01:20:08 - INFO - Epoch: [3], step: [2800], lr: 0.000018, batch_loss: 0.0018, avg_loss: 0.0166
+02/14/2022 01:21:14 - INFO - Epoch: [3], step: [2900], lr: 0.000018, batch_loss: 0.0054, avg_loss: 0.0167
+02/14/2022 01:22:20 - INFO - Epoch: [3], step: [3000], lr: 0.000018, batch_loss: 0.0236, avg_loss: 0.0168
+02/14/2022 01:23:26 - INFO - Epoch: [3], step: [3100], lr: 0.000018, batch_loss: 0.0025, avg_loss: 0.0169
+02/14/2022 01:24:32 - INFO - Epoch: [3], step: [3200], lr: 0.000018, batch_loss: 0.0029, avg_loss: 0.0168
+02/14/2022 01:25:38 - INFO - Epoch: [3], step: [3300], lr: 0.000018, batch_loss: 0.1211, avg_loss: 0.0170
+02/14/2022 01:26:43 - INFO - Epoch: [3], step: [3400], lr: 0.000018, batch_loss: 0.0876, avg_loss: 0.0169
+02/14/2022 01:27:49 - INFO - Epoch: [3], step: [3500], lr: 0.000018, batch_loss: 0.0058, avg_loss: 0.0169
+02/14/2022 01:28:55 - INFO - Epoch: [3], step: [3600], lr: 0.000018, batch_loss: 0.0194, avg_loss: 0.0169
+02/14/2022 01:30:01 - INFO - Epoch: [3], step: [3700], lr: 0.000018, batch_loss: 0.1090, avg_loss: 0.0169
+02/14/2022 01:31:07 - INFO - Epoch: [3], step: [3800], lr: 0.000018, batch_loss: 0.0029, avg_loss: 0.0170
+02/14/2022 01:32:13 - INFO - Epoch: [3], step: [3900], lr: 0.000018, batch_loss: 0.0187, avg_loss: 0.0170
+02/14/2022 01:33:19 - INFO - Epoch: [3], step: [4000], lr: 0.000018, batch_loss: 0.0031, avg_loss: 0.0170
+02/14/2022 01:34:25 - INFO - Epoch: [3], step: [4100], lr: 0.000018, batch_loss: 0.0032, avg_loss: 0.0169
+02/14/2022 01:35:31 - INFO - Epoch: [3], step: [4200], lr: 0.000018, batch_loss: 0.0019, avg_loss: 0.0169
+02/14/2022 01:36:37 - INFO - Epoch: [3], step: [4300], lr: 0.000018, batch_loss: 0.0623, avg_loss: 0.0170
+02/14/2022 01:37:43 - INFO - Epoch: [3], step: [4400], lr: 0.000018, batch_loss: 0.1323, avg_loss: 0.0170
+02/14/2022 01:37:59 - INFO - ** ** Epoch [3] done! Training loss: 0.01706 ** **
+02/14/2022 01:38:00 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 01:38:00 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 01:38:00 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 01:38:00 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 01:38:00 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 01:38:00 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 01:38:00 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 01:38:00 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 01:38:54 - INFO - ** * ** Eval at Epoch [3]! Eval Reults:  ** * **
+02/14/2022 01:38:54 - INFO - I2T Retrieval: 0.8630 @ R1, 0.9790 @ R5, 0.9940 @ R10
+02/14/2022 01:38:54 - INFO - =====> Start epoch 4:
+02/14/2022 01:38:55 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 01:38:55 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 01:38:55 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 01:38:55 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 01:38:55 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 01:38:55 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 01:38:55 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 01:38:55 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 01:40:03 - INFO - Epoch: [4], step: [100], lr: 0.000018, batch_loss: 0.0288, avg_loss: 0.0180
+02/14/2022 01:41:10 - INFO - Epoch: [4], step: [200], lr: 0.000018, batch_loss: 0.0015, avg_loss: 0.0183
+02/14/2022 01:42:16 - INFO - Epoch: [4], step: [300], lr: 0.000018, batch_loss: 0.0310, avg_loss: 0.0173
+02/14/2022 01:43:22 - INFO - Epoch: [4], step: [400], lr: 0.000018, batch_loss: 0.0068, avg_loss: 0.0178
+02/14/2022 01:44:29 - INFO - Epoch: [4], step: [500], lr: 0.000018, batch_loss: 0.0034, avg_loss: 0.0168
+02/14/2022 01:45:35 - INFO - Epoch: [4], step: [600], lr: 0.000018, batch_loss: 0.0021, avg_loss: 0.0167
+02/14/2022 01:46:40 - INFO - Epoch: [4], step: [700], lr: 0.000018, batch_loss: 0.0039, avg_loss: 0.0161
+02/14/2022 01:47:46 - INFO - Epoch: [4], step: [800], lr: 0.000018, batch_loss: 0.0008, avg_loss: 0.0164
+02/14/2022 01:48:53 - INFO - Epoch: [4], step: [900], lr: 0.000018, batch_loss: 0.0574, avg_loss: 0.0167
+02/14/2022 01:49:58 - INFO - Epoch: [4], step: [1000], lr: 0.000018, batch_loss: 0.0011, avg_loss: 0.0166
+02/14/2022 01:51:04 - INFO - Epoch: [4], step: [1100], lr: 0.000018, batch_loss: 0.0012, avg_loss: 0.0163
+02/14/2022 01:52:10 - INFO - Epoch: [4], step: [1200], lr: 0.000018, batch_loss: 0.0187, avg_loss: 0.0164
+02/14/2022 01:53:16 - INFO - Epoch: [4], step: [1300], lr: 0.000018, batch_loss: 0.0165, avg_loss: 0.0161
+02/14/2022 01:54:21 - INFO - Epoch: [4], step: [1400], lr: 0.000018, batch_loss: 0.0008, avg_loss: 0.0162
+02/14/2022 01:55:27 - INFO - Epoch: [4], step: [1500], lr: 0.000018, batch_loss: 0.0455, avg_loss: 0.0161
+02/14/2022 01:56:33 - INFO - Epoch: [4], step: [1600], lr: 0.000018, batch_loss: 0.0014, avg_loss: 0.0159
+02/14/2022 01:57:38 - INFO - Epoch: [4], step: [1700], lr: 0.000018, batch_loss: 0.0006, avg_loss: 0.0162
+02/14/2022 01:58:44 - INFO - Epoch: [4], step: [1800], lr: 0.000018, batch_loss: 0.0010, avg_loss: 0.0163
+02/14/2022 01:59:50 - INFO - Epoch: [4], step: [1900], lr: 0.000018, batch_loss: 0.0090, avg_loss: 0.0165
+02/14/2022 02:00:55 - INFO - Epoch: [4], step: [2000], lr: 0.000018, batch_loss: 0.0145, avg_loss: 0.0163
+02/14/2022 02:02:01 - INFO - Epoch: [4], step: [2100], lr: 0.000018, batch_loss: 0.0019, avg_loss: 0.0163
+02/14/2022 02:03:07 - INFO - Epoch: [4], step: [2200], lr: 0.000018, batch_loss: 0.0011, avg_loss: 0.0163
+02/14/2022 02:04:13 - INFO - Epoch: [4], step: [2300], lr: 0.000018, batch_loss: 0.0048, avg_loss: 0.0163
+02/14/2022 02:05:18 - INFO - Epoch: [4], step: [2400], lr: 0.000018, batch_loss: 0.0007, avg_loss: 0.0161
+02/14/2022 02:06:24 - INFO - Epoch: [4], step: [2500], lr: 0.000018, batch_loss: 0.0937, avg_loss: 0.0161
+02/14/2022 02:07:30 - INFO - Epoch: [4], step: [2600], lr: 0.000018, batch_loss: 0.0292, avg_loss: 0.0161
+02/14/2022 02:08:35 - INFO - Epoch: [4], step: [2700], lr: 0.000018, batch_loss: 0.0188, avg_loss: 0.0161
+02/14/2022 02:09:41 - INFO - Epoch: [4], step: [2800], lr: 0.000018, batch_loss: 0.0018, avg_loss: 0.0160
+02/14/2022 02:10:46 - INFO - Epoch: [4], step: [2900], lr: 0.000018, batch_loss: 0.0005, avg_loss: 0.0159
+02/14/2022 02:11:52 - INFO - Epoch: [4], step: [3000], lr: 0.000018, batch_loss: 0.1142, avg_loss: 0.0160
+02/14/2022 02:12:58 - INFO - Epoch: [4], step: [3100], lr: 0.000018, batch_loss: 0.0017, avg_loss: 0.0162
+02/14/2022 02:14:03 - INFO - Epoch: [4], step: [3200], lr: 0.000018, batch_loss: 0.0013, avg_loss: 0.0161
+02/14/2022 02:15:09 - INFO - Epoch: [4], step: [3300], lr: 0.000018, batch_loss: 0.0013, avg_loss: 0.0161
+02/14/2022 02:16:15 - INFO - Epoch: [4], step: [3400], lr: 0.000017, batch_loss: 0.0011, avg_loss: 0.0160
+02/14/2022 02:17:20 - INFO - Epoch: [4], step: [3500], lr: 0.000017, batch_loss: 0.0015, avg_loss: 0.0161
+02/14/2022 02:18:26 - INFO - Epoch: [4], step: [3600], lr: 0.000017, batch_loss: 0.0016, avg_loss: 0.0162
+02/14/2022 02:19:32 - INFO - Epoch: [4], step: [3700], lr: 0.000017, batch_loss: 0.0038, avg_loss: 0.0161
+02/14/2022 02:20:38 - INFO - Epoch: [4], step: [3800], lr: 0.000017, batch_loss: 0.0013, avg_loss: 0.0161
+02/14/2022 02:21:43 - INFO - Epoch: [4], step: [3900], lr: 0.000017, batch_loss: 0.0165, avg_loss: 0.0160
+02/14/2022 02:22:49 - INFO - Epoch: [4], step: [4000], lr: 0.000017, batch_loss: 0.0596, avg_loss: 0.0161
+02/14/2022 02:23:55 - INFO - Epoch: [4], step: [4100], lr: 0.000017, batch_loss: 0.0185, avg_loss: 0.0161
+02/14/2022 02:25:00 - INFO - Epoch: [4], step: [4200], lr: 0.000017, batch_loss: 0.0026, avg_loss: 0.0161
+02/14/2022 02:26:06 - INFO - Epoch: [4], step: [4300], lr: 0.000017, batch_loss: 0.0066, avg_loss: 0.0161
+02/14/2022 02:27:12 - INFO - Epoch: [4], step: [4400], lr: 0.000017, batch_loss: 0.0082, avg_loss: 0.0162
+02/14/2022 02:27:28 - INFO - ** ** Epoch [4] done! Training loss: 0.01622 ** **
+02/14/2022 02:27:29 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 02:27:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 02:27:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 02:27:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 02:27:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 02:27:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 02:27:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 02:27:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 02:28:23 - INFO - ** * ** Eval at Epoch [4]! Eval Reults:  ** * **
+02/14/2022 02:28:23 - INFO - I2T Retrieval: 0.8720 @ R1, 0.9820 @ R5, 0.9950 @ R10
+02/14/2022 02:28:23 - INFO - =====> Start epoch 5:
+02/14/2022 02:28:24 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 02:28:24 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 02:28:24 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 02:28:24 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 02:28:24 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 02:28:24 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 02:28:24 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+
+02/14/2022 02:28:24 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 02:29:33 - INFO - Epoch: [5], step: [100], lr: 0.000017, batch_loss: 0.0214, avg_loss: 0.0114
+02/14/2022 02:30:39 - INFO - Epoch: [5], step: [200], lr: 0.000017, batch_loss: 0.0062, avg_loss: 0.0121
+02/14/2022 02:31:45 - INFO - Epoch: [5], step: [300], lr: 0.000017, batch_loss: 0.0049, avg_loss: 0.0126
+02/14/2022 02:32:51 - INFO - Epoch: [5], step: [400], lr: 0.000017, batch_loss: 0.0037, avg_loss: 0.0130
+02/14/2022 02:33:57 - INFO - Epoch: [5], step: [500], lr: 0.000017, batch_loss: 0.0016, avg_loss: 0.0133
+02/14/2022 02:35:03 - INFO - Epoch: [5], step: [600], lr: 0.000017, batch_loss: 0.0007, avg_loss: 0.0145
+02/14/2022 02:36:09 - INFO - Epoch: [5], step: [700], lr: 0.000017, batch_loss: 0.0121, avg_loss: 0.0141
+02/14/2022 02:37:15 - INFO - Epoch: [5], step: [800], lr: 0.000017, batch_loss: 0.0056, avg_loss: 0.0141
+02/14/2022 02:38:22 - INFO - Epoch: [5], step: [900], lr: 0.000017, batch_loss: 0.0163, avg_loss: 0.0140
+02/14/2022 02:39:28 - INFO - Epoch: [5], step: [1000], lr: 0.000017, batch_loss: 0.0020, avg_loss: 0.0141
+02/14/2022 02:40:34 - INFO - Epoch: [5], step: [1100], lr: 0.000017, batch_loss: 0.0372, avg_loss: 0.0136
+02/14/2022 02:41:40 - INFO - Epoch: [5], step: [1200], lr: 0.000017, batch_loss: 0.0195, avg_loss: 0.0140
+02/14/2022 02:42:46 - INFO - Epoch: [5], step: [1300], lr: 0.000017, batch_loss: 0.0042, avg_loss: 0.0140
+02/14/2022 02:43:52 - INFO - Epoch: [5], step: [1400], lr: 0.000017, batch_loss: 0.0018, avg_loss: 0.0139
+02/14/2022 02:44:58 - INFO - Epoch: [5], step: [1500], lr: 0.000017, batch_loss: 0.0022, avg_loss: 0.0142
+02/14/2022 02:46:04 - INFO - Epoch: [5], step: [1600], lr: 0.000017, batch_loss: 0.0107, avg_loss: 0.0142
+02/14/2022 02:47:10 - INFO - Epoch: [5], step: [1700], lr: 0.000017, batch_loss: 0.0117, avg_loss: 0.0139
+02/14/2022 02:48:16 - INFO - Epoch: [5], step: [1800], lr: 0.000017, batch_loss: 0.0120, avg_loss: 0.0137
+02/14/2022 02:49:21 - INFO - Epoch: [5], step: [1900], lr: 0.000017, batch_loss: 0.0076, avg_loss: 0.0138
+02/14/2022 02:50:27 - INFO - Epoch: [5], step: [2000], lr: 0.000017, batch_loss: 0.0862, avg_loss: 0.0138
+02/14/2022 02:51:33 - INFO - Epoch: [5], step: [2100], lr: 0.000017, batch_loss: 0.0013, avg_loss: 0.0138
+02/14/2022 02:52:40 - INFO - Epoch: [5], step: [2200], lr: 0.000017, batch_loss: 0.0040, avg_loss: 0.0139
+02/14/2022 02:53:45 - INFO - Epoch: [5], step: [2300], lr: 0.000017, batch_loss: 0.0035, avg_loss: 0.0138
+02/14/2022 02:54:51 - INFO - Epoch: [5], step: [2400], lr: 0.000017, batch_loss: 0.0031, avg_loss: 0.0142
+02/14/2022 02:55:57 - INFO - Epoch: [5], step: [2500], lr: 0.000017, batch_loss: 0.0135, avg_loss: 0.0143
+02/14/2022 02:57:03 - INFO - Epoch: [5], step: [2600], lr: 0.000017, batch_loss: 0.0012, avg_loss: 0.0144
+02/14/2022 02:58:09 - INFO - Epoch: [5], step: [2700], lr: 0.000017, batch_loss: 0.0129, avg_loss: 0.0143
+02/14/2022 02:59:14 - INFO - Epoch: [5], step: [2800], lr: 0.000017, batch_loss: 0.0033, avg_loss: 0.0143
+02/14/2022 03:00:20 - INFO - Epoch: [5], step: [2900], lr: 0.000017, batch_loss: 0.0087, avg_loss: 0.0142
+02/14/2022 03:01:26 - INFO - Epoch: [5], step: [3000], lr: 0.000017, batch_loss: 0.0017, avg_loss: 0.0142
+02/14/2022 03:02:32 - INFO - Epoch: [5], step: [3100], lr: 0.000017, batch_loss: 0.0014, avg_loss: 0.0142
+02/14/2022 03:03:38 - INFO - Epoch: [5], step: [3200], lr: 0.000017, batch_loss: 0.0012, avg_loss: 0.0140
+02/14/2022 03:04:43 - INFO - Epoch: [5], step: [3300], lr: 0.000017, batch_loss: 0.0259, avg_loss: 0.0141
+02/14/2022 03:05:49 - INFO - Epoch: [5], step: [3400], lr: 0.000017, batch_loss: 0.0154, avg_loss: 0.0143
+02/14/2022 03:06:55 - INFO - Epoch: [5], step: [3500], lr: 0.000017, batch_loss: 0.0299, avg_loss: 0.0144
+02/14/2022 03:08:01 - INFO - Epoch: [5], step: [3600], lr: 0.000017, batch_loss: 0.0015, avg_loss: 0.0145
+02/14/2022 03:09:07 - INFO - Epoch: [5], step: [3700], lr: 0.000017, batch_loss: 0.0007, avg_loss: 0.0145
+02/14/2022 03:10:13 - INFO - Epoch: [5], step: [3800], lr: 0.000017, batch_loss: 0.0173, avg_loss: 0.0146
+02/14/2022 03:11:19 - INFO - Epoch: [5], step: [3900], lr: 0.000017, batch_loss: 0.0316, avg_loss: 0.0145
+02/14/2022 03:12:25 - INFO - Epoch: [5], step: [4000], lr: 0.000017, batch_loss: 0.0482, avg_loss: 0.0145
+02/14/2022 03:13:31 - INFO - Epoch: [5], step: [4100], lr: 0.000017, batch_loss: 0.0035, avg_loss: 0.0145
+02/14/2022 03:14:37 - INFO - Epoch: [5], step: [4200], lr: 0.000017, batch_loss: 0.0020, avg_loss: 0.0145
+02/14/2022 03:15:43 - INFO - Epoch: [5], step: [4300], lr: 0.000017, batch_loss: 0.0009, avg_loss: 0.0144
+02/14/2022 03:16:49 - INFO - Epoch: [5], step: [4400], lr: 0.000017, batch_loss: 0.0141, avg_loss: 0.0143
+02/14/2022 03:17:06 - INFO - ** ** Epoch [5] done! Training loss: 0.01434 ** **
+02/14/2022 03:17:07 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 03:17:07 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 03:17:07 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 03:17:07 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 03:17:07 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 03:17:07 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 03:17:07 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+
+02/14/2022 03:17:07 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 03:18:02 - INFO - ** * ** Eval at Epoch [5]! Eval Reults:  ** * **
+02/14/2022 03:18:02 - INFO - I2T Retrieval: 0.8750 @ R1, 0.9850 @ R5, 0.9960 @ R10
+02/14/2022 03:18:02 - INFO - =====> Start epoch 6:
+02/14/2022 03:18:03 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 03:18:03 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 03:18:03 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 03:18:03 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 03:18:03 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 03:18:03 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 03:18:03 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 03:18:03 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 03:19:11 - INFO - Epoch: [6], step: [100], lr: 0.000017, batch_loss: 0.0237, avg_loss: 0.0206
+02/14/2022 03:20:18 - INFO - Epoch: [6], step: [200], lr: 0.000017, batch_loss: 0.0694, avg_loss: 0.0167
+02/14/2022 03:21:24 - INFO - Epoch: [6], step: [300], lr: 0.000017, batch_loss: 0.0007, avg_loss: 0.0168
+02/14/2022 03:22:31 - INFO - Epoch: [6], step: [400], lr: 0.000017, batch_loss: 0.0708, avg_loss: 0.0160
+02/14/2022 03:23:36 - INFO - Epoch: [6], step: [500], lr: 0.000017, batch_loss: 0.0035, avg_loss: 0.0164
+02/14/2022 03:24:43 - INFO - Epoch: [6], step: [600], lr: 0.000017, batch_loss: 0.0026, avg_loss: 0.0161
+02/14/2022 03:25:49 - INFO - Epoch: [6], step: [700], lr: 0.000017, batch_loss: 0.0026, avg_loss: 0.0154
+02/14/2022 03:26:55 - INFO - Epoch: [6], step: [800], lr: 0.000017, batch_loss: 0.0010, avg_loss: 0.0149
+02/14/2022 03:28:01 - INFO - Epoch: [6], step: [900], lr: 0.000017, batch_loss: 0.0020, avg_loss: 0.0149
+02/14/2022 03:29:07 - INFO - Epoch: [6], step: [1000], lr: 0.000017, batch_loss: 0.0032, avg_loss: 0.0146
+02/14/2022 03:30:13 - INFO - Epoch: [6], step: [1100], lr: 0.000017, batch_loss: 0.0018, avg_loss: 0.0143
+02/14/2022 03:31:19 - INFO - Epoch: [6], step: [1200], lr: 0.000016, batch_loss: 0.0028, avg_loss: 0.0142
+02/14/2022 03:32:25 - INFO - Epoch: [6], step: [1300], lr: 0.000016, batch_loss: 0.0340, avg_loss: 0.0146
+02/14/2022 03:33:31 - INFO - Epoch: [6], step: [1400], lr: 0.000016, batch_loss: 0.0013, avg_loss: 0.0142
+02/14/2022 03:34:38 - INFO - Epoch: [6], step: [1500], lr: 0.000016, batch_loss: 0.0071, avg_loss: 0.0141
+02/14/2022 03:35:44 - INFO - Epoch: [6], step: [1600], lr: 0.000016, batch_loss: 0.0107, avg_loss: 0.0141
+02/14/2022 03:36:50 - INFO - Epoch: [6], step: [1700], lr: 0.000016, batch_loss: 0.0141, avg_loss: 0.0142
+02/14/2022 03:37:56 - INFO - Epoch: [6], step: [1800], lr: 0.000016, batch_loss: 0.0029, avg_loss: 0.0142
+02/14/2022 03:39:02 - INFO - Epoch: [6], step: [1900], lr: 0.000016, batch_loss: 0.0686, avg_loss: 0.0143
+02/14/2022 03:40:08 - INFO - Epoch: [6], step: [2000], lr: 0.000016, batch_loss: 0.0007, avg_loss: 0.0143
+02/14/2022 03:41:14 - INFO - Epoch: [6], step: [2100], lr: 0.000016, batch_loss: 0.0031, avg_loss: 0.0142
+02/14/2022 03:42:21 - INFO - Epoch: [6], step: [2200], lr: 0.000016, batch_loss: 0.0020, avg_loss: 0.0142
+02/14/2022 03:43:27 - INFO - Epoch: [6], step: [2300], lr: 0.000016, batch_loss: 0.0031, avg_loss: 0.0141
+02/14/2022 03:44:33 - INFO - Epoch: [6], step: [2400], lr: 0.000016, batch_loss: 0.0011, avg_loss: 0.0140
+02/14/2022 03:45:39 - INFO - Epoch: [6], step: [2500], lr: 0.000016, batch_loss: 0.0441, avg_loss: 0.0142
+02/14/2022 03:46:45 - INFO - Epoch: [6], step: [2600], lr: 0.000016, batch_loss: 0.0018, avg_loss: 0.0141
+02/14/2022 03:47:51 - INFO - Epoch: [6], step: [2700], lr: 0.000016, batch_loss: 0.0006, avg_loss: 0.0142
+02/14/2022 03:48:57 - INFO - Epoch: [6], step: [2800], lr: 0.000016, batch_loss: 0.0313, avg_loss: 0.0141
+02/14/2022 03:50:03 - INFO - Epoch: [6], step: [2900], lr: 0.000016, batch_loss: 0.0027, avg_loss: 0.0142
+02/14/2022 03:51:10 - INFO - Epoch: [6], step: [3000], lr: 0.000016, batch_loss: 0.0015, avg_loss: 0.0140
+02/14/2022 03:52:16 - INFO - Epoch: [6], step: [3100], lr: 0.000016, batch_loss: 0.0018, avg_loss: 0.0140
+02/14/2022 03:53:22 - INFO - Epoch: [6], step: [3200], lr: 0.000016, batch_loss: 0.0040, avg_loss: 0.0139
+02/14/2022 03:54:29 - INFO - Epoch: [6], step: [3300], lr: 0.000016, batch_loss: 0.0507, avg_loss: 0.0139
+02/14/2022 03:55:35 - INFO - Epoch: [6], step: [3400], lr: 0.000016, batch_loss: 0.1097, avg_loss: 0.0140
+02/14/2022 03:56:41 - INFO - Epoch: [6], step: [3500], lr: 0.000016, batch_loss: 0.0019, avg_loss: 0.0139
+02/14/2022 03:57:47 - INFO - Epoch: [6], step: [3600], lr: 0.000016, batch_loss: 0.0552, avg_loss: 0.0140
+02/14/2022 03:58:53 - INFO - Epoch: [6], step: [3700], lr: 0.000016, batch_loss: 0.0108, avg_loss: 0.0139
+02/14/2022 04:00:00 - INFO - Epoch: [6], step: [3800], lr: 0.000016, batch_loss: 0.0015, avg_loss: 0.0139
+02/14/2022 04:01:06 - INFO - Epoch: [6], step: [3900], lr: 0.000016, batch_loss: 0.0033, avg_loss: 0.0139
+02/14/2022 04:02:11 - INFO - Epoch: [6], step: [4000], lr: 0.000016, batch_loss: 0.0015, avg_loss: 0.0138
+02/14/2022 04:03:18 - INFO - Epoch: [6], step: [4100], lr: 0.000016, batch_loss: 0.0026, avg_loss: 0.0138
+02/14/2022 04:04:24 - INFO - Epoch: [6], step: [4200], lr: 0.000016, batch_loss: 0.0034, avg_loss: 0.0137
+02/14/2022 04:05:30 - INFO - Epoch: [6], step: [4300], lr: 0.000016, batch_loss: 0.0487, avg_loss: 0.0138
+02/14/2022 04:06:36 - INFO - Epoch: [6], step: [4400], lr: 0.000016, batch_loss: 0.0817, avg_loss: 0.0138
+02/14/2022 04:06:53 - INFO - ** ** Epoch [6] done! Training loss: 0.01384 ** **
+02/14/2022 04:06:53 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 04:06:53 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 04:06:53 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 04:06:53 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 04:06:53 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 04:06:53 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 04:06:53 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 04:06:53 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 04:07:48 - INFO - ** * ** Eval at Epoch [6]! Eval Reults:  ** * **
+02/14/2022 04:07:48 - INFO - I2T Retrieval: 0.8770 @ R1, 0.9810 @ R5, 0.9950 @ R10
+02/14/2022 04:07:48 - INFO - =====> Start epoch 7:
+02/14/2022 04:07:49 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 04:07:49 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 04:07:49 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 04:07:49 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 04:07:49 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 04:07:49 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 04:07:49 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 04:07:49 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 04:08:57 - INFO - Epoch: [7], step: [100], lr: 0.000016, batch_loss: 0.0025, avg_loss: 0.0159
+02/14/2022 04:10:04 - INFO - Epoch: [7], step: [200], lr: 0.000016, batch_loss: 0.0179, avg_loss: 0.0146
+02/14/2022 04:11:11 - INFO - Epoch: [7], step: [300], lr: 0.000016, batch_loss: 0.0018, avg_loss: 0.0132
+02/14/2022 04:12:17 - INFO - Epoch: [7], step: [400], lr: 0.000016, batch_loss: 0.0081, avg_loss: 0.0134
+02/14/2022 04:13:24 - INFO - Epoch: [7], step: [500], lr: 0.000016, batch_loss: 0.0023, avg_loss: 0.0126
+02/14/2022 04:14:30 - INFO - Epoch: [7], step: [600], lr: 0.000016, batch_loss: 0.0004, avg_loss: 0.0126
+02/14/2022 04:15:37 - INFO - Epoch: [7], step: [700], lr: 0.000016, batch_loss: 0.0034, avg_loss: 0.0125
+02/14/2022 04:16:44 - INFO - Epoch: [7], step: [800], lr: 0.000016, batch_loss: 0.0013, avg_loss: 0.0127
+02/14/2022 04:17:50 - INFO - Epoch: [7], step: [900], lr: 0.000016, batch_loss: 0.0010, avg_loss: 0.0124
+02/14/2022 04:18:57 - INFO - Epoch: [7], step: [1000], lr: 0.000016, batch_loss: 0.0016, avg_loss: 0.0128
+02/14/2022 04:20:03 - INFO - Epoch: [7], step: [1100], lr: 0.000016, batch_loss: 0.0015, avg_loss: 0.0128
+02/14/2022 04:21:09 - INFO - Epoch: [7], step: [1200], lr: 0.000016, batch_loss: 0.0009, avg_loss: 0.0128
+02/14/2022 04:22:16 - INFO - Epoch: [7], step: [1300], lr: 0.000016, batch_loss: 0.0034, avg_loss: 0.0129
+02/14/2022 04:23:22 - INFO - Epoch: [7], step: [1400], lr: 0.000016, batch_loss: 0.0249, avg_loss: 0.0132
+02/14/2022 04:24:28 - INFO - Epoch: [7], step: [1500], lr: 0.000016, batch_loss: 0.0016, avg_loss: 0.0132
+02/14/2022 04:25:34 - INFO - Epoch: [7], step: [1600], lr: 0.000016, batch_loss: 0.0010, avg_loss: 0.0130
+02/14/2022 04:26:40 - INFO - Epoch: [7], step: [1700], lr: 0.000016, batch_loss: 0.0105, avg_loss: 0.0131
+02/14/2022 04:27:46 - INFO - Epoch: [7], step: [1800], lr: 0.000016, batch_loss: 0.0032, avg_loss: 0.0132
+02/14/2022 04:28:52 - INFO - Epoch: [7], step: [1900], lr: 0.000016, batch_loss: 0.0012, avg_loss: 0.0131
+02/14/2022 04:29:58 - INFO - Epoch: [7], step: [2000], lr: 0.000016, batch_loss: 0.0018, avg_loss: 0.0129
+02/14/2022 04:31:04 - INFO - Epoch: [7], step: [2100], lr: 0.000016, batch_loss: 0.0014, avg_loss: 0.0128
+02/14/2022 04:32:10 - INFO - Epoch: [7], step: [2200], lr: 0.000016, batch_loss: 0.0382, avg_loss: 0.0129
+02/14/2022 04:33:17 - INFO - Epoch: [7], step: [2300], lr: 0.000016, batch_loss: 0.0554, avg_loss: 0.0131
+02/14/2022 04:34:23 - INFO - Epoch: [7], step: [2400], lr: 0.000016, batch_loss: 0.0032, avg_loss: 0.0131
+02/14/2022 04:35:29 - INFO - Epoch: [7], step: [2500], lr: 0.000016, batch_loss: 0.0007, avg_loss: 0.0132
+02/14/2022 04:36:36 - INFO - Epoch: [7], step: [2600], lr: 0.000016, batch_loss: 0.0030, avg_loss: 0.0131
+02/14/2022 04:37:43 - INFO - Epoch: [7], step: [2700], lr: 0.000016, batch_loss: 0.0042, avg_loss: 0.0129
+02/14/2022 04:38:49 - INFO - Epoch: [7], step: [2800], lr: 0.000016, batch_loss: 0.0018, avg_loss: 0.0131
+02/14/2022 04:39:56 - INFO - Epoch: [7], step: [2900], lr: 0.000016, batch_loss: 0.0003, avg_loss: 0.0131
+02/14/2022 04:41:02 - INFO - Epoch: [7], step: [3000], lr: 0.000016, batch_loss: 0.0743, avg_loss: 0.0130
+02/14/2022 04:42:08 - INFO - Epoch: [7], step: [3100], lr: 0.000016, batch_loss: 0.0035, avg_loss: 0.0130
+02/14/2022 04:43:15 - INFO - Epoch: [7], step: [3200], lr: 0.000016, batch_loss: 0.0027, avg_loss: 0.0130
+02/14/2022 04:44:21 - INFO - Epoch: [7], step: [3300], lr: 0.000016, batch_loss: 0.0005, avg_loss: 0.0130
+02/14/2022 04:45:27 - INFO - Epoch: [7], step: [3400], lr: 0.000015, batch_loss: 0.0171, avg_loss: 0.0130
+02/14/2022 04:46:34 - INFO - Epoch: [7], step: [3500], lr: 0.000015, batch_loss: 0.0202, avg_loss: 0.0130
+02/14/2022 04:47:40 - INFO - Epoch: [7], step: [3600], lr: 0.000015, batch_loss: 0.0022, avg_loss: 0.0132
+02/14/2022 04:48:46 - INFO - Epoch: [7], step: [3700], lr: 0.000015, batch_loss: 0.0134, avg_loss: 0.0131
+02/14/2022 04:49:52 - INFO - Epoch: [7], step: [3800], lr: 0.000015, batch_loss: 0.0011, avg_loss: 0.0131
+02/14/2022 04:50:59 - INFO - Epoch: [7], step: [3900], lr: 0.000015, batch_loss: 0.0008, avg_loss: 0.0131
+02/14/2022 04:52:05 - INFO - Epoch: [7], step: [4000], lr: 0.000015, batch_loss: 0.0017, avg_loss: 0.0130
+02/14/2022 04:53:12 - INFO - Epoch: [7], step: [4100], lr: 0.000015, batch_loss: 0.0010, avg_loss: 0.0130
+02/14/2022 04:54:18 - INFO - Epoch: [7], step: [4200], lr: 0.000015, batch_loss: 0.0014, avg_loss: 0.0130
+02/14/2022 04:55:25 - INFO - Epoch: [7], step: [4300], lr: 0.000015, batch_loss: 0.0056, avg_loss: 0.0131
+02/14/2022 04:56:31 - INFO - Epoch: [7], step: [4400], lr: 0.000015, batch_loss: 0.0010, avg_loss: 0.0131
+02/14/2022 04:56:48 - INFO - ** ** Epoch [7] done! Training loss: 0.01306 ** **
+02/14/2022 04:56:48 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 04:56:48 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 04:56:48 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 04:56:48 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 04:56:48 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 04:56:48 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 04:56:48 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 04:56:48 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 04:57:43 - INFO - ** * ** Eval at Epoch [7]! Eval Reults:  ** * **
+02/14/2022 04:57:43 - INFO - I2T Retrieval: 0.8720 @ R1, 0.9870 @ R5, 0.9950 @ R10
+02/14/2022 04:57:43 - INFO - =====> Start epoch 8:
+02/14/2022 04:57:44 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 04:57:44 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 04:57:44 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 04:57:44 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 04:57:44 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 04:57:44 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 04:57:44 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 04:57:44 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 04:58:52 - INFO - Epoch: [8], step: [100], lr: 0.000015, batch_loss: 0.0019, avg_loss: 0.0120
+02/14/2022 04:59:59 - INFO - Epoch: [8], step: [200], lr: 0.000015, batch_loss: 0.0012, avg_loss: 0.0132
+02/14/2022 05:01:05 - INFO - Epoch: [8], step: [300], lr: 0.000015, batch_loss: 0.0006, avg_loss: 0.0113
+02/14/2022 05:02:11 - INFO - Epoch: [8], step: [400], lr: 0.000015, batch_loss: 0.0011, avg_loss: 0.0110
+02/14/2022 05:03:18 - INFO - Epoch: [8], step: [500], lr: 0.000015, batch_loss: 0.0218, avg_loss: 0.0110
+02/14/2022 05:04:24 - INFO - Epoch: [8], step: [600], lr: 0.000015, batch_loss: 0.0015, avg_loss: 0.0115
+02/14/2022 05:05:29 - INFO - Epoch: [8], step: [700], lr: 0.000015, batch_loss: 0.0216, avg_loss: 0.0116
+02/14/2022 05:06:35 - INFO - Epoch: [8], step: [800], lr: 0.000015, batch_loss: 0.0095, avg_loss: 0.0115
+02/14/2022 05:07:41 - INFO - Epoch: [8], step: [900], lr: 0.000015, batch_loss: 0.0135, avg_loss: 0.0118
+02/14/2022 05:08:47 - INFO - Epoch: [8], step: [1000], lr: 0.000015, batch_loss: 0.0027, avg_loss: 0.0122
+02/14/2022 05:09:53 - INFO - Epoch: [8], step: [1100], lr: 0.000015, batch_loss: 0.0019, avg_loss: 0.0122
+02/14/2022 05:10:59 - INFO - Epoch: [8], step: [1200], lr: 0.000015, batch_loss: 0.0692, avg_loss: 0.0124
+02/14/2022 05:12:05 - INFO - Epoch: [8], step: [1300], lr: 0.000015, batch_loss: 0.0063, avg_loss: 0.0124
+02/14/2022 05:13:11 - INFO - Epoch: [8], step: [1400], lr: 0.000015, batch_loss: 0.0090, avg_loss: 0.0124
+02/14/2022 05:14:17 - INFO - Epoch: [8], step: [1500], lr: 0.000015, batch_loss: 0.0018, avg_loss: 0.0124
+02/14/2022 05:15:22 - INFO - Epoch: [8], step: [1600], lr: 0.000015, batch_loss: 0.0016, avg_loss: 0.0124
+02/14/2022 05:16:29 - INFO - Epoch: [8], step: [1700], lr: 0.000015, batch_loss: 0.0966, avg_loss: 0.0124
+02/14/2022 05:17:35 - INFO - Epoch: [8], step: [1800], lr: 0.000015, batch_loss: 0.0010, avg_loss: 0.0123
+02/14/2022 05:18:41 - INFO - Epoch: [8], step: [1900], lr: 0.000015, batch_loss: 0.0026, avg_loss: 0.0122
+02/14/2022 05:19:47 - INFO - Epoch: [8], step: [2000], lr: 0.000015, batch_loss: 0.0078, avg_loss: 0.0122
+02/14/2022 05:20:52 - INFO - Epoch: [8], step: [2100], lr: 0.000015, batch_loss: 0.0208, avg_loss: 0.0122
+02/14/2022 05:21:58 - INFO - Epoch: [8], step: [2200], lr: 0.000015, batch_loss: 0.0015, avg_loss: 0.0121
+02/14/2022 05:23:05 - INFO - Epoch: [8], step: [2300], lr: 0.000015, batch_loss: 0.0044, avg_loss: 0.0124
+02/14/2022 05:24:11 - INFO - Epoch: [8], step: [2400], lr: 0.000015, batch_loss: 0.0345, avg_loss: 0.0122
+02/14/2022 05:25:17 - INFO - Epoch: [8], step: [2500], lr: 0.000015, batch_loss: 0.0030, avg_loss: 0.0122
+02/14/2022 05:26:23 - INFO - Epoch: [8], step: [2600], lr: 0.000015, batch_loss: 0.1036, avg_loss: 0.0123
+02/14/2022 05:27:29 - INFO - Epoch: [8], step: [2700], lr: 0.000015, batch_loss: 0.0015, avg_loss: 0.0123
+02/14/2022 05:28:35 - INFO - Epoch: [8], step: [2800], lr: 0.000015, batch_loss: 0.0016, avg_loss: 0.0122
+02/14/2022 05:29:41 - INFO - Epoch: [8], step: [2900], lr: 0.000015, batch_loss: 0.0020, avg_loss: 0.0123
+02/14/2022 05:30:46 - INFO - Epoch: [8], step: [3000], lr: 0.000015, batch_loss: 0.0027, avg_loss: 0.0122
+02/14/2022 05:31:52 - INFO - Epoch: [8], step: [3100], lr: 0.000015, batch_loss: 0.0026, avg_loss: 0.0122
+02/14/2022 05:32:58 - INFO - Epoch: [8], step: [3200], lr: 0.000015, batch_loss: 0.0022, avg_loss: 0.0124
+02/14/2022 05:34:04 - INFO - Epoch: [8], step: [3300], lr: 0.000015, batch_loss: 0.0027, avg_loss: 0.0124
+02/14/2022 05:35:11 - INFO - Epoch: [8], step: [3400], lr: 0.000015, batch_loss: 0.0024, avg_loss: 0.0126
+02/14/2022 05:36:18 - INFO - Epoch: [8], step: [3500], lr: 0.000015, batch_loss: 0.0103, avg_loss: 0.0126
+02/14/2022 05:37:24 - INFO - Epoch: [8], step: [3600], lr: 0.000015, batch_loss: 0.0011, avg_loss: 0.0126
+02/14/2022 05:38:30 - INFO - Epoch: [8], step: [3700], lr: 0.000015, batch_loss: 0.0017, avg_loss: 0.0126
+02/14/2022 05:39:35 - INFO - Epoch: [8], step: [3800], lr: 0.000015, batch_loss: 0.0054, avg_loss: 0.0127
+02/14/2022 05:40:41 - INFO - Epoch: [8], step: [3900], lr: 0.000015, batch_loss: 0.0090, avg_loss: 0.0126
+02/14/2022 05:41:47 - INFO - Epoch: [8], step: [4000], lr: 0.000015, batch_loss: 0.0047, avg_loss: 0.0126
+02/14/2022 05:42:54 - INFO - Epoch: [8], step: [4100], lr: 0.000015, batch_loss: 0.0658, avg_loss: 0.0126
+02/14/2022 05:43:59 - INFO - Epoch: [8], step: [4200], lr: 0.000015, batch_loss: 0.0042, avg_loss: 0.0128
+02/14/2022 05:45:05 - INFO - Epoch: [8], step: [4300], lr: 0.000015, batch_loss: 0.0035, avg_loss: 0.0128
+02/14/2022 05:46:12 - INFO - Epoch: [8], step: [4400], lr: 0.000015, batch_loss: 0.0041, avg_loss: 0.0129
+02/14/2022 05:46:29 - INFO - ** ** Epoch [8] done! Training loss: 0.01286 ** **
+02/14/2022 05:46:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 05:46:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 05:46:29 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 05:46:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 05:46:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 05:46:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 05:46:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 05:46:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 05:47:24 - INFO - ** * ** Eval at Epoch [8]! Eval Reults:  ** * **
+02/14/2022 05:47:24 - INFO - I2T Retrieval: 0.8780 @ R1, 0.9840 @ R5, 0.9940 @ R10
+02/14/2022 05:47:24 - INFO - =====> Start epoch 9:
+02/14/2022 05:47:25 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 05:47:25 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 05:47:25 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 05:47:25 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 05:47:25 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 05:47:25 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 05:47:25 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 05:47:25 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 05:48:33 - INFO - Epoch: [9], step: [100], lr: 0.000015, batch_loss: 0.0018, avg_loss: 0.0152
+02/14/2022 05:49:39 - INFO - Epoch: [9], step: [200], lr: 0.000015, batch_loss: 0.0026, avg_loss: 0.0108
+02/14/2022 05:50:45 - INFO - Epoch: [9], step: [300], lr: 0.000015, batch_loss: 0.0875, avg_loss: 0.0132
+02/14/2022 05:51:51 - INFO - Epoch: [9], step: [400], lr: 0.000015, batch_loss: 0.0018, avg_loss: 0.0129
+02/14/2022 05:52:59 - INFO - Epoch: [9], step: [500], lr: 0.000015, batch_loss: 0.0016, avg_loss: 0.0130
+02/14/2022 05:54:06 - INFO - Epoch: [9], step: [600], lr: 0.000015, batch_loss: 0.0033, avg_loss: 0.0129
+02/14/2022 05:55:13 - INFO - Epoch: [9], step: [700], lr: 0.000015, batch_loss: 0.0014, avg_loss: 0.0127
+02/14/2022 05:56:19 - INFO - Epoch: [9], step: [800], lr: 0.000015, batch_loss: 0.0008, avg_loss: 0.0129
+02/14/2022 05:57:26 - INFO - Epoch: [9], step: [900], lr: 0.000015, batch_loss: 0.0011, avg_loss: 0.0130
+02/14/2022 05:58:32 - INFO - Epoch: [9], step: [1000], lr: 0.000015, batch_loss: 0.0699, avg_loss: 0.0129
+02/14/2022 05:59:38 - INFO - Epoch: [9], step: [1100], lr: 0.000015, batch_loss: 0.0978, avg_loss: 0.0129
+02/14/2022 06:00:44 - INFO - Epoch: [9], step: [1200], lr: 0.000014, batch_loss: 0.0090, avg_loss: 0.0126
+02/14/2022 06:01:51 - INFO - Epoch: [9], step: [1300], lr: 0.000014, batch_loss: 0.1506, avg_loss: 0.0129
+02/14/2022 06:02:57 - INFO - Epoch: [9], step: [1400], lr: 0.000014, batch_loss: 0.0026, avg_loss: 0.0126
+02/14/2022 06:04:04 - INFO - Epoch: [9], step: [1500], lr: 0.000014, batch_loss: 0.0013, avg_loss: 0.0123
+02/14/2022 06:05:10 - INFO - Epoch: [9], step: [1600], lr: 0.000014, batch_loss: 0.0034, avg_loss: 0.0125
+02/14/2022 06:06:16 - INFO - Epoch: [9], step: [1700], lr: 0.000014, batch_loss: 0.0067, avg_loss: 0.0124
+02/14/2022 06:07:22 - INFO - Epoch: [9], step: [1800], lr: 0.000014, batch_loss: 0.0012, avg_loss: 0.0123
+02/14/2022 06:08:29 - INFO - Epoch: [9], step: [1900], lr: 0.000014, batch_loss: 0.0477, avg_loss: 0.0121
+02/14/2022 06:09:35 - INFO - Epoch: [9], step: [2000], lr: 0.000014, batch_loss: 0.0331, avg_loss: 0.0119
+02/14/2022 06:10:42 - INFO - Epoch: [9], step: [2100], lr: 0.000014, batch_loss: 0.0029, avg_loss: 0.0119
+02/14/2022 06:11:48 - INFO - Epoch: [9], step: [2200], lr: 0.000014, batch_loss: 0.0007, avg_loss: 0.0119
+02/14/2022 06:12:55 - INFO - Epoch: [9], step: [2300], lr: 0.000014, batch_loss: 0.0011, avg_loss: 0.0120
+02/14/2022 06:14:02 - INFO - Epoch: [9], step: [2400], lr: 0.000014, batch_loss: 0.0022, avg_loss: 0.0121
+02/14/2022 06:15:08 - INFO - Epoch: [9], step: [2500], lr: 0.000014, batch_loss: 0.0063, avg_loss: 0.0122
+02/14/2022 06:16:14 - INFO - Epoch: [9], step: [2600], lr: 0.000014, batch_loss: 0.0127, avg_loss: 0.0122
+02/14/2022 06:17:20 - INFO - Epoch: [9], step: [2700], lr: 0.000014, batch_loss: 0.0829, avg_loss: 0.0124
+02/14/2022 06:18:27 - INFO - Epoch: [9], step: [2800], lr: 0.000014, batch_loss: 0.0034, avg_loss: 0.0124
+02/14/2022 06:19:33 - INFO - Epoch: [9], step: [2900], lr: 0.000014, batch_loss: 0.0020, avg_loss: 0.0122
+02/14/2022 06:20:39 - INFO - Epoch: [9], step: [3000], lr: 0.000014, batch_loss: 0.0048, avg_loss: 0.0123
+02/14/2022 06:21:45 - INFO - Epoch: [9], step: [3100], lr: 0.000014, batch_loss: 0.0020, avg_loss: 0.0124
+02/14/2022 06:22:52 - INFO - Epoch: [9], step: [3200], lr: 0.000014, batch_loss: 0.0034, avg_loss: 0.0122
+02/14/2022 06:23:58 - INFO - Epoch: [9], step: [3300], lr: 0.000014, batch_loss: 0.0005, avg_loss: 0.0121
+02/14/2022 06:25:04 - INFO - Epoch: [9], step: [3400], lr: 0.000014, batch_loss: 0.0017, avg_loss: 0.0122
+02/14/2022 06:26:11 - INFO - Epoch: [9], step: [3500], lr: 0.000014, batch_loss: 0.0815, avg_loss: 0.0122
+02/14/2022 06:27:17 - INFO - Epoch: [9], step: [3600], lr: 0.000014, batch_loss: 0.0019, avg_loss: 0.0121
+02/14/2022 06:28:23 - INFO - Epoch: [9], step: [3700], lr: 0.000014, batch_loss: 0.0014, avg_loss: 0.0122
+02/14/2022 06:29:30 - INFO - Epoch: [9], step: [3800], lr: 0.000014, batch_loss: 0.0006, avg_loss: 0.0122
+02/14/2022 06:30:36 - INFO - Epoch: [9], step: [3900], lr: 0.000014, batch_loss: 0.0443, avg_loss: 0.0122
+02/14/2022 06:31:43 - INFO - Epoch: [9], step: [4000], lr: 0.000014, batch_loss: 0.0059, avg_loss: 0.0122
+02/14/2022 06:32:50 - INFO - Epoch: [9], step: [4100], lr: 0.000014, batch_loss: 0.0015, avg_loss: 0.0121
+02/14/2022 06:33:56 - INFO - Epoch: [9], step: [4200], lr: 0.000014, batch_loss: 0.0018, avg_loss: 0.0121
+02/14/2022 06:35:02 - INFO - Epoch: [9], step: [4300], lr: 0.000014, batch_loss: 0.0012, avg_loss: 0.0121
+02/14/2022 06:36:09 - INFO - Epoch: [9], step: [4400], lr: 0.000014, batch_loss: 0.0053, avg_loss: 0.0121
+02/14/2022 06:36:26 - INFO - ** ** Epoch [9] done! Training loss: 0.01212 ** **
+02/14/2022 06:36:26 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 06:36:26 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 06:36:26 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 06:36:26 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 06:36:26 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 06:36:26 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 06:36:26 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 06:36:26 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 06:37:21 - INFO - ** * ** Eval at Epoch [9]! Eval Reults:  ** * **
+02/14/2022 06:37:21 - INFO - I2T Retrieval: 0.8820 @ R1, 0.9830 @ R5, 0.9940 @ R10
+02/14/2022 06:37:21 - INFO - =====> Start epoch 10:
+02/14/2022 06:37:22 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 06:37:22 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 06:37:22 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 06:37:22 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 06:37:22 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 06:37:22 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 06:37:22 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 06:37:22 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+
+02/14/2022 06:38:30 - INFO - Epoch: [10], step: [100], lr: 0.000014, batch_loss: 0.0108, avg_loss: 0.0105
+02/14/2022 06:39:36 - INFO - Epoch: [10], step: [200], lr: 0.000014, batch_loss: 0.0614, avg_loss: 0.0110
+02/14/2022 06:40:42 - INFO - Epoch: [10], step: [300], lr: 0.000014, batch_loss: 0.0018, avg_loss: 0.0124
+02/14/2022 06:41:48 - INFO - Epoch: [10], step: [400], lr: 0.000014, batch_loss: 0.0030, avg_loss: 0.0121
+02/14/2022 06:42:54 - INFO - Epoch: [10], step: [500], lr: 0.000014, batch_loss: 0.0029, avg_loss: 0.0117
+02/14/2022 06:44:00 - INFO - Epoch: [10], step: [600], lr: 0.000014, batch_loss: 0.0008, avg_loss: 0.0121
+02/14/2022 06:45:06 - INFO - Epoch: [10], step: [700], lr: 0.000014, batch_loss: 0.0491, avg_loss: 0.0124
+02/14/2022 06:46:12 - INFO - Epoch: [10], step: [800], lr: 0.000014, batch_loss: 0.0049, avg_loss: 0.0124
+02/14/2022 06:47:18 - INFO - Epoch: [10], step: [900], lr: 0.000014, batch_loss: 0.0079, avg_loss: 0.0123
+02/14/2022 06:48:24 - INFO - Epoch: [10], step: [1000], lr: 0.000014, batch_loss: 0.0026, avg_loss: 0.0124
+02/14/2022 06:49:30 - INFO - Epoch: [10], step: [1100], lr: 0.000014, batch_loss: 0.0034, avg_loss: 0.0126
+02/14/2022 06:50:36 - INFO - Epoch: [10], step: [1200], lr: 0.000014, batch_loss: 0.0016, avg_loss: 0.0128
+02/14/2022 06:51:42 - INFO - Epoch: [10], step: [1300], lr: 0.000014, batch_loss: 0.0129, avg_loss: 0.0127
+02/14/2022 06:52:48 - INFO - Epoch: [10], step: [1400], lr: 0.000014, batch_loss: 0.0036, avg_loss: 0.0127
+02/14/2022 06:53:53 - INFO - Epoch: [10], step: [1500], lr: 0.000014, batch_loss: 0.0014, avg_loss: 0.0126
+02/14/2022 06:54:59 - INFO - Epoch: [10], step: [1600], lr: 0.000014, batch_loss: 0.0009, avg_loss: 0.0124
+02/14/2022 06:56:05 - INFO - Epoch: [10], step: [1700], lr: 0.000014, batch_loss: 0.0019, avg_loss: 0.0123
+02/14/2022 06:57:11 - INFO - Epoch: [10], step: [1800], lr: 0.000014, batch_loss: 0.0012, avg_loss: 0.0123
+02/14/2022 06:58:17 - INFO - Epoch: [10], step: [1900], lr: 0.000014, batch_loss: 0.0227, avg_loss: 0.0122
+02/14/2022 06:59:23 - INFO - Epoch: [10], step: [2000], lr: 0.000014, batch_loss: 0.0016, avg_loss: 0.0120
+02/14/2022 07:00:28 - INFO - Epoch: [10], step: [2100], lr: 0.000014, batch_loss: 0.0008, avg_loss: 0.0120
+02/14/2022 07:01:34 - INFO - Epoch: [10], step: [2200], lr: 0.000014, batch_loss: 0.0012, avg_loss: 0.0120
+02/14/2022 07:02:40 - INFO - Epoch: [10], step: [2300], lr: 0.000014, batch_loss: 0.0035, avg_loss: 0.0120
+02/14/2022 07:03:46 - INFO - Epoch: [10], step: [2400], lr: 0.000014, batch_loss: 0.0027, avg_loss: 0.0117
+02/14/2022 07:04:52 - INFO - Epoch: [10], step: [2500], lr: 0.000014, batch_loss: 0.0009, avg_loss: 0.0118
+02/14/2022 07:05:58 - INFO - Epoch: [10], step: [2600], lr: 0.000014, batch_loss: 0.0144, avg_loss: 0.0118
+02/14/2022 07:07:04 - INFO - Epoch: [10], step: [2700], lr: 0.000014, batch_loss: 0.0009, avg_loss: 0.0119
+02/14/2022 07:08:09 - INFO - Epoch: [10], step: [2800], lr: 0.000014, batch_loss: 0.0036, avg_loss: 0.0120
+02/14/2022 07:09:15 - INFO - Epoch: [10], step: [2900], lr: 0.000014, batch_loss: 0.0425, avg_loss: 0.0123
+02/14/2022 07:10:21 - INFO - Epoch: [10], step: [3000], lr: 0.000014, batch_loss: 0.0117, avg_loss: 0.0121
+02/14/2022 07:11:27 - INFO - Epoch: [10], step: [3100], lr: 0.000014, batch_loss: 0.0014, avg_loss: 0.0121
+02/14/2022 07:12:33 - INFO - Epoch: [10], step: [3200], lr: 0.000014, batch_loss: 0.0041, avg_loss: 0.0121
+02/14/2022 07:13:39 - INFO - Epoch: [10], step: [3300], lr: 0.000014, batch_loss: 0.0043, avg_loss: 0.0121
+02/14/2022 07:14:44 - INFO - Epoch: [10], step: [3400], lr: 0.000013, batch_loss: 0.0016, avg_loss: 0.0121
+02/14/2022 07:15:50 - INFO - Epoch: [10], step: [3500], lr: 0.000013, batch_loss: 0.0051, avg_loss: 0.0121
+02/14/2022 07:16:56 - INFO - Epoch: [10], step: [3600], lr: 0.000013, batch_loss: 0.0017, avg_loss: 0.0120
+02/14/2022 07:18:02 - INFO - Epoch: [10], step: [3700], lr: 0.000013, batch_loss: 0.0228, avg_loss: 0.0121
+02/14/2022 07:19:08 - INFO - Epoch: [10], step: [3800], lr: 0.000013, batch_loss: 0.0022, avg_loss: 0.0122
+02/14/2022 07:20:14 - INFO - Epoch: [10], step: [3900], lr: 0.000013, batch_loss: 0.1224, avg_loss: 0.0122
+02/14/2022 07:21:19 - INFO - Epoch: [10], step: [4000], lr: 0.000013, batch_loss: 0.0032, avg_loss: 0.0122
+02/14/2022 07:22:25 - INFO - Epoch: [10], step: [4100], lr: 0.000013, batch_loss: 0.0004, avg_loss: 0.0122
+02/14/2022 07:23:31 - INFO - Epoch: [10], step: [4200], lr: 0.000013, batch_loss: 0.0030, avg_loss: 0.0122
+02/14/2022 07:24:36 - INFO - Epoch: [10], step: [4300], lr: 0.000013, batch_loss: 0.0018, avg_loss: 0.0121
+02/14/2022 07:25:42 - INFO - Epoch: [10], step: [4400], lr: 0.000013, batch_loss: 0.0017, avg_loss: 0.0121
+02/14/2022 07:25:59 - INFO - ** ** Epoch [10] done! Training loss: 0.01210 ** **
+02/14/2022 07:26:00 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 07:26:00 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 07:26:00 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+
+02/14/2022 07:26:00 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 07:26:00 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 07:26:00 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 07:26:00 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 07:26:00 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 07:26:54 - INFO - ** * ** Eval at Epoch [10]! Eval Reults:  ** * **
+02/14/2022 07:26:54 - INFO - I2T Retrieval: 0.8700 @ R1, 0.9880 @ R5, 0.9960 @ R10
+02/14/2022 07:26:54 - INFO - =====> Start epoch 11:
+02/14/2022 07:26:55 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 07:26:55 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 07:26:55 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 07:26:55 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 07:26:55 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 07:26:55 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 07:26:55 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 07:26:55 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 07:28:04 - INFO - Epoch: [11], step: [100], lr: 0.000013, batch_loss: 0.0014, avg_loss: 0.0140
+02/14/2022 07:29:11 - INFO - Epoch: [11], step: [200], lr: 0.000013, batch_loss: 0.0196, avg_loss: 0.0117
+02/14/2022 07:30:17 - INFO - Epoch: [11], step: [300], lr: 0.000013, batch_loss: 0.0008, avg_loss: 0.0123
+02/14/2022 07:31:23 - INFO - Epoch: [11], step: [400], lr: 0.000013, batch_loss: 0.0046, avg_loss: 0.0129
+02/14/2022 07:32:30 - INFO - Epoch: [11], step: [500], lr: 0.000013, batch_loss: 0.0009, avg_loss: 0.0118
+02/14/2022 07:33:36 - INFO - Epoch: [11], step: [600], lr: 0.000013, batch_loss: 0.0011, avg_loss: 0.0117
+02/14/2022 07:34:43 - INFO - Epoch: [11], step: [700], lr: 0.000013, batch_loss: 0.0043, avg_loss: 0.0115
+02/14/2022 07:35:49 - INFO - Epoch: [11], step: [800], lr: 0.000013, batch_loss: 0.0015, avg_loss: 0.0117
+02/14/2022 07:36:55 - INFO - Epoch: [11], step: [900], lr: 0.000013, batch_loss: 0.0024, avg_loss: 0.0113
+02/14/2022 07:38:02 - INFO - Epoch: [11], step: [1000], lr: 0.000013, batch_loss: 0.0386, avg_loss: 0.0112
+02/14/2022 07:39:08 - INFO - Epoch: [11], step: [1100], lr: 0.000013, batch_loss: 0.0007, avg_loss: 0.0115
+02/14/2022 07:40:14 - INFO - Epoch: [11], step: [1200], lr: 0.000013, batch_loss: 0.0019, avg_loss: 0.0113
+02/14/2022 07:41:20 - INFO - Epoch: [11], step: [1300], lr: 0.000013, batch_loss: 0.0036, avg_loss: 0.0115
+02/14/2022 07:42:27 - INFO - Epoch: [11], step: [1400], lr: 0.000013, batch_loss: 0.0017, avg_loss: 0.0116
+02/14/2022 07:43:33 - INFO - Epoch: [11], step: [1500], lr: 0.000013, batch_loss: 0.0275, avg_loss: 0.0117
+02/14/2022 07:44:39 - INFO - Epoch: [11], step: [1600], lr: 0.000013, batch_loss: 0.0014, avg_loss: 0.0116
+02/14/2022 07:45:45 - INFO - Epoch: [11], step: [1700], lr: 0.000013, batch_loss: 0.0073, avg_loss: 0.0116
+02/14/2022 07:46:51 - INFO - Epoch: [11], step: [1800], lr: 0.000013, batch_loss: 0.0008, avg_loss: 0.0115
+02/14/2022 07:47:57 - INFO - Epoch: [11], step: [1900], lr: 0.000013, batch_loss: 0.0025, avg_loss: 0.0115
+02/14/2022 07:49:03 - INFO - Epoch: [11], step: [2000], lr: 0.000013, batch_loss: 0.0031, avg_loss: 0.0117
+02/14/2022 07:50:10 - INFO - Epoch: [11], step: [2100], lr: 0.000013, batch_loss: 0.0028, avg_loss: 0.0119
+02/14/2022 07:51:16 - INFO - Epoch: [11], step: [2200], lr: 0.000013, batch_loss: 0.0007, avg_loss: 0.0119
+02/14/2022 07:52:23 - INFO - Epoch: [11], step: [2300], lr: 0.000013, batch_loss: 0.0017, avg_loss: 0.0116
+02/14/2022 07:53:29 - INFO - Epoch: [11], step: [2400], lr: 0.000013, batch_loss: 0.0008, avg_loss: 0.0116
+02/14/2022 07:54:35 - INFO - Epoch: [11], step: [2500], lr: 0.000013, batch_loss: 0.0021, avg_loss: 0.0115
+02/14/2022 07:55:41 - INFO - Epoch: [11], step: [2600], lr: 0.000013, batch_loss: 0.0019, avg_loss: 0.0114
+02/14/2022 07:56:47 - INFO - Epoch: [11], step: [2700], lr: 0.000013, batch_loss: 0.0039, avg_loss: 0.0115
+02/14/2022 07:57:54 - INFO - Epoch: [11], step: [2800], lr: 0.000013, batch_loss: 0.0015, avg_loss: 0.0115
+02/14/2022 07:59:00 - INFO - Epoch: [11], step: [2900], lr: 0.000013, batch_loss: 0.0021, avg_loss: 0.0115
+02/14/2022 08:00:06 - INFO - Epoch: [11], step: [3000], lr: 0.000013, batch_loss: 0.0027, avg_loss: 0.0115
+02/14/2022 08:01:12 - INFO - Epoch: [11], step: [3100], lr: 0.000013, batch_loss: 0.0013, avg_loss: 0.0114
+02/14/2022 08:02:18 - INFO - Epoch: [11], step: [3200], lr: 0.000013, batch_loss: 0.0009, avg_loss: 0.0114
+02/14/2022 08:03:25 - INFO - Epoch: [11], step: [3300], lr: 0.000013, batch_loss: 0.0006, avg_loss: 0.0113
+02/14/2022 08:04:31 - INFO - Epoch: [11], step: [3400], lr: 0.000013, batch_loss: 0.0150, avg_loss: 0.0115
+02/14/2022 08:05:37 - INFO - Epoch: [11], step: [3500], lr: 0.000013, batch_loss: 0.0013, avg_loss: 0.0114
+02/14/2022 08:06:43 - INFO - Epoch: [11], step: [3600], lr: 0.000013, batch_loss: 0.0189, avg_loss: 0.0115
+02/14/2022 08:07:50 - INFO - Epoch: [11], step: [3700], lr: 0.000013, batch_loss: 0.0021, avg_loss: 0.0116
+02/14/2022 08:08:56 - INFO - Epoch: [11], step: [3800], lr: 0.000013, batch_loss: 0.0033, avg_loss: 0.0116
+02/14/2022 08:10:02 - INFO - Epoch: [11], step: [3900], lr: 0.000013, batch_loss: 0.0012, avg_loss: 0.0117
+02/14/2022 08:11:08 - INFO - Epoch: [11], step: [4000], lr: 0.000013, batch_loss: 0.0256, avg_loss: 0.0117
+02/14/2022 08:12:14 - INFO - Epoch: [11], step: [4100], lr: 0.000013, batch_loss: 0.0018, avg_loss: 0.0118
+02/14/2022 08:13:21 - INFO - Epoch: [11], step: [4200], lr: 0.000013, batch_loss: 0.0028, avg_loss: 0.0118
+02/14/2022 08:14:27 - INFO - Epoch: [11], step: [4300], lr: 0.000013, batch_loss: 0.0013, avg_loss: 0.0118
+02/14/2022 08:15:33 - INFO - Epoch: [11], step: [4400], lr: 0.000013, batch_loss: 0.0034, avg_loss: 0.0119
+02/14/2022 08:15:50 - INFO - ** ** Epoch [11] done! Training loss: 0.01189 ** **
+02/14/2022 08:15:50 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 08:15:50 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 08:15:50 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 08:15:50 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 08:15:50 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 08:15:50 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 08:15:50 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 08:15:50 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 08:16:45 - INFO - ** * ** Eval at Epoch [11]! Eval Reults:  ** * **
+02/14/2022 08:16:45 - INFO - I2T Retrieval: 0.8720 @ R1, 0.9830 @ R5, 0.9950 @ R10
+02/14/2022 08:16:45 - INFO - =====> Start epoch 12:
+02/14/2022 08:16:46 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 08:16:46 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 08:16:46 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 08:16:46 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 08:16:46 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 08:16:46 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 08:16:46 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 08:16:46 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 08:17:54 - INFO - Epoch: [12], step: [100], lr: 0.000013, batch_loss: 0.0019, avg_loss: 0.0098
+02/14/2022 08:19:00 - INFO - Epoch: [12], step: [200], lr: 0.000013, batch_loss: 0.0014, avg_loss: 0.0080
+02/14/2022 08:20:06 - INFO - Epoch: [12], step: [300], lr: 0.000013, batch_loss: 0.0047, avg_loss: 0.0105
+02/14/2022 08:21:11 - INFO - Epoch: [12], step: [400], lr: 0.000013, batch_loss: 0.0016, avg_loss: 0.0105
+02/14/2022 08:22:17 - INFO - Epoch: [12], step: [500], lr: 0.000013, batch_loss: 0.0592, avg_loss: 0.0110
+02/14/2022 08:23:23 - INFO - Epoch: [12], step: [600], lr: 0.000013, batch_loss: 0.0004, avg_loss: 0.0107
+02/14/2022 08:24:29 - INFO - Epoch: [12], step: [700], lr: 0.000013, batch_loss: 0.0041, avg_loss: 0.0108
+02/14/2022 08:25:35 - INFO - Epoch: [12], step: [800], lr: 0.000013, batch_loss: 0.0010, avg_loss: 0.0109
+02/14/2022 08:26:41 - INFO - Epoch: [12], step: [900], lr: 0.000013, batch_loss: 0.0004, avg_loss: 0.0106
+02/14/2022 08:27:47 - INFO - Epoch: [12], step: [1000], lr: 0.000013, batch_loss: 0.0034, avg_loss: 0.0106
+02/14/2022 08:28:53 - INFO - Epoch: [12], step: [1100], lr: 0.000013, batch_loss: 0.0598, avg_loss: 0.0105
+02/14/2022 08:29:59 - INFO - Epoch: [12], step: [1200], lr: 0.000012, batch_loss: 0.0028, avg_loss: 0.0105
+02/14/2022 08:31:04 - INFO - Epoch: [12], step: [1300], lr: 0.000012, batch_loss: 0.0014, avg_loss: 0.0109
+02/14/2022 08:32:10 - INFO - Epoch: [12], step: [1400], lr: 0.000012, batch_loss: 0.0006, avg_loss: 0.0106
+02/14/2022 08:33:16 - INFO - Epoch: [12], step: [1500], lr: 0.000012, batch_loss: 0.0005, avg_loss: 0.0106
+02/14/2022 08:34:22 - INFO - Epoch: [12], step: [1600], lr: 0.000012, batch_loss: 0.0065, avg_loss: 0.0107
+02/14/2022 08:35:27 - INFO - Epoch: [12], step: [1700], lr: 0.000012, batch_loss: 0.0012, avg_loss: 0.0107
+02/14/2022 08:36:33 - INFO - Epoch: [12], step: [1800], lr: 0.000012, batch_loss: 0.0014, avg_loss: 0.0106
+02/14/2022 08:37:39 - INFO - Epoch: [12], step: [1900], lr: 0.000012, batch_loss: 0.0014, avg_loss: 0.0108
+02/14/2022 08:38:45 - INFO - Epoch: [12], step: [2000], lr: 0.000012, batch_loss: 0.0013, avg_loss: 0.0108
+02/14/2022 08:39:51 - INFO - Epoch: [12], step: [2100], lr: 0.000012, batch_loss: 0.0016, avg_loss: 0.0110
+02/14/2022 08:40:56 - INFO - Epoch: [12], step: [2200], lr: 0.000012, batch_loss: 0.0013, avg_loss: 0.0108
+02/14/2022 08:42:02 - INFO - Epoch: [12], step: [2300], lr: 0.000012, batch_loss: 0.0284, avg_loss: 0.0106
+02/14/2022 08:43:09 - INFO - Epoch: [12], step: [2400], lr: 0.000012, batch_loss: 0.0332, avg_loss: 0.0106
+02/14/2022 08:44:15 - INFO - Epoch: [12], step: [2500], lr: 0.000012, batch_loss: 0.0020, avg_loss: 0.0107
+02/14/2022 08:45:21 - INFO - Epoch: [12], step: [2600], lr: 0.000012, batch_loss: 0.0016, avg_loss: 0.0106
+02/14/2022 08:46:27 - INFO - Epoch: [12], step: [2700], lr: 0.000012, batch_loss: 0.0296, avg_loss: 0.0106
+02/14/2022 08:47:33 - INFO - Epoch: [12], step: [2800], lr: 0.000012, batch_loss: 0.0023, avg_loss: 0.0107
+02/14/2022 08:48:39 - INFO - Epoch: [12], step: [2900], lr: 0.000012, batch_loss: 0.0068, avg_loss: 0.0107
+02/14/2022 08:49:45 - INFO - Epoch: [12], step: [3000], lr: 0.000012, batch_loss: 0.0018, avg_loss: 0.0108
+02/14/2022 08:50:50 - INFO - Epoch: [12], step: [3100], lr: 0.000012, batch_loss: 0.0012, avg_loss: 0.0108
+02/14/2022 08:51:56 - INFO - Epoch: [12], step: [3200], lr: 0.000012, batch_loss: 0.0013, avg_loss: 0.0109
+02/14/2022 08:53:02 - INFO - Epoch: [12], step: [3300], lr: 0.000012, batch_loss: 0.0016, avg_loss: 0.0109
+02/14/2022 08:54:08 - INFO - Epoch: [12], step: [3400], lr: 0.000012, batch_loss: 0.0019, avg_loss: 0.0109
+02/14/2022 08:55:14 - INFO - Epoch: [12], step: [3500], lr: 0.000012, batch_loss: 0.0015, avg_loss: 0.0111
+02/14/2022 08:56:20 - INFO - Epoch: [12], step: [3600], lr: 0.000012, batch_loss: 0.0013, avg_loss: 0.0110
+02/14/2022 08:57:26 - INFO - Epoch: [12], step: [3700], lr: 0.000012, batch_loss: 0.0017, avg_loss: 0.0110
+02/14/2022 08:58:32 - INFO - Epoch: [12], step: [3800], lr: 0.000012, batch_loss: 0.0016, avg_loss: 0.0110
+02/14/2022 08:59:38 - INFO - Epoch: [12], step: [3900], lr: 0.000012, batch_loss: 0.0022, avg_loss: 0.0111
+02/14/2022 09:00:44 - INFO - Epoch: [12], step: [4000], lr: 0.000012, batch_loss: 0.0010, avg_loss: 0.0110
+02/14/2022 09:01:50 - INFO - Epoch: [12], step: [4100], lr: 0.000012, batch_loss: 0.0022, avg_loss: 0.0111
+02/14/2022 09:02:56 - INFO - Epoch: [12], step: [4200], lr: 0.000012, batch_loss: 0.0007, avg_loss: 0.0111
+02/14/2022 09:04:02 - INFO - Epoch: [12], step: [4300], lr: 0.000012, batch_loss: 0.0014, avg_loss: 0.0112
+02/14/2022 09:05:08 - INFO - Epoch: [12], step: [4400], lr: 0.000012, batch_loss: 0.0040, avg_loss: 0.0112
+02/14/2022 09:05:25 - INFO - ** ** Epoch [12] done! Training loss: 0.01125 ** **
+02/14/2022 09:05:25 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 09:05:25 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 09:05:25 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 09:05:25 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+
+02/14/2022 09:05:25 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 09:05:25 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 09:05:25 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 09:05:25 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 09:06:20 - INFO - ** * ** Eval at Epoch [12]! Eval Reults:  ** * **
+02/14/2022 09:06:20 - INFO - I2T Retrieval: 0.8710 @ R1, 0.9860 @ R5, 0.9950 @ R10
+02/14/2022 09:06:20 - INFO - =====> Start epoch 13:
+02/14/2022 09:06:21 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 09:06:21 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 09:06:21 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 09:06:21 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 09:06:21 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 09:06:21 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 09:06:21 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 09:06:21 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 09:07:29 - INFO - Epoch: [13], step: [100], lr: 0.000012, batch_loss: 0.0688, avg_loss: 0.0136
+02/14/2022 09:08:36 - INFO - Epoch: [13], step: [200], lr: 0.000012, batch_loss: 0.0012, avg_loss: 0.0121
+02/14/2022 09:09:42 - INFO - Epoch: [13], step: [300], lr: 0.000012, batch_loss: 0.0010, avg_loss: 0.0107
+02/14/2022 09:10:48 - INFO - Epoch: [13], step: [400], lr: 0.000012, batch_loss: 0.0024, avg_loss: 0.0114
+02/14/2022 09:11:54 - INFO - Epoch: [13], step: [500], lr: 0.000012, batch_loss: 0.0435, avg_loss: 0.0111
+02/14/2022 09:13:00 - INFO - Epoch: [13], step: [600], lr: 0.000012, batch_loss: 0.0444, avg_loss: 0.0112
+02/14/2022 09:14:07 - INFO - Epoch: [13], step: [700], lr: 0.000012, batch_loss: 0.0011, avg_loss: 0.0113
+02/14/2022 09:15:13 - INFO - Epoch: [13], step: [800], lr: 0.000012, batch_loss: 0.0018, avg_loss: 0.0119
+02/14/2022 09:16:19 - INFO - Epoch: [13], step: [900], lr: 0.000012, batch_loss: 0.0027, avg_loss: 0.0118
+02/14/2022 09:17:25 - INFO - Epoch: [13], step: [1000], lr: 0.000012, batch_loss: 0.0004, avg_loss: 0.0116
+02/14/2022 09:18:31 - INFO - Epoch: [13], step: [1100], lr: 0.000012, batch_loss: 0.0022, avg_loss: 0.0115
+02/14/2022 09:19:37 - INFO - Epoch: [13], step: [1200], lr: 0.000012, batch_loss: 0.0012, avg_loss: 0.0113
+02/14/2022 09:20:43 - INFO - Epoch: [13], step: [1300], lr: 0.000012, batch_loss: 0.0005, avg_loss: 0.0111
+02/14/2022 09:21:49 - INFO - Epoch: [13], step: [1400], lr: 0.000012, batch_loss: 0.0016, avg_loss: 0.0109
+02/14/2022 09:22:55 - INFO - Epoch: [13], step: [1500], lr: 0.000012, batch_loss: 0.0010, avg_loss: 0.0110
+02/14/2022 09:24:00 - INFO - Epoch: [13], step: [1600], lr: 0.000012, batch_loss: 0.1303, avg_loss: 0.0109
+02/14/2022 09:25:07 - INFO - Epoch: [13], step: [1700], lr: 0.000012, batch_loss: 0.0042, avg_loss: 0.0110
+02/14/2022 09:26:13 - INFO - Epoch: [13], step: [1800], lr: 0.000012, batch_loss: 0.0242, avg_loss: 0.0111
+02/14/2022 09:27:19 - INFO - Epoch: [13], step: [1900], lr: 0.000012, batch_loss: 0.0023, avg_loss: 0.0111
+02/14/2022 09:28:25 - INFO - Epoch: [13], step: [2000], lr: 0.000012, batch_loss: 0.0010, avg_loss: 0.0110
+02/14/2022 09:29:31 - INFO - Epoch: [13], step: [2100], lr: 0.000012, batch_loss: 0.0010, avg_loss: 0.0110
+02/14/2022 09:30:37 - INFO - Epoch: [13], step: [2200], lr: 0.000012, batch_loss: 0.0032, avg_loss: 0.0111
+02/14/2022 09:31:43 - INFO - Epoch: [13], step: [2300], lr: 0.000012, batch_loss: 0.0016, avg_loss: 0.0109
+02/14/2022 09:32:49 - INFO - Epoch: [13], step: [2400], lr: 0.000012, batch_loss: 0.0021, avg_loss: 0.0110
+02/14/2022 09:33:55 - INFO - Epoch: [13], step: [2500], lr: 0.000012, batch_loss: 0.0013, avg_loss: 0.0113
+02/14/2022 09:35:01 - INFO - Epoch: [13], step: [2600], lr: 0.000012, batch_loss: 0.0036, avg_loss: 0.0113
+02/14/2022 09:36:07 - INFO - Epoch: [13], step: [2700], lr: 0.000012, batch_loss: 0.0046, avg_loss: 0.0112
+02/14/2022 09:37:13 - INFO - Epoch: [13], step: [2800], lr: 0.000012, batch_loss: 0.0016, avg_loss: 0.0111
+02/14/2022 09:38:19 - INFO - Epoch: [13], step: [2900], lr: 0.000012, batch_loss: 0.0009, avg_loss: 0.0112
+02/14/2022 09:39:25 - INFO - Epoch: [13], step: [3000], lr: 0.000012, batch_loss: 0.0039, avg_loss: 0.0112
+02/14/2022 09:40:31 - INFO - Epoch: [13], step: [3100], lr: 0.000012, batch_loss: 0.0032, avg_loss: 0.0111
+02/14/2022 09:41:36 - INFO - Epoch: [13], step: [3200], lr: 0.000012, batch_loss: 0.0018, avg_loss: 0.0112
+02/14/2022 09:42:42 - INFO - Epoch: [13], step: [3300], lr: 0.000012, batch_loss: 0.0011, avg_loss: 0.0112
+02/14/2022 09:43:48 - INFO - Epoch: [13], step: [3400], lr: 0.000011, batch_loss: 0.0009, avg_loss: 0.0111
+02/14/2022 09:44:54 - INFO - Epoch: [13], step: [3500], lr: 0.000011, batch_loss: 0.0062, avg_loss: 0.0111
+02/14/2022 09:46:00 - INFO - Epoch: [13], step: [3600], lr: 0.000011, batch_loss: 0.0016, avg_loss: 0.0112
+02/14/2022 09:47:06 - INFO - Epoch: [13], step: [3700], lr: 0.000011, batch_loss: 0.0060, avg_loss: 0.0112
+02/14/2022 09:48:11 - INFO - Epoch: [13], step: [3800], lr: 0.000011, batch_loss: 0.0006, avg_loss: 0.0112
+02/14/2022 09:49:17 - INFO - Epoch: [13], step: [3900], lr: 0.000011, batch_loss: 0.0048, avg_loss: 0.0113
+02/14/2022 09:50:23 - INFO - Epoch: [13], step: [4000], lr: 0.000011, batch_loss: 0.0004, avg_loss: 0.0111
+02/14/2022 09:51:28 - INFO - Epoch: [13], step: [4100], lr: 0.000011, batch_loss: 0.0823, avg_loss: 0.0110
+02/14/2022 09:52:34 - INFO - Epoch: [13], step: [4200], lr: 0.000011, batch_loss: 0.0635, avg_loss: 0.0110
+02/14/2022 09:53:40 - INFO - Epoch: [13], step: [4300], lr: 0.000011, batch_loss: 0.0036, avg_loss: 0.0109
+02/14/2022 09:54:46 - INFO - Epoch: [13], step: [4400], lr: 0.000011, batch_loss: 0.0009, avg_loss: 0.0109
+02/14/2022 09:55:03 - INFO - ** ** Epoch [13] done! Training loss: 0.01089 ** **
+02/14/2022 09:55:03 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 09:55:03 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 09:55:03 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 09:55:03 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 09:55:03 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 09:55:03 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 09:55:03 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 09:55:03 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 09:55:58 - INFO - ** * ** Eval at Epoch [13]! Eval Reults:  ** * **
+02/14/2022 09:55:58 - INFO - I2T Retrieval: 0.8830 @ R1, 0.9860 @ R5, 0.9950 @ R10
+02/14/2022 09:55:58 - INFO - =====> Start epoch 14:
+02/14/2022 09:55:59 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 09:55:59 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 09:55:59 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 09:55:59 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 09:55:59 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 09:55:59 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 09:55:59 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 09:55:59 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 09:57:07 - INFO - Epoch: [14], step: [100], lr: 0.000011, batch_loss: 0.0022, avg_loss: 0.0115
+02/14/2022 09:58:14 - INFO - Epoch: [14], step: [200], lr: 0.000011, batch_loss: 0.0008, avg_loss: 0.0108
+02/14/2022 09:59:20 - INFO - Epoch: [14], step: [300], lr: 0.000011, batch_loss: 0.0013, avg_loss: 0.0116
+02/14/2022 10:00:26 - INFO - Epoch: [14], step: [400], lr: 0.000011, batch_loss: 0.0026, avg_loss: 0.0121
+02/14/2022 10:01:32 - INFO - Epoch: [14], step: [500], lr: 0.000011, batch_loss: 0.0021, avg_loss: 0.0114
+02/14/2022 10:02:38 - INFO - Epoch: [14], step: [600], lr: 0.000011, batch_loss: 0.0019, avg_loss: 0.0106
+02/14/2022 10:03:44 - INFO - Epoch: [14], step: [700], lr: 0.000011, batch_loss: 0.0009, avg_loss: 0.0109
+02/14/2022 10:04:50 - INFO - Epoch: [14], step: [800], lr: 0.000011, batch_loss: 0.0018, avg_loss: 0.0111
+02/14/2022 10:05:56 - INFO - Epoch: [14], step: [900], lr: 0.000011, batch_loss: 0.0728, avg_loss: 0.0112
+02/14/2022 10:07:02 - INFO - Epoch: [14], step: [1000], lr: 0.000011, batch_loss: 0.0007, avg_loss: 0.0111
+02/14/2022 10:08:08 - INFO - Epoch: [14], step: [1100], lr: 0.000011, batch_loss: 0.0006, avg_loss: 0.0111
+02/14/2022 10:09:14 - INFO - Epoch: [14], step: [1200], lr: 0.000011, batch_loss: 0.0041, avg_loss: 0.0115
+02/14/2022 10:10:19 - INFO - Epoch: [14], step: [1300], lr: 0.000011, batch_loss: 0.0634, avg_loss: 0.0113
+02/14/2022 10:11:26 - INFO - Epoch: [14], step: [1400], lr: 0.000011, batch_loss: 0.0014, avg_loss: 0.0112
+02/14/2022 10:12:32 - INFO - Epoch: [14], step: [1500], lr: 0.000011, batch_loss: 0.0308, avg_loss: 0.0111
+02/14/2022 10:13:38 - INFO - Epoch: [14], step: [1600], lr: 0.000011, batch_loss: 0.0018, avg_loss: 0.0111
+02/14/2022 10:14:44 - INFO - Epoch: [14], step: [1700], lr: 0.000011, batch_loss: 0.0007, avg_loss: 0.0111
+02/14/2022 10:15:49 - INFO - Epoch: [14], step: [1800], lr: 0.000011, batch_loss: 0.0046, avg_loss: 0.0112
+02/14/2022 10:16:55 - INFO - Epoch: [14], step: [1900], lr: 0.000011, batch_loss: 0.0004, avg_loss: 0.0111
+02/14/2022 10:18:01 - INFO - Epoch: [14], step: [2000], lr: 0.000011, batch_loss: 0.0869, avg_loss: 0.0110
+02/14/2022 10:19:07 - INFO - Epoch: [14], step: [2100], lr: 0.000011, batch_loss: 0.0014, avg_loss: 0.0111
+02/14/2022 10:20:13 - INFO - Epoch: [14], step: [2200], lr: 0.000011, batch_loss: 0.0505, avg_loss: 0.0111
+02/14/2022 10:21:19 - INFO - Epoch: [14], step: [2300], lr: 0.000011, batch_loss: 0.0008, avg_loss: 0.0109
+02/14/2022 10:22:25 - INFO - Epoch: [14], step: [2400], lr: 0.000011, batch_loss: 0.0015, avg_loss: 0.0109
+02/14/2022 10:23:30 - INFO - Epoch: [14], step: [2500], lr: 0.000011, batch_loss: 0.0026, avg_loss: 0.0109
+02/14/2022 10:24:36 - INFO - Epoch: [14], step: [2600], lr: 0.000011, batch_loss: 0.0009, avg_loss: 0.0108
+02/14/2022 10:25:43 - INFO - Epoch: [14], step: [2700], lr: 0.000011, batch_loss: 0.0024, avg_loss: 0.0108
+02/14/2022 10:26:48 - INFO - Epoch: [14], step: [2800], lr: 0.000011, batch_loss: 0.0017, avg_loss: 0.0107
+02/14/2022 10:27:54 - INFO - Epoch: [14], step: [2900], lr: 0.000011, batch_loss: 0.0014, avg_loss: 0.0106
+02/14/2022 10:29:00 - INFO - Epoch: [14], step: [3000], lr: 0.000011, batch_loss: 0.0017, avg_loss: 0.0106
+02/14/2022 10:30:06 - INFO - Epoch: [14], step: [3100], lr: 0.000011, batch_loss: 0.0030, avg_loss: 0.0106
+02/14/2022 10:31:12 - INFO - Epoch: [14], step: [3200], lr: 0.000011, batch_loss: 0.0019, avg_loss: 0.0106
+02/14/2022 10:32:18 - INFO - Epoch: [14], step: [3300], lr: 0.000011, batch_loss: 0.0013, avg_loss: 0.0106
+02/14/2022 10:33:24 - INFO - Epoch: [14], step: [3400], lr: 0.000011, batch_loss: 0.0021, avg_loss: 0.0107
+02/14/2022 10:34:30 - INFO - Epoch: [14], step: [3500], lr: 0.000011, batch_loss: 0.0007, avg_loss: 0.0107
+02/14/2022 10:35:36 - INFO - Epoch: [14], step: [3600], lr: 0.000011, batch_loss: 0.0020, avg_loss: 0.0106
+02/14/2022 10:36:42 - INFO - Epoch: [14], step: [3700], lr: 0.000011, batch_loss: 0.0010, avg_loss: 0.0105
+02/14/2022 10:37:47 - INFO - Epoch: [14], step: [3800], lr: 0.000011, batch_loss: 0.0012, avg_loss: 0.0105
+02/14/2022 10:38:53 - INFO - Epoch: [14], step: [3900], lr: 0.000011, batch_loss: 0.0016, avg_loss: 0.0105
+02/14/2022 10:39:59 - INFO - Epoch: [14], step: [4000], lr: 0.000011, batch_loss: 0.0308, avg_loss: 0.0104
+02/14/2022 10:41:05 - INFO - Epoch: [14], step: [4100], lr: 0.000011, batch_loss: 0.0786, avg_loss: 0.0105
+02/14/2022 10:42:11 - INFO - Epoch: [14], step: [4200], lr: 0.000011, batch_loss: 0.0092, avg_loss: 0.0105
+02/14/2022 10:43:17 - INFO - Epoch: [14], step: [4300], lr: 0.000011, batch_loss: 0.0012, avg_loss: 0.0105
+02/14/2022 10:44:22 - INFO - Epoch: [14], step: [4400], lr: 0.000011, batch_loss: 0.0024, avg_loss: 0.0104
+02/14/2022 10:44:39 - INFO - ** ** Epoch [14] done! Training loss: 0.01035 ** **
+02/14/2022 10:44:40 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 10:44:40 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 10:44:40 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 10:44:40 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 10:44:40 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 10:44:40 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 10:44:40 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 10:44:40 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 10:45:34 - INFO - ** * ** Eval at Epoch [14]! Eval Reults:  ** * **
+02/14/2022 10:45:34 - INFO - I2T Retrieval: 0.8700 @ R1, 0.9850 @ R5, 0.9940 @ R10
+02/14/2022 10:45:34 - INFO - =====> Start epoch 15:
+02/14/2022 10:45:35 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 10:45:35 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 10:45:35 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 10:45:35 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 10:45:35 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 10:45:35 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 10:45:35 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 10:45:35 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 10:46:43 - INFO - Epoch: [15], step: [100], lr: 0.000011, batch_loss: 0.0008, avg_loss: 0.0091
+02/14/2022 10:47:49 - INFO - Epoch: [15], step: [200], lr: 0.000011, batch_loss: 0.0039, avg_loss: 0.0095
+02/14/2022 10:48:56 - INFO - Epoch: [15], step: [300], lr: 0.000011, batch_loss: 0.0009, avg_loss: 0.0094
+02/14/2022 10:50:01 - INFO - Epoch: [15], step: [400], lr: 0.000011, batch_loss: 0.0007, avg_loss: 0.0089
+02/14/2022 10:51:08 - INFO - Epoch: [15], step: [500], lr: 0.000011, batch_loss: 0.0886, avg_loss: 0.0100
+02/14/2022 10:52:14 - INFO - Epoch: [15], step: [600], lr: 0.000011, batch_loss: 0.0005, avg_loss: 0.0099
+02/14/2022 10:53:20 - INFO - Epoch: [15], step: [700], lr: 0.000011, batch_loss: 0.0670, avg_loss: 0.0106
+02/14/2022 10:54:26 - INFO - Epoch: [15], step: [800], lr: 0.000011, batch_loss: 0.0009, avg_loss: 0.0105
+02/14/2022 10:55:32 - INFO - Epoch: [15], step: [900], lr: 0.000011, batch_loss: 0.0022, avg_loss: 0.0100
+02/14/2022 10:56:38 - INFO - Epoch: [15], step: [1000], lr: 0.000011, batch_loss: 0.0092, avg_loss: 0.0098
+02/14/2022 10:57:44 - INFO - Epoch: [15], step: [1100], lr: 0.000011, batch_loss: 0.0005, avg_loss: 0.0098
+02/14/2022 10:58:50 - INFO - Epoch: [15], step: [1200], lr: 0.000010, batch_loss: 0.0005, avg_loss: 0.0098
+02/14/2022 10:59:56 - INFO - Epoch: [15], step: [1300], lr: 0.000010, batch_loss: 0.0614, avg_loss: 0.0098
+02/14/2022 11:01:02 - INFO - Epoch: [15], step: [1400], lr: 0.000010, batch_loss: 0.0308, avg_loss: 0.0099
+02/14/2022 11:02:08 - INFO - Epoch: [15], step: [1500], lr: 0.000010, batch_loss: 0.0009, avg_loss: 0.0099
+02/14/2022 11:03:14 - INFO - Epoch: [15], step: [1600], lr: 0.000010, batch_loss: 0.0790, avg_loss: 0.0100
+02/14/2022 11:04:20 - INFO - Epoch: [15], step: [1700], lr: 0.000010, batch_loss: 0.0007, avg_loss: 0.0099
+02/14/2022 11:05:26 - INFO - Epoch: [15], step: [1800], lr: 0.000010, batch_loss: 0.0022, avg_loss: 0.0097
+02/14/2022 11:06:32 - INFO - Epoch: [15], step: [1900], lr: 0.000010, batch_loss: 0.0026, avg_loss: 0.0098
+02/14/2022 11:07:38 - INFO - Epoch: [15], step: [2000], lr: 0.000010, batch_loss: 0.0011, avg_loss: 0.0099
+02/14/2022 11:08:44 - INFO - Epoch: [15], step: [2100], lr: 0.000010, batch_loss: 0.0019, avg_loss: 0.0098
+02/14/2022 11:09:50 - INFO - Epoch: [15], step: [2200], lr: 0.000010, batch_loss: 0.0105, avg_loss: 0.0099
+02/14/2022 11:10:56 - INFO - Epoch: [15], step: [2300], lr: 0.000010, batch_loss: 0.0018, avg_loss: 0.0099
+02/14/2022 11:12:02 - INFO - Epoch: [15], step: [2400], lr: 0.000010, batch_loss: 0.0048, avg_loss: 0.0100
+02/14/2022 11:13:08 - INFO - Epoch: [15], step: [2500], lr: 0.000010, batch_loss: 0.0054, avg_loss: 0.0101
+02/14/2022 11:14:14 - INFO - Epoch: [15], step: [2600], lr: 0.000010, batch_loss: 0.0980, avg_loss: 0.0102
+02/14/2022 11:15:20 - INFO - Epoch: [15], step: [2700], lr: 0.000010, batch_loss: 0.0011, avg_loss: 0.0101
+02/14/2022 11:16:25 - INFO - Epoch: [15], step: [2800], lr: 0.000010, batch_loss: 0.0093, avg_loss: 0.0101
+02/14/2022 11:17:31 - INFO - Epoch: [15], step: [2900], lr: 0.000010, batch_loss: 0.0365, avg_loss: 0.0100
+02/14/2022 11:18:38 - INFO - Epoch: [15], step: [3000], lr: 0.000010, batch_loss: 0.0028, avg_loss: 0.0099
+02/14/2022 11:19:44 - INFO - Epoch: [15], step: [3100], lr: 0.000010, batch_loss: 0.0019, avg_loss: 0.0099
+02/14/2022 11:20:49 - INFO - Epoch: [15], step: [3200], lr: 0.000010, batch_loss: 0.0016, avg_loss: 0.0098
+02/14/2022 11:21:56 - INFO - Epoch: [15], step: [3300], lr: 0.000010, batch_loss: 0.0023, avg_loss: 0.0099
+02/14/2022 11:23:02 - INFO - Epoch: [15], step: [3400], lr: 0.000010, batch_loss: 0.0018, avg_loss: 0.0099
+02/14/2022 11:24:08 - INFO - Epoch: [15], step: [3500], lr: 0.000010, batch_loss: 0.0016, avg_loss: 0.0098
+02/14/2022 11:25:14 - INFO - Epoch: [15], step: [3600], lr: 0.000010, batch_loss: 0.0064, avg_loss: 0.0097
+02/14/2022 11:26:20 - INFO - Epoch: [15], step: [3700], lr: 0.000010, batch_loss: 0.0008, avg_loss: 0.0096
+02/14/2022 11:27:26 - INFO - Epoch: [15], step: [3800], lr: 0.000010, batch_loss: 0.0005, avg_loss: 0.0097
+02/14/2022 11:28:32 - INFO - Epoch: [15], step: [3900], lr: 0.000010, batch_loss: 0.0933, avg_loss: 0.0097
+02/14/2022 11:29:38 - INFO - Epoch: [15], step: [4000], lr: 0.000010, batch_loss: 0.0015, avg_loss: 0.0098
+02/14/2022 11:30:44 - INFO - Epoch: [15], step: [4100], lr: 0.000010, batch_loss: 0.0019, avg_loss: 0.0099
+02/14/2022 11:31:50 - INFO - Epoch: [15], step: [4200], lr: 0.000010, batch_loss: 0.0011, avg_loss: 0.0100
+02/14/2022 11:32:56 - INFO - Epoch: [15], step: [4300], lr: 0.000010, batch_loss: 0.0007, avg_loss: 0.0100
+02/14/2022 11:34:01 - INFO - Epoch: [15], step: [4400], lr: 0.000010, batch_loss: 0.0010, avg_loss: 0.0099
+02/14/2022 11:34:18 - INFO - ** ** Epoch [15] done! Training loss: 0.00986 ** **
+02/14/2022 11:34:19 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 11:34:19 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 11:34:19 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 11:34:19 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 11:34:19 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 11:34:19 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 11:34:19 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+
+02/14/2022 11:34:19 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 11:35:14 - INFO - ** * ** Eval at Epoch [15]! Eval Reults:  ** * **
+02/14/2022 11:35:14 - INFO - I2T Retrieval: 0.8770 @ R1, 0.9870 @ R5, 0.9950 @ R10
+02/14/2022 11:35:14 - INFO - =====> Start epoch 16:
+02/14/2022 11:35:15 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 11:35:15 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 11:35:15 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 11:35:15 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 11:35:15 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 11:35:15 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 11:35:15 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+
+
+
+02/14/2022 11:35:15 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 11:36:23 - INFO - Epoch: [16], step: [100], lr: 0.000010, batch_loss: 0.0030, avg_loss: 0.0095
+02/14/2022 11:37:29 - INFO - Epoch: [16], step: [200], lr: 0.000010, batch_loss: 0.0025, avg_loss: 0.0103
+02/14/2022 11:38:36 - INFO - Epoch: [16], step: [300], lr: 0.000010, batch_loss: 0.0006, avg_loss: 0.0099
+02/14/2022 11:39:42 - INFO - Epoch: [16], step: [400], lr: 0.000010, batch_loss: 0.0006, avg_loss: 0.0089
+02/14/2022 11:40:48 - INFO - Epoch: [16], step: [500], lr: 0.000010, batch_loss: 0.0003, avg_loss: 0.0087
+02/14/2022 11:41:55 - INFO - Epoch: [16], step: [600], lr: 0.000010, batch_loss: 0.0010, avg_loss: 0.0086
+02/14/2022 11:43:01 - INFO - Epoch: [16], step: [700], lr: 0.000010, batch_loss: 0.0012, avg_loss: 0.0092
+02/14/2022 11:44:07 - INFO - Epoch: [16], step: [800], lr: 0.000010, batch_loss: 0.0010, avg_loss: 0.0099
+02/14/2022 11:45:13 - INFO - Epoch: [16], step: [900], lr: 0.000010, batch_loss: 0.0031, avg_loss: 0.0098
+02/14/2022 11:46:19 - INFO - Epoch: [16], step: [1000], lr: 0.000010, batch_loss: 0.0035, avg_loss: 0.0096
+02/14/2022 11:47:26 - INFO - Epoch: [16], step: [1100], lr: 0.000010, batch_loss: 0.0017, avg_loss: 0.0098
+02/14/2022 11:48:32 - INFO - Epoch: [16], step: [1200], lr: 0.000010, batch_loss: 0.0095, avg_loss: 0.0098
+02/14/2022 11:49:37 - INFO - Epoch: [16], step: [1300], lr: 0.000010, batch_loss: 0.0010, avg_loss: 0.0096
+02/14/2022 11:50:43 - INFO - Epoch: [16], step: [1400], lr: 0.000010, batch_loss: 0.0016, avg_loss: 0.0094
+02/14/2022 11:51:50 - INFO - Epoch: [16], step: [1500], lr: 0.000010, batch_loss: 0.0036, avg_loss: 0.0095
+02/14/2022 11:52:56 - INFO - Epoch: [16], step: [1600], lr: 0.000010, batch_loss: 0.0015, avg_loss: 0.0098
+02/14/2022 11:54:02 - INFO - Epoch: [16], step: [1700], lr: 0.000010, batch_loss: 0.0015, avg_loss: 0.0100
+02/14/2022 11:55:08 - INFO - Epoch: [16], step: [1800], lr: 0.000010, batch_loss: 0.0018, avg_loss: 0.0098
+02/14/2022 11:56:14 - INFO - Epoch: [16], step: [1900], lr: 0.000010, batch_loss: 0.0022, avg_loss: 0.0100
+02/14/2022 11:57:20 - INFO - Epoch: [16], step: [2000], lr: 0.000010, batch_loss: 0.0015, avg_loss: 0.0099
+02/14/2022 11:58:26 - INFO - Epoch: [16], step: [2100], lr: 0.000010, batch_loss: 0.0009, avg_loss: 0.0098
+02/14/2022 11:59:32 - INFO - Epoch: [16], step: [2200], lr: 0.000010, batch_loss: 0.0011, avg_loss: 0.0097
+02/14/2022 12:00:38 - INFO - Epoch: [16], step: [2300], lr: 0.000010, batch_loss: 0.0005, avg_loss: 0.0096
+02/14/2022 12:01:44 - INFO - Epoch: [16], step: [2400], lr: 0.000010, batch_loss: 0.0006, avg_loss: 0.0096
+02/14/2022 12:02:50 - INFO - Epoch: [16], step: [2500], lr: 0.000010, batch_loss: 0.0013, avg_loss: 0.0096
+02/14/2022 12:03:56 - INFO - Epoch: [16], step: [2600], lr: 0.000010, batch_loss: 0.0023, avg_loss: 0.0094
+02/14/2022 12:05:02 - INFO - Epoch: [16], step: [2700], lr: 0.000010, batch_loss: 0.0009, avg_loss: 0.0093
+02/14/2022 12:06:08 - INFO - Epoch: [16], step: [2800], lr: 0.000010, batch_loss: 0.0667, avg_loss: 0.0094
+02/14/2022 12:07:14 - INFO - Epoch: [16], step: [2900], lr: 0.000010, batch_loss: 0.0018, avg_loss: 0.0094
+02/14/2022 12:08:20 - INFO - Epoch: [16], step: [3000], lr: 0.000010, batch_loss: 0.0007, avg_loss: 0.0093
+02/14/2022 12:09:26 - INFO - Epoch: [16], step: [3100], lr: 0.000010, batch_loss: 0.0005, avg_loss: 0.0093
+02/14/2022 12:10:32 - INFO - Epoch: [16], step: [3200], lr: 0.000010, batch_loss: 0.0004, avg_loss: 0.0092
+02/14/2022 12:11:38 - INFO - Epoch: [16], step: [3300], lr: 0.000010, batch_loss: 0.0690, avg_loss: 0.0094
+02/14/2022 12:12:44 - INFO - Epoch: [16], step: [3400], lr: 0.000009, batch_loss: 0.0006, avg_loss: 0.0095
+02/14/2022 12:13:50 - INFO - Epoch: [16], step: [3500], lr: 0.000009, batch_loss: 0.0021, avg_loss: 0.0094
+02/14/2022 12:14:56 - INFO - Epoch: [16], step: [3600], lr: 0.000009, batch_loss: 0.0007, avg_loss: 0.0095
+02/14/2022 12:16:02 - INFO - Epoch: [16], step: [3700], lr: 0.000009, batch_loss: 0.0050, avg_loss: 0.0096
+02/14/2022 12:17:08 - INFO - Epoch: [16], step: [3800], lr: 0.000009, batch_loss: 0.0035, avg_loss: 0.0097
+02/14/2022 12:18:14 - INFO - Epoch: [16], step: [3900], lr: 0.000009, batch_loss: 0.0014, avg_loss: 0.0096
+02/14/2022 12:19:20 - INFO - Epoch: [16], step: [4000], lr: 0.000009, batch_loss: 0.0024, avg_loss: 0.0097
+02/14/2022 12:20:26 - INFO - Epoch: [16], step: [4100], lr: 0.000009, batch_loss: 0.0021, avg_loss: 0.0096
+02/14/2022 12:21:32 - INFO - Epoch: [16], step: [4200], lr: 0.000009, batch_loss: 0.0005, avg_loss: 0.0096
+02/14/2022 12:22:38 - INFO - Epoch: [16], step: [4300], lr: 0.000009, batch_loss: 0.0070, avg_loss: 0.0096
+02/14/2022 12:23:44 - INFO - Epoch: [16], step: [4400], lr: 0.000009, batch_loss: 0.0012, avg_loss: 0.0097
+02/14/2022 12:24:01 - INFO - ** ** Epoch [16] done! Training loss: 0.00969 ** **
+02/14/2022 12:24:01 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 12:24:01 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 12:24:01 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+
+02/14/2022 12:24:01 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 12:24:01 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 12:24:01 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 12:24:01 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 12:24:01 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 12:24:56 - INFO - ** * ** Eval at Epoch [16]! Eval Reults:  ** * **
+02/14/2022 12:24:56 - INFO - I2T Retrieval: 0.8740 @ R1, 0.9860 @ R5, 0.9950 @ R10
+02/14/2022 12:24:56 - INFO - =====> Start epoch 17:
+02/14/2022 12:24:57 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 12:24:57 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 12:24:57 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 12:24:57 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 12:24:57 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 12:24:57 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 12:24:57 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 12:24:57 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 12:26:05 - INFO - Epoch: [17], step: [100], lr: 0.000009, batch_loss: 0.0018, avg_loss: 0.0085
+02/14/2022 12:27:12 - INFO - Epoch: [17], step: [200], lr: 0.000009, batch_loss: 0.0009, avg_loss: 0.0088
+02/14/2022 12:28:18 - INFO - Epoch: [17], step: [300], lr: 0.000009, batch_loss: 0.0348, avg_loss: 0.0087
+02/14/2022 12:29:24 - INFO - Epoch: [17], step: [400], lr: 0.000009, batch_loss: 0.0154, avg_loss: 0.0080
+02/14/2022 12:30:31 - INFO - Epoch: [17], step: [500], lr: 0.000009, batch_loss: 0.0024, avg_loss: 0.0077
+02/14/2022 12:31:37 - INFO - Epoch: [17], step: [600], lr: 0.000009, batch_loss: 0.0011, avg_loss: 0.0079
+02/14/2022 12:32:42 - INFO - Epoch: [17], step: [700], lr: 0.000009, batch_loss: 0.0024, avg_loss: 0.0079
+02/14/2022 12:33:48 - INFO - Epoch: [17], step: [800], lr: 0.000009, batch_loss: 0.0011, avg_loss: 0.0079
+02/14/2022 12:34:54 - INFO - Epoch: [17], step: [900], lr: 0.000009, batch_loss: 0.0016, avg_loss: 0.0078
+02/14/2022 12:36:00 - INFO - Epoch: [17], step: [1000], lr: 0.000009, batch_loss: 0.0019, avg_loss: 0.0080
+02/14/2022 12:37:06 - INFO - Epoch: [17], step: [1100], lr: 0.000009, batch_loss: 0.0535, avg_loss: 0.0080
+02/14/2022 12:38:11 - INFO - Epoch: [17], step: [1200], lr: 0.000009, batch_loss: 0.0008, avg_loss: 0.0083
+02/14/2022 12:39:17 - INFO - Epoch: [17], step: [1300], lr: 0.000009, batch_loss: 0.0007, avg_loss: 0.0086
+02/14/2022 12:40:23 - INFO - Epoch: [17], step: [1400], lr: 0.000009, batch_loss: 0.0006, avg_loss: 0.0085
+02/14/2022 12:41:29 - INFO - Epoch: [17], step: [1500], lr: 0.000009, batch_loss: 0.0019, avg_loss: 0.0085
+02/14/2022 12:42:34 - INFO - Epoch: [17], step: [1600], lr: 0.000009, batch_loss: 0.0022, avg_loss: 0.0086
+02/14/2022 12:43:40 - INFO - Epoch: [17], step: [1700], lr: 0.000009, batch_loss: 0.0014, avg_loss: 0.0086
+02/14/2022 12:44:46 - INFO - Epoch: [17], step: [1800], lr: 0.000009, batch_loss: 0.0013, avg_loss: 0.0086
+02/14/2022 12:45:52 - INFO - Epoch: [17], step: [1900], lr: 0.000009, batch_loss: 0.0020, avg_loss: 0.0087
+02/14/2022 12:46:58 - INFO - Epoch: [17], step: [2000], lr: 0.000009, batch_loss: 0.0011, avg_loss: 0.0087
+02/14/2022 12:48:04 - INFO - Epoch: [17], step: [2100], lr: 0.000009, batch_loss: 0.0169, avg_loss: 0.0088
+02/14/2022 12:49:09 - INFO - Epoch: [17], step: [2200], lr: 0.000009, batch_loss: 0.0011, avg_loss: 0.0089
+02/14/2022 12:50:15 - INFO - Epoch: [17], step: [2300], lr: 0.000009, batch_loss: 0.1105, avg_loss: 0.0089
+02/14/2022 12:51:20 - INFO - Epoch: [17], step: [2400], lr: 0.000009, batch_loss: 0.0021, avg_loss: 0.0090
+02/14/2022 12:52:26 - INFO - Epoch: [17], step: [2500], lr: 0.000009, batch_loss: 0.0422, avg_loss: 0.0091
+02/14/2022 12:53:32 - INFO - Epoch: [17], step: [2600], lr: 0.000009, batch_loss: 0.0054, avg_loss: 0.0091
+02/14/2022 12:54:38 - INFO - Epoch: [17], step: [2700], lr: 0.000009, batch_loss: 0.0027, avg_loss: 0.0091
+02/14/2022 12:55:44 - INFO - Epoch: [17], step: [2800], lr: 0.000009, batch_loss: 0.0027, avg_loss: 0.0093
+02/14/2022 12:56:49 - INFO - Epoch: [17], step: [2900], lr: 0.000009, batch_loss: 0.0019, avg_loss: 0.0093
+02/14/2022 12:57:55 - INFO - Epoch: [17], step: [3000], lr: 0.000009, batch_loss: 0.0064, avg_loss: 0.0094
+02/14/2022 12:59:01 - INFO - Epoch: [17], step: [3100], lr: 0.000009, batch_loss: 0.0009, avg_loss: 0.0093
+02/14/2022 13:00:06 - INFO - Epoch: [17], step: [3200], lr: 0.000009, batch_loss: 0.0654, avg_loss: 0.0093
+02/14/2022 13:01:12 - INFO - Epoch: [17], step: [3300], lr: 0.000009, batch_loss: 0.0011, avg_loss: 0.0093
+02/14/2022 13:02:18 - INFO - Epoch: [17], step: [3400], lr: 0.000009, batch_loss: 0.0015, avg_loss: 0.0093
+02/14/2022 13:03:23 - INFO - Epoch: [17], step: [3500], lr: 0.000009, batch_loss: 0.0025, avg_loss: 0.0092
+02/14/2022 13:04:29 - INFO - Epoch: [17], step: [3600], lr: 0.000009, batch_loss: 0.0504, avg_loss: 0.0092
+02/14/2022 13:05:35 - INFO - Epoch: [17], step: [3700], lr: 0.000009, batch_loss: 0.0006, avg_loss: 0.0090
+02/14/2022 13:06:41 - INFO - Epoch: [17], step: [3800], lr: 0.000009, batch_loss: 0.0012, avg_loss: 0.0091
+02/14/2022 13:07:47 - INFO - Epoch: [17], step: [3900], lr: 0.000009, batch_loss: 0.0104, avg_loss: 0.0091
+02/14/2022 13:08:53 - INFO - Epoch: [17], step: [4000], lr: 0.000009, batch_loss: 0.0040, avg_loss: 0.0091
+02/14/2022 13:09:59 - INFO - Epoch: [17], step: [4100], lr: 0.000009, batch_loss: 0.0007, avg_loss: 0.0092
+02/14/2022 13:11:05 - INFO - Epoch: [17], step: [4200], lr: 0.000009, batch_loss: 0.0016, avg_loss: 0.0091
+02/14/2022 13:12:10 - INFO - Epoch: [17], step: [4300], lr: 0.000009, batch_loss: 0.0007, avg_loss: 0.0091
+02/14/2022 13:13:16 - INFO - Epoch: [17], step: [4400], lr: 0.000009, batch_loss: 0.0012, avg_loss: 0.0090
+02/14/2022 13:13:32 - INFO - ** ** Epoch [17] done! Training loss: 0.00900 ** **
+02/14/2022 13:13:33 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 13:13:33 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 13:13:33 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 13:13:33 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 13:13:33 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 13:13:33 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 13:13:33 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 13:13:33 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 13:14:27 - INFO - ** * ** Eval at Epoch [17]! Eval Reults:  ** * **
+02/14/2022 13:14:27 - INFO - I2T Retrieval: 0.8860 @ R1, 0.9910 @ R5, 0.9960 @ R10
+02/14/2022 13:14:27 - INFO - =====> Start epoch 18:
+02/14/2022 13:14:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 13:14:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 13:14:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 13:14:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 13:14:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 13:14:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 13:14:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 13:14:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 13:15:37 - INFO - Epoch: [18], step: [100], lr: 0.000009, batch_loss: 0.0011, avg_loss: 0.0051
+02/14/2022 13:16:43 - INFO - Epoch: [18], step: [200], lr: 0.000009, batch_loss: 0.0023, avg_loss: 0.0073
+02/14/2022 13:17:49 - INFO - Epoch: [18], step: [300], lr: 0.000009, batch_loss: 0.0573, avg_loss: 0.0080
+02/14/2022 13:18:55 - INFO - Epoch: [18], step: [400], lr: 0.000009, batch_loss: 0.0022, avg_loss: 0.0083
+02/14/2022 13:20:01 - INFO - Epoch: [18], step: [500], lr: 0.000009, batch_loss: 0.0023, avg_loss: 0.0082
+02/14/2022 13:21:08 - INFO - Epoch: [18], step: [600], lr: 0.000009, batch_loss: 0.0765, avg_loss: 0.0083
+02/14/2022 13:22:14 - INFO - Epoch: [18], step: [700], lr: 0.000009, batch_loss: 0.0020, avg_loss: 0.0090
+02/14/2022 13:23:20 - INFO - Epoch: [18], step: [800], lr: 0.000009, batch_loss: 0.0219, avg_loss: 0.0087
+02/14/2022 13:24:26 - INFO - Epoch: [18], step: [900], lr: 0.000009, batch_loss: 0.0664, avg_loss: 0.0088
+02/14/2022 13:25:32 - INFO - Epoch: [18], step: [1000], lr: 0.000009, batch_loss: 0.0045, avg_loss: 0.0092
+02/14/2022 13:26:39 - INFO - Epoch: [18], step: [1100], lr: 0.000009, batch_loss: 0.0005, avg_loss: 0.0093
+02/14/2022 13:27:45 - INFO - Epoch: [18], step: [1200], lr: 0.000008, batch_loss: 0.0011, avg_loss: 0.0093
+02/14/2022 13:28:50 - INFO - Epoch: [18], step: [1300], lr: 0.000008, batch_loss: 0.0008, avg_loss: 0.0092
+02/14/2022 13:29:57 - INFO - Epoch: [18], step: [1400], lr: 0.000008, batch_loss: 0.0011, avg_loss: 0.0091
+02/14/2022 13:31:03 - INFO - Epoch: [18], step: [1500], lr: 0.000008, batch_loss: 0.0012, avg_loss: 0.0090
+02/14/2022 13:32:09 - INFO - Epoch: [18], step: [1600], lr: 0.000008, batch_loss: 0.0016, avg_loss: 0.0091
+02/14/2022 13:33:15 - INFO - Epoch: [18], step: [1700], lr: 0.000008, batch_loss: 0.0008, avg_loss: 0.0093
+02/14/2022 13:34:21 - INFO - Epoch: [18], step: [1800], lr: 0.000008, batch_loss: 0.0013, avg_loss: 0.0091
+02/14/2022 13:35:27 - INFO - Epoch: [18], step: [1900], lr: 0.000008, batch_loss: 0.0067, avg_loss: 0.0089
+02/14/2022 13:36:33 - INFO - Epoch: [18], step: [2000], lr: 0.000008, batch_loss: 0.0052, avg_loss: 0.0090
+02/14/2022 13:37:39 - INFO - Epoch: [18], step: [2100], lr: 0.000008, batch_loss: 0.0149, avg_loss: 0.0091
+02/14/2022 13:38:45 - INFO - Epoch: [18], step: [2200], lr: 0.000008, batch_loss: 0.0013, avg_loss: 0.0090
+02/14/2022 13:39:51 - INFO - Epoch: [18], step: [2300], lr: 0.000008, batch_loss: 0.0429, avg_loss: 0.0090
+02/14/2022 13:40:57 - INFO - Epoch: [18], step: [2400], lr: 0.000008, batch_loss: 0.0013, avg_loss: 0.0088
+02/14/2022 13:42:03 - INFO - Epoch: [18], step: [2500], lr: 0.000008, batch_loss: 0.0027, avg_loss: 0.0090
+02/14/2022 13:43:09 - INFO - Epoch: [18], step: [2600], lr: 0.000008, batch_loss: 0.0857, avg_loss: 0.0090
+02/14/2022 13:44:15 - INFO - Epoch: [18], step: [2700], lr: 0.000008, batch_loss: 0.0013, avg_loss: 0.0092
+02/14/2022 13:45:21 - INFO - Epoch: [18], step: [2800], lr: 0.000008, batch_loss: 0.0139, avg_loss: 0.0093
+02/14/2022 13:46:27 - INFO - Epoch: [18], step: [2900], lr: 0.000008, batch_loss: 0.0018, avg_loss: 0.0094
+02/14/2022 13:47:33 - INFO - Epoch: [18], step: [3000], lr: 0.000008, batch_loss: 0.0002, avg_loss: 0.0094
+02/14/2022 13:48:39 - INFO - Epoch: [18], step: [3100], lr: 0.000008, batch_loss: 0.0005, avg_loss: 0.0093
+02/14/2022 13:49:46 - INFO - Epoch: [18], step: [3200], lr: 0.000008, batch_loss: 0.0025, avg_loss: 0.0093
+02/14/2022 13:50:52 - INFO - Epoch: [18], step: [3300], lr: 0.000008, batch_loss: 0.0036, avg_loss: 0.0093
+02/14/2022 13:51:58 - INFO - Epoch: [18], step: [3400], lr: 0.000008, batch_loss: 0.0006, avg_loss: 0.0094
+02/14/2022 13:53:04 - INFO - Epoch: [18], step: [3500], lr: 0.000008, batch_loss: 0.0016, avg_loss: 0.0094
+02/14/2022 13:54:10 - INFO - Epoch: [18], step: [3600], lr: 0.000008, batch_loss: 0.0013, avg_loss: 0.0094
+02/14/2022 13:55:16 - INFO - Epoch: [18], step: [3700], lr: 0.000008, batch_loss: 0.0017, avg_loss: 0.0094
+02/14/2022 13:56:22 - INFO - Epoch: [18], step: [3800], lr: 0.000008, batch_loss: 0.0014, avg_loss: 0.0093
+02/14/2022 13:57:28 - INFO - Epoch: [18], step: [3900], lr: 0.000008, batch_loss: 0.0182, avg_loss: 0.0093
+02/14/2022 13:58:34 - INFO - Epoch: [18], step: [4000], lr: 0.000008, batch_loss: 0.0023, avg_loss: 0.0093
+02/14/2022 13:59:40 - INFO - Epoch: [18], step: [4100], lr: 0.000008, batch_loss: 0.0004, avg_loss: 0.0092
+02/14/2022 14:00:46 - INFO - Epoch: [18], step: [4200], lr: 0.000008, batch_loss: 0.0008, avg_loss: 0.0092
+02/14/2022 14:01:52 - INFO - Epoch: [18], step: [4300], lr: 0.000008, batch_loss: 0.0006, avg_loss: 0.0092
+02/14/2022 14:02:59 - INFO - Epoch: [18], step: [4400], lr: 0.000008, batch_loss: 0.0014, avg_loss: 0.0093
+02/14/2022 14:03:16 - INFO - ** ** Epoch [18] done! Training loss: 0.00928 ** **
+02/14/2022 14:03:16 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:03:16 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 14:03:16 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 14:03:16 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:03:16 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:03:16 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 14:03:16 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 14:03:16 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:04:11 - INFO - ** * ** Eval at Epoch [18]! Eval Reults:  ** * **
+02/14/2022 14:04:11 - INFO - I2T Retrieval: 0.8860 @ R1, 0.9890 @ R5, 0.9960 @ R10
+02/14/2022 14:04:11 - INFO - =====> Start epoch 19:
+02/14/2022 14:04:12 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:04:12 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:04:12 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:04:12 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:04:12 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:04:12 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:04:12 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:04:12 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:05:19 - INFO - Epoch: [19], step: [100], lr: 0.000008, batch_loss: 0.0006, avg_loss: 0.0133
+02/14/2022 14:06:25 - INFO - Epoch: [19], step: [200], lr: 0.000008, batch_loss: 0.0008, avg_loss: 0.0127
+02/14/2022 14:07:32 - INFO - Epoch: [19], step: [300], lr: 0.000008, batch_loss: 0.0006, avg_loss: 0.0110
+02/14/2022 14:08:38 - INFO - Epoch: [19], step: [400], lr: 0.000008, batch_loss: 0.0005, avg_loss: 0.0107
+02/14/2022 14:09:45 - INFO - Epoch: [19], step: [500], lr: 0.000008, batch_loss: 0.0006, avg_loss: 0.0104
+02/14/2022 14:10:51 - INFO - Epoch: [19], step: [600], lr: 0.000008, batch_loss: 0.0010, avg_loss: 0.0107
+02/14/2022 14:11:56 - INFO - Epoch: [19], step: [700], lr: 0.000008, batch_loss: 0.0010, avg_loss: 0.0106
+02/14/2022 14:13:02 - INFO - Epoch: [19], step: [800], lr: 0.000008, batch_loss: 0.0017, avg_loss: 0.0104
+02/14/2022 14:14:09 - INFO - Epoch: [19], step: [900], lr: 0.000008, batch_loss: 0.0011, avg_loss: 0.0106
+02/14/2022 14:15:14 - INFO - Epoch: [19], step: [1000], lr: 0.000008, batch_loss: 0.0003, avg_loss: 0.0103
+02/14/2022 14:16:20 - INFO - Epoch: [19], step: [1100], lr: 0.000008, batch_loss: 0.0029, avg_loss: 0.0100
+02/14/2022 14:17:27 - INFO - Epoch: [19], step: [1200], lr: 0.000008, batch_loss: 0.0294, avg_loss: 0.0101
+02/14/2022 14:18:33 - INFO - Epoch: [19], step: [1300], lr: 0.000008, batch_loss: 0.0029, avg_loss: 0.0100
+02/14/2022 14:19:39 - INFO - Epoch: [19], step: [1400], lr: 0.000008, batch_loss: 0.0010, avg_loss: 0.0099
+02/14/2022 14:20:45 - INFO - Epoch: [19], step: [1500], lr: 0.000008, batch_loss: 0.0006, avg_loss: 0.0099
+02/14/2022 14:21:51 - INFO - Epoch: [19], step: [1600], lr: 0.000008, batch_loss: 0.0010, avg_loss: 0.0098
+02/14/2022 14:22:57 - INFO - Epoch: [19], step: [1700], lr: 0.000008, batch_loss: 0.0167, avg_loss: 0.0097
+02/14/2022 14:24:03 - INFO - Epoch: [19], step: [1800], lr: 0.000008, batch_loss: 0.0006, avg_loss: 0.0096
+02/14/2022 14:25:09 - INFO - Epoch: [19], step: [1900], lr: 0.000008, batch_loss: 0.0006, avg_loss: 0.0094
+02/14/2022 14:26:15 - INFO - Epoch: [19], step: [2000], lr: 0.000008, batch_loss: 0.0015, avg_loss: 0.0095
+02/14/2022 14:27:21 - INFO - Epoch: [19], step: [2100], lr: 0.000008, batch_loss: 0.0008, avg_loss: 0.0093
+02/14/2022 14:28:27 - INFO - Epoch: [19], step: [2200], lr: 0.000008, batch_loss: 0.0006, avg_loss: 0.0093
+02/14/2022 14:29:33 - INFO - Epoch: [19], step: [2300], lr: 0.000008, batch_loss: 0.0018, avg_loss: 0.0093
+02/14/2022 14:30:39 - INFO - Epoch: [19], step: [2400], lr: 0.000008, batch_loss: 0.0017, avg_loss: 0.0094
+02/14/2022 14:31:45 - INFO - Epoch: [19], step: [2500], lr: 0.000008, batch_loss: 0.0009, avg_loss: 0.0093
+02/14/2022 14:32:51 - INFO - Epoch: [19], step: [2600], lr: 0.000008, batch_loss: 0.0010, avg_loss: 0.0092
+02/14/2022 14:33:57 - INFO - Epoch: [19], step: [2700], lr: 0.000008, batch_loss: 0.0123, avg_loss: 0.0092
+02/14/2022 14:35:03 - INFO - Epoch: [19], step: [2800], lr: 0.000008, batch_loss: 0.0013, avg_loss: 0.0092
+02/14/2022 14:36:09 - INFO - Epoch: [19], step: [2900], lr: 0.000008, batch_loss: 0.0018, avg_loss: 0.0091
+02/14/2022 14:37:15 - INFO - Epoch: [19], step: [3000], lr: 0.000008, batch_loss: 0.0034, avg_loss: 0.0092
+02/14/2022 14:38:21 - INFO - Epoch: [19], step: [3100], lr: 0.000008, batch_loss: 0.0014, avg_loss: 0.0091
+02/14/2022 14:39:27 - INFO - Epoch: [19], step: [3200], lr: 0.000008, batch_loss: 0.0036, avg_loss: 0.0091
+02/14/2022 14:40:33 - INFO - Epoch: [19], step: [3300], lr: 0.000008, batch_loss: 0.0747, avg_loss: 0.0090
+02/14/2022 14:41:39 - INFO - Epoch: [19], step: [3400], lr: 0.000007, batch_loss: 0.0018, avg_loss: 0.0090
+02/14/2022 14:42:45 - INFO - Epoch: [19], step: [3500], lr: 0.000007, batch_loss: 0.0014, avg_loss: 0.0089
+02/14/2022 14:43:50 - INFO - Epoch: [19], step: [3600], lr: 0.000007, batch_loss: 0.0014, avg_loss: 0.0089
+02/14/2022 14:44:56 - INFO - Epoch: [19], step: [3700], lr: 0.000007, batch_loss: 0.0026, avg_loss: 0.0089
+02/14/2022 14:46:03 - INFO - Epoch: [19], step: [3800], lr: 0.000007, batch_loss: 0.0037, avg_loss: 0.0089
+02/14/2022 14:47:09 - INFO - Epoch: [19], step: [3900], lr: 0.000007, batch_loss: 0.0012, avg_loss: 0.0088
+02/14/2022 14:48:14 - INFO - Epoch: [19], step: [4000], lr: 0.000007, batch_loss: 0.0017, avg_loss: 0.0088
+02/14/2022 14:49:20 - INFO - Epoch: [19], step: [4100], lr: 0.000007, batch_loss: 0.0010, avg_loss: 0.0088
+02/14/2022 14:50:26 - INFO - Epoch: [19], step: [4200], lr: 0.000007, batch_loss: 0.0006, avg_loss: 0.0087
+02/14/2022 14:51:32 - INFO - Epoch: [19], step: [4300], lr: 0.000007, batch_loss: 0.0012, avg_loss: 0.0087
+02/14/2022 14:52:38 - INFO - Epoch: [19], step: [4400], lr: 0.000007, batch_loss: 0.0018, avg_loss: 0.0087
+02/14/2022 14:52:55 - INFO - ** ** Epoch [19] done! Training loss: 0.00869 ** **
+02/14/2022 14:52:55 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:52:55 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:52:55 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:52:55 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:52:55 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:52:55 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:52:55 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:52:55 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:53:50 - INFO - ** * ** Eval at Epoch [19]! Eval Reults:  ** * **
+02/14/2022 14:53:50 - INFO - I2T Retrieval: 0.8810 @ R1, 0.9860 @ R5, 0.9960 @ R10
+02/14/2022 14:53:50 - INFO - =====> Start epoch 20:
+02/14/2022 14:53:51 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:53:51 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:53:51 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:53:51 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:53:51 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:53:51 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:53:51 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:53:51 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 14:54:58 - INFO - Epoch: [20], step: [100], lr: 0.000007, batch_loss: 0.0010, avg_loss: 0.0102
+02/14/2022 14:56:05 - INFO - Epoch: [20], step: [200], lr: 0.000007, batch_loss: 0.0024, avg_loss: 0.0122
+02/14/2022 14:57:11 - INFO - Epoch: [20], step: [300], lr: 0.000007, batch_loss: 0.0017, avg_loss: 0.0116
+02/14/2022 14:58:17 - INFO - Epoch: [20], step: [400], lr: 0.000007, batch_loss: 0.0010, avg_loss: 0.0104
+02/14/2022 14:59:23 - INFO - Epoch: [20], step: [500], lr: 0.000007, batch_loss: 0.0010, avg_loss: 0.0100
+02/14/2022 15:00:29 - INFO - Epoch: [20], step: [600], lr: 0.000007, batch_loss: 0.0008, avg_loss: 0.0103
+02/14/2022 15:01:35 - INFO - Epoch: [20], step: [700], lr: 0.000007, batch_loss: 0.0011, avg_loss: 0.0098
+02/14/2022 15:02:41 - INFO - Epoch: [20], step: [800], lr: 0.000007, batch_loss: 0.0012, avg_loss: 0.0097
+02/14/2022 15:03:47 - INFO - Epoch: [20], step: [900], lr: 0.000007, batch_loss: 0.0017, avg_loss: 0.0097
+02/14/2022 15:04:53 - INFO - Epoch: [20], step: [1000], lr: 0.000007, batch_loss: 0.1007, avg_loss: 0.0094
+02/14/2022 15:05:59 - INFO - Epoch: [20], step: [1100], lr: 0.000007, batch_loss: 0.0015, avg_loss: 0.0091
+02/14/2022 15:07:05 - INFO - Epoch: [20], step: [1200], lr: 0.000007, batch_loss: 0.0010, avg_loss: 0.0089
+02/14/2022 15:08:11 - INFO - Epoch: [20], step: [1300], lr: 0.000007, batch_loss: 0.0014, avg_loss: 0.0089
+02/14/2022 15:09:16 - INFO - Epoch: [20], step: [1400], lr: 0.000007, batch_loss: 0.0012, avg_loss: 0.0088
+02/14/2022 15:10:22 - INFO - Epoch: [20], step: [1500], lr: 0.000007, batch_loss: 0.0012, avg_loss: 0.0089
+02/14/2022 15:11:29 - INFO - Epoch: [20], step: [1600], lr: 0.000007, batch_loss: 0.0008, avg_loss: 0.0088
+02/14/2022 15:12:34 - INFO - Epoch: [20], step: [1700], lr: 0.000007, batch_loss: 0.0012, avg_loss: 0.0091
+02/14/2022 15:13:40 - INFO - Epoch: [20], step: [1800], lr: 0.000007, batch_loss: 0.0902, avg_loss: 0.0092
+02/14/2022 15:14:46 - INFO - Epoch: [20], step: [1900], lr: 0.000007, batch_loss: 0.0006, avg_loss: 0.0091
+02/14/2022 15:15:52 - INFO - Epoch: [20], step: [2000], lr: 0.000007, batch_loss: 0.0015, avg_loss: 0.0092
+02/14/2022 15:16:59 - INFO - Epoch: [20], step: [2100], lr: 0.000007, batch_loss: 0.0135, avg_loss: 0.0090
+02/14/2022 15:18:05 - INFO - Epoch: [20], step: [2200], lr: 0.000007, batch_loss: 0.0013, avg_loss: 0.0089
+02/14/2022 15:19:11 - INFO - Epoch: [20], step: [2300], lr: 0.000007, batch_loss: 0.0015, avg_loss: 0.0090
+02/14/2022 15:20:17 - INFO - Epoch: [20], step: [2400], lr: 0.000007, batch_loss: 0.0676, avg_loss: 0.0092
+02/14/2022 15:21:23 - INFO - Epoch: [20], step: [2500], lr: 0.000007, batch_loss: 0.0733, avg_loss: 0.0093
+02/14/2022 15:22:29 - INFO - Epoch: [20], step: [2600], lr: 0.000007, batch_loss: 0.0010, avg_loss: 0.0092
+02/14/2022 15:23:35 - INFO - Epoch: [20], step: [2700], lr: 0.000007, batch_loss: 0.0012, avg_loss: 0.0093
+02/14/2022 15:24:41 - INFO - Epoch: [20], step: [2800], lr: 0.000007, batch_loss: 0.0034, avg_loss: 0.0092
+02/14/2022 15:25:47 - INFO - Epoch: [20], step: [2900], lr: 0.000007, batch_loss: 0.0009, avg_loss: 0.0091
+02/14/2022 15:26:53 - INFO - Epoch: [20], step: [3000], lr: 0.000007, batch_loss: 0.0011, avg_loss: 0.0090
+02/14/2022 15:27:59 - INFO - Epoch: [20], step: [3100], lr: 0.000007, batch_loss: 0.0016, avg_loss: 0.0090
+02/14/2022 15:29:05 - INFO - Epoch: [20], step: [3200], lr: 0.000007, batch_loss: 0.0012, avg_loss: 0.0090
+02/14/2022 15:30:11 - INFO - Epoch: [20], step: [3300], lr: 0.000007, batch_loss: 0.0006, avg_loss: 0.0089
+02/14/2022 15:31:17 - INFO - Epoch: [20], step: [3400], lr: 0.000007, batch_loss: 0.0038, avg_loss: 0.0090
+02/14/2022 15:32:23 - INFO - Epoch: [20], step: [3500], lr: 0.000007, batch_loss: 0.0016, avg_loss: 0.0090
+02/14/2022 15:33:29 - INFO - Epoch: [20], step: [3600], lr: 0.000007, batch_loss: 0.0012, avg_loss: 0.0091
+02/14/2022 15:34:35 - INFO - Epoch: [20], step: [3700], lr: 0.000007, batch_loss: 0.0009, avg_loss: 0.0091
+02/14/2022 15:35:41 - INFO - Epoch: [20], step: [3800], lr: 0.000007, batch_loss: 0.0027, avg_loss: 0.0090
+02/14/2022 15:36:47 - INFO - Epoch: [20], step: [3900], lr: 0.000007, batch_loss: 0.0017, avg_loss: 0.0090
+02/14/2022 15:37:53 - INFO - Epoch: [20], step: [4000], lr: 0.000007, batch_loss: 0.0019, avg_loss: 0.0089
+02/14/2022 15:38:59 - INFO - Epoch: [20], step: [4100], lr: 0.000007, batch_loss: 0.0005, avg_loss: 0.0089
+02/14/2022 15:40:05 - INFO - Epoch: [20], step: [4200], lr: 0.000007, batch_loss: 0.0011, avg_loss: 0.0089
+02/14/2022 15:41:10 - INFO - Epoch: [20], step: [4300], lr: 0.000007, batch_loss: 0.0005, avg_loss: 0.0089
+02/14/2022 15:42:16 - INFO - Epoch: [20], step: [4400], lr: 0.000007, batch_loss: 0.0013, avg_loss: 0.0090
+02/14/2022 15:42:33 - INFO - ** ** Epoch [20] done! Training loss: 0.00899 ** **
+02/14/2022 15:42:34 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 15:42:34 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 15:42:34 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 15:42:34 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 15:42:34 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 15:42:34 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 15:42:34 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 15:42:34 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 15:43:28 - INFO - ** * ** Eval at Epoch [20]! Eval Reults:  ** * **
+02/14/2022 15:43:28 - INFO - I2T Retrieval: 0.8780 @ R1, 0.9870 @ R5, 0.9960 @ R10
+02/14/2022 15:43:28 - INFO - =====> Start epoch 21:
+02/14/2022 15:43:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 15:43:29 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 15:43:29 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 15:43:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 15:43:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+
+02/14/2022 15:43:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 15:43:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 15:43:29 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 15:44:37 - INFO - Epoch: [21], step: [100], lr: 0.000007, batch_loss: 0.0012, avg_loss: 0.0090
+02/14/2022 15:45:43 - INFO - Epoch: [21], step: [200], lr: 0.000007, batch_loss: 0.0080, avg_loss: 0.0093
+02/14/2022 15:46:50 - INFO - Epoch: [21], step: [300], lr: 0.000007, batch_loss: 0.0006, avg_loss: 0.0100
+02/14/2022 15:47:56 - INFO - Epoch: [21], step: [400], lr: 0.000007, batch_loss: 0.0004, avg_loss: 0.0096
+02/14/2022 15:49:02 - INFO - Epoch: [21], step: [500], lr: 0.000007, batch_loss: 0.0010, avg_loss: 0.0088
+02/14/2022 15:50:08 - INFO - Epoch: [21], step: [600], lr: 0.000007, batch_loss: 0.0013, avg_loss: 0.0085
+02/14/2022 15:51:14 - INFO - Epoch: [21], step: [700], lr: 0.000007, batch_loss: 0.0009, avg_loss: 0.0086
+02/14/2022 15:52:21 - INFO - Epoch: [21], step: [800], lr: 0.000007, batch_loss: 0.0016, avg_loss: 0.0087
+02/14/2022 15:53:27 - INFO - Epoch: [21], step: [900], lr: 0.000007, batch_loss: 0.0032, avg_loss: 0.0087
+02/14/2022 15:54:33 - INFO - Epoch: [21], step: [1000], lr: 0.000007, batch_loss: 0.0008, avg_loss: 0.0086
+02/14/2022 15:55:39 - INFO - Epoch: [21], step: [1100], lr: 0.000007, batch_loss: 0.0024, avg_loss: 0.0085
+02/14/2022 15:56:45 - INFO - Epoch: [21], step: [1200], lr: 0.000006, batch_loss: 0.0016, avg_loss: 0.0087
+02/14/2022 15:57:51 - INFO - Epoch: [21], step: [1300], lr: 0.000006, batch_loss: 0.0008, avg_loss: 0.0085
+02/14/2022 15:58:57 - INFO - Epoch: [21], step: [1400], lr: 0.000006, batch_loss: 0.0007, avg_loss: 0.0083
+02/14/2022 16:00:03 - INFO - Epoch: [21], step: [1500], lr: 0.000006, batch_loss: 0.0014, avg_loss: 0.0086
+02/14/2022 16:01:10 - INFO - Epoch: [21], step: [1600], lr: 0.000006, batch_loss: 0.0014, avg_loss: 0.0086
+02/14/2022 16:02:16 - INFO - Epoch: [21], step: [1700], lr: 0.000006, batch_loss: 0.0012, avg_loss: 0.0085
+02/14/2022 16:03:22 - INFO - Epoch: [21], step: [1800], lr: 0.000006, batch_loss: 0.0052, avg_loss: 0.0086
+02/14/2022 16:04:28 - INFO - Epoch: [21], step: [1900], lr: 0.000006, batch_loss: 0.0010, avg_loss: 0.0089
+02/14/2022 16:05:34 - INFO - Epoch: [21], step: [2000], lr: 0.000006, batch_loss: 0.0014, avg_loss: 0.0091
+02/14/2022 16:06:40 - INFO - Epoch: [21], step: [2100], lr: 0.000006, batch_loss: 0.0010, avg_loss: 0.0089
+02/14/2022 16:07:47 - INFO - Epoch: [21], step: [2200], lr: 0.000006, batch_loss: 0.0007, avg_loss: 0.0089
+02/14/2022 16:08:53 - INFO - Epoch: [21], step: [2300], lr: 0.000006, batch_loss: 0.0020, avg_loss: 0.0088
+02/14/2022 16:09:59 - INFO - Epoch: [21], step: [2400], lr: 0.000006, batch_loss: 0.0607, avg_loss: 0.0088
+02/14/2022 16:11:05 - INFO - Epoch: [21], step: [2500], lr: 0.000006, batch_loss: 0.0012, avg_loss: 0.0087
+02/14/2022 16:12:11 - INFO - Epoch: [21], step: [2600], lr: 0.000006, batch_loss: 0.0017, avg_loss: 0.0087
+02/14/2022 16:13:17 - INFO - Epoch: [21], step: [2700], lr: 0.000006, batch_loss: 0.0009, avg_loss: 0.0087
+02/14/2022 16:14:22 - INFO - Epoch: [21], step: [2800], lr: 0.000006, batch_loss: 0.0006, avg_loss: 0.0086
+02/14/2022 16:15:29 - INFO - Epoch: [21], step: [2900], lr: 0.000006, batch_loss: 0.0021, avg_loss: 0.0085
+02/14/2022 16:16:35 - INFO - Epoch: [21], step: [3000], lr: 0.000006, batch_loss: 0.0017, avg_loss: 0.0085
+02/14/2022 16:17:41 - INFO - Epoch: [21], step: [3100], lr: 0.000006, batch_loss: 0.0021, avg_loss: 0.0085
+02/14/2022 16:18:47 - INFO - Epoch: [21], step: [3200], lr: 0.000006, batch_loss: 0.0015, avg_loss: 0.0084
+02/14/2022 16:19:53 - INFO - Epoch: [21], step: [3300], lr: 0.000006, batch_loss: 0.0003, avg_loss: 0.0084
+02/14/2022 16:21:00 - INFO - Epoch: [21], step: [3400], lr: 0.000006, batch_loss: 0.0013, avg_loss: 0.0084
+02/14/2022 16:22:06 - INFO - Epoch: [21], step: [3500], lr: 0.000006, batch_loss: 0.0021, avg_loss: 0.0084
+02/14/2022 16:23:11 - INFO - Epoch: [21], step: [3600], lr: 0.000006, batch_loss: 0.0007, avg_loss: 0.0085
+02/14/2022 16:24:17 - INFO - Epoch: [21], step: [3700], lr: 0.000006, batch_loss: 0.0010, avg_loss: 0.0084
+02/14/2022 16:25:23 - INFO - Epoch: [21], step: [3800], lr: 0.000006, batch_loss: 0.0014, avg_loss: 0.0085
+02/14/2022 16:26:30 - INFO - Epoch: [21], step: [3900], lr: 0.000006, batch_loss: 0.0027, avg_loss: 0.0086
+02/14/2022 16:27:36 - INFO - Epoch: [21], step: [4000], lr: 0.000006, batch_loss: 0.0012, avg_loss: 0.0087
+02/14/2022 16:28:42 - INFO - Epoch: [21], step: [4100], lr: 0.000006, batch_loss: 0.0008, avg_loss: 0.0087
+02/14/2022 16:29:48 - INFO - Epoch: [21], step: [4200], lr: 0.000006, batch_loss: 0.0042, avg_loss: 0.0087
+02/14/2022 16:30:54 - INFO - Epoch: [21], step: [4300], lr: 0.000006, batch_loss: 0.0012, avg_loss: 0.0087
+02/14/2022 16:32:00 - INFO - Epoch: [21], step: [4400], lr: 0.000006, batch_loss: 0.0012, avg_loss: 0.0088
+02/14/2022 16:32:17 - INFO - ** ** Epoch [21] done! Training loss: 0.00872 ** **
+02/14/2022 16:32:18 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 16:32:18 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 16:32:18 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 16:32:18 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 16:32:18 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 16:32:18 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 16:32:18 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 16:32:18 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 16:33:13 - INFO - ** * ** Eval at Epoch [21]! Eval Reults:  ** * **
+02/14/2022 16:33:13 - INFO - I2T Retrieval: 0.8790 @ R1, 0.9860 @ R5, 0.9960 @ R10
+02/14/2022 16:33:13 - INFO - =====> Start epoch 22:
+02/14/2022 16:33:14 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 16:33:14 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 16:33:14 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 16:33:14 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 16:33:14 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 16:33:14 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 16:33:14 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 16:33:14 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 16:34:22 - INFO - Epoch: [22], step: [100], lr: 0.000006, batch_loss: 0.0009, avg_loss: 0.0092
+02/14/2022 16:35:29 - INFO - Epoch: [22], step: [200], lr: 0.000006, batch_loss: 0.0008, avg_loss: 0.0103
+02/14/2022 16:36:36 - INFO - Epoch: [22], step: [300], lr: 0.000006, batch_loss: 0.0014, avg_loss: 0.0103
+02/14/2022 16:37:42 - INFO - Epoch: [22], step: [400], lr: 0.000006, batch_loss: 0.0008, avg_loss: 0.0096
+02/14/2022 16:38:49 - INFO - Epoch: [22], step: [500], lr: 0.000006, batch_loss: 0.0007, avg_loss: 0.0096
+02/14/2022 16:39:55 - INFO - Epoch: [22], step: [600], lr: 0.000006, batch_loss: 0.0010, avg_loss: 0.0102
+02/14/2022 16:41:01 - INFO - Epoch: [22], step: [700], lr: 0.000006, batch_loss: 0.0008, avg_loss: 0.0096
+02/14/2022 16:42:08 - INFO - Epoch: [22], step: [800], lr: 0.000006, batch_loss: 0.0220, avg_loss: 0.0095
+02/14/2022 16:43:14 - INFO - Epoch: [22], step: [900], lr: 0.000006, batch_loss: 0.0005, avg_loss: 0.0093
+02/14/2022 16:44:20 - INFO - Epoch: [22], step: [1000], lr: 0.000006, batch_loss: 0.0049, avg_loss: 0.0094
+02/14/2022 16:45:27 - INFO - Epoch: [22], step: [1100], lr: 0.000006, batch_loss: 0.0011, avg_loss: 0.0094
+02/14/2022 16:46:33 - INFO - Epoch: [22], step: [1200], lr: 0.000006, batch_loss: 0.0011, avg_loss: 0.0094
+02/14/2022 16:47:39 - INFO - Epoch: [22], step: [1300], lr: 0.000006, batch_loss: 0.0014, avg_loss: 0.0093
+02/14/2022 16:48:46 - INFO - Epoch: [22], step: [1400], lr: 0.000006, batch_loss: 0.0008, avg_loss: 0.0094
+02/14/2022 16:49:52 - INFO - Epoch: [22], step: [1500], lr: 0.000006, batch_loss: 0.0014, avg_loss: 0.0091
+02/14/2022 16:50:59 - INFO - Epoch: [22], step: [1600], lr: 0.000006, batch_loss: 0.0013, avg_loss: 0.0090
+02/14/2022 16:52:05 - INFO - Epoch: [22], step: [1700], lr: 0.000006, batch_loss: 0.0018, avg_loss: 0.0090
+02/14/2022 16:53:12 - INFO - Epoch: [22], step: [1800], lr: 0.000006, batch_loss: 0.0006, avg_loss: 0.0089
+02/14/2022 16:54:18 - INFO - Epoch: [22], step: [1900], lr: 0.000006, batch_loss: 0.0005, avg_loss: 0.0088
+02/14/2022 16:55:25 - INFO - Epoch: [22], step: [2000], lr: 0.000006, batch_loss: 0.0006, avg_loss: 0.0086
+02/14/2022 16:56:32 - INFO - Epoch: [22], step: [2100], lr: 0.000006, batch_loss: 0.0005, avg_loss: 0.0084
+02/14/2022 16:57:38 - INFO - Epoch: [22], step: [2200], lr: 0.000006, batch_loss: 0.0016, avg_loss: 0.0084
+02/14/2022 16:58:45 - INFO - Epoch: [22], step: [2300], lr: 0.000006, batch_loss: 0.0009, avg_loss: 0.0084
+02/14/2022 16:59:52 - INFO - Epoch: [22], step: [2400], lr: 0.000006, batch_loss: 0.0020, avg_loss: 0.0083
+02/14/2022 17:00:58 - INFO - Epoch: [22], step: [2500], lr: 0.000006, batch_loss: 0.0008, avg_loss: 0.0082
+02/14/2022 17:02:05 - INFO - Epoch: [22], step: [2600], lr: 0.000006, batch_loss: 0.0005, avg_loss: 0.0082
+02/14/2022 17:03:11 - INFO - Epoch: [22], step: [2700], lr: 0.000006, batch_loss: 0.0013, avg_loss: 0.0083
+02/14/2022 17:04:18 - INFO - Epoch: [22], step: [2800], lr: 0.000006, batch_loss: 0.0006, avg_loss: 0.0083
+02/14/2022 17:05:24 - INFO - Epoch: [22], step: [2900], lr: 0.000006, batch_loss: 0.0006, avg_loss: 0.0081
+02/14/2022 17:06:31 - INFO - Epoch: [22], step: [3000], lr: 0.000006, batch_loss: 0.0014, avg_loss: 0.0082
+02/14/2022 17:07:37 - INFO - Epoch: [22], step: [3100], lr: 0.000006, batch_loss: 0.0014, avg_loss: 0.0083
+02/14/2022 17:08:44 - INFO - Epoch: [22], step: [3200], lr: 0.000006, batch_loss: 0.0009, avg_loss: 0.0082
+02/14/2022 17:09:51 - INFO - Epoch: [22], step: [3300], lr: 0.000006, batch_loss: 0.0027, avg_loss: 0.0082
+02/14/2022 17:10:58 - INFO - Epoch: [22], step: [3400], lr: 0.000005, batch_loss: 0.0037, avg_loss: 0.0083
+02/14/2022 17:12:05 - INFO - Epoch: [22], step: [3500], lr: 0.000005, batch_loss: 0.0014, avg_loss: 0.0083
+02/14/2022 17:13:12 - INFO - Epoch: [22], step: [3600], lr: 0.000005, batch_loss: 0.0008, avg_loss: 0.0083
+02/14/2022 17:14:18 - INFO - Epoch: [22], step: [3700], lr: 0.000005, batch_loss: 0.0013, avg_loss: 0.0083
+02/14/2022 17:15:25 - INFO - Epoch: [22], step: [3800], lr: 0.000005, batch_loss: 0.0167, avg_loss: 0.0084
+02/14/2022 17:16:32 - INFO - Epoch: [22], step: [3900], lr: 0.000005, batch_loss: 0.0008, avg_loss: 0.0083
+02/14/2022 17:17:39 - INFO - Epoch: [22], step: [4000], lr: 0.000005, batch_loss: 0.0018, avg_loss: 0.0083
+02/14/2022 17:18:45 - INFO - Epoch: [22], step: [4100], lr: 0.000005, batch_loss: 0.0006, avg_loss: 0.0084
+02/14/2022 17:19:52 - INFO - Epoch: [22], step: [4200], lr: 0.000005, batch_loss: 0.0686, avg_loss: 0.0084
+02/14/2022 17:20:58 - INFO - Epoch: [22], step: [4300], lr: 0.000005, batch_loss: 0.0010, avg_loss: 0.0085
+02/14/2022 17:22:04 - INFO - Epoch: [22], step: [4400], lr: 0.000005, batch_loss: 0.0015, avg_loss: 0.0085
+02/14/2022 17:22:21 - INFO - ** ** Epoch [22] done! Training loss: 0.00849 ** **
+02/14/2022 17:22:21 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 17:22:21 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 17:22:21 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 17:22:21 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 17:22:21 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+
+02/14/2022 17:22:21 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 17:22:21 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 17:22:21 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 17:23:17 - INFO - ** * ** Eval at Epoch [22]! Eval Reults:  ** * **
+02/14/2022 17:23:17 - INFO - I2T Retrieval: 0.8870 @ R1, 0.9880 @ R5, 0.9950 @ R10
+02/14/2022 17:23:17 - INFO - =====> Start epoch 23:
+02/14/2022 17:23:18 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 17:23:18 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 17:23:18 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 17:23:18 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 17:23:18 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 17:23:18 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 17:23:18 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 17:23:18 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 17:24:25 - INFO - Epoch: [23], step: [100], lr: 0.000005, batch_loss: 0.0009, avg_loss: 0.0101
+02/14/2022 17:25:31 - INFO - Epoch: [23], step: [200], lr: 0.000005, batch_loss: 0.0010, avg_loss: 0.0097
+02/14/2022 17:26:38 - INFO - Epoch: [23], step: [300], lr: 0.000005, batch_loss: 0.0011, avg_loss: 0.0093
+02/14/2022 17:27:44 - INFO - Epoch: [23], step: [400], lr: 0.000005, batch_loss: 0.0007, avg_loss: 0.0086
+02/14/2022 17:28:50 - INFO - Epoch: [23], step: [500], lr: 0.000005, batch_loss: 0.0939, avg_loss: 0.0088
+02/14/2022 17:29:56 - INFO - Epoch: [23], step: [600], lr: 0.000005, batch_loss: 0.0006, avg_loss: 0.0082
+02/14/2022 17:31:02 - INFO - Epoch: [23], step: [700], lr: 0.000005, batch_loss: 0.0009, avg_loss: 0.0080
+02/14/2022 17:32:08 - INFO - Epoch: [23], step: [800], lr: 0.000005, batch_loss: 0.0005, avg_loss: 0.0077
+02/14/2022 17:33:13 - INFO - Epoch: [23], step: [900], lr: 0.000005, batch_loss: 0.0006, avg_loss: 0.0078
+02/14/2022 17:34:19 - INFO - Epoch: [23], step: [1000], lr: 0.000005, batch_loss: 0.0003, avg_loss: 0.0075
+02/14/2022 17:35:25 - INFO - Epoch: [23], step: [1100], lr: 0.000005, batch_loss: 0.0018, avg_loss: 0.0077
+02/14/2022 17:36:30 - INFO - Epoch: [23], step: [1200], lr: 0.000005, batch_loss: 0.0010, avg_loss: 0.0076
+02/14/2022 17:37:36 - INFO - Epoch: [23], step: [1300], lr: 0.000005, batch_loss: 0.0014, avg_loss: 0.0078
+02/14/2022 17:38:42 - INFO - Epoch: [23], step: [1400], lr: 0.000005, batch_loss: 0.0010, avg_loss: 0.0078
+02/14/2022 17:39:47 - INFO - Epoch: [23], step: [1500], lr: 0.000005, batch_loss: 0.0005, avg_loss: 0.0079
+02/14/2022 17:40:53 - INFO - Epoch: [23], step: [1600], lr: 0.000005, batch_loss: 0.0010, avg_loss: 0.0080
+02/14/2022 17:41:59 - INFO - Epoch: [23], step: [1700], lr: 0.000005, batch_loss: 0.0006, avg_loss: 0.0082
+02/14/2022 17:43:05 - INFO - Epoch: [23], step: [1800], lr: 0.000005, batch_loss: 0.0004, avg_loss: 0.0082
+02/14/2022 17:44:10 - INFO - Epoch: [23], step: [1900], lr: 0.000005, batch_loss: 0.0011, avg_loss: 0.0083
+02/14/2022 17:45:16 - INFO - Epoch: [23], step: [2000], lr: 0.000005, batch_loss: 0.0011, avg_loss: 0.0083
+02/14/2022 17:46:21 - INFO - Epoch: [23], step: [2100], lr: 0.000005, batch_loss: 0.0015, avg_loss: 0.0081
+02/14/2022 17:47:27 - INFO - Epoch: [23], step: [2200], lr: 0.000005, batch_loss: 0.0008, avg_loss: 0.0079
+02/14/2022 17:48:33 - INFO - Epoch: [23], step: [2300], lr: 0.000005, batch_loss: 0.0008, avg_loss: 0.0077
+02/14/2022 17:49:38 - INFO - Epoch: [23], step: [2400], lr: 0.000005, batch_loss: 0.0006, avg_loss: 0.0078
+02/14/2022 17:50:44 - INFO - Epoch: [23], step: [2500], lr: 0.000005, batch_loss: 0.0010, avg_loss: 0.0077
+02/14/2022 17:51:49 - INFO - Epoch: [23], step: [2600], lr: 0.000005, batch_loss: 0.0560, avg_loss: 0.0078
+02/14/2022 17:52:55 - INFO - Epoch: [23], step: [2700], lr: 0.000005, batch_loss: 0.0007, avg_loss: 0.0079
+02/14/2022 17:54:01 - INFO - Epoch: [23], step: [2800], lr: 0.000005, batch_loss: 0.0033, avg_loss: 0.0080
+02/14/2022 17:55:07 - INFO - Epoch: [23], step: [2900], lr: 0.000005, batch_loss: 0.0007, avg_loss: 0.0081
+02/14/2022 17:56:12 - INFO - Epoch: [23], step: [3000], lr: 0.000005, batch_loss: 0.0016, avg_loss: 0.0080
+02/14/2022 17:57:18 - INFO - Epoch: [23], step: [3100], lr: 0.000005, batch_loss: 0.0040, avg_loss: 0.0080
+02/14/2022 17:58:23 - INFO - Epoch: [23], step: [3200], lr: 0.000005, batch_loss: 0.0271, avg_loss: 0.0079
+02/14/2022 17:59:29 - INFO - Epoch: [23], step: [3300], lr: 0.000005, batch_loss: 0.0008, avg_loss: 0.0079
+02/14/2022 18:00:34 - INFO - Epoch: [23], step: [3400], lr: 0.000005, batch_loss: 0.0011, avg_loss: 0.0079
+02/14/2022 18:01:40 - INFO - Epoch: [23], step: [3500], lr: 0.000005, batch_loss: 0.0027, avg_loss: 0.0079
+02/14/2022 18:02:46 - INFO - Epoch: [23], step: [3600], lr: 0.000005, batch_loss: 0.0013, avg_loss: 0.0079
+02/14/2022 18:03:52 - INFO - Epoch: [23], step: [3700], lr: 0.000005, batch_loss: 0.0021, avg_loss: 0.0078
+02/14/2022 18:04:58 - INFO - Epoch: [23], step: [3800], lr: 0.000005, batch_loss: 0.0073, avg_loss: 0.0077
+02/14/2022 18:06:04 - INFO - Epoch: [23], step: [3900], lr: 0.000005, batch_loss: 0.0015, avg_loss: 0.0077
+02/14/2022 18:07:09 - INFO - Epoch: [23], step: [4000], lr: 0.000005, batch_loss: 0.0175, avg_loss: 0.0077
+02/14/2022 18:08:15 - INFO - Epoch: [23], step: [4100], lr: 0.000005, batch_loss: 0.0007, avg_loss: 0.0077
+02/14/2022 18:09:21 - INFO - Epoch: [23], step: [4200], lr: 0.000005, batch_loss: 0.0022, avg_loss: 0.0077
+02/14/2022 18:10:27 - INFO - Epoch: [23], step: [4300], lr: 0.000005, batch_loss: 0.0013, avg_loss: 0.0077
+02/14/2022 18:11:32 - INFO - Epoch: [23], step: [4400], lr: 0.000005, batch_loss: 0.0011, avg_loss: 0.0078
+02/14/2022 18:11:49 - INFO - ** ** Epoch [23] done! Training loss: 0.00778 ** **
+02/14/2022 18:11:50 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 18:11:50 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 18:11:50 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 18:11:50 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 18:11:50 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 18:11:50 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 18:11:50 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 18:11:50 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 18:12:44 - INFO - ** * ** Eval at Epoch [23]! Eval Reults:  ** * **
+02/14/2022 18:12:44 - INFO - I2T Retrieval: 0.8810 @ R1, 0.9890 @ R5, 0.9950 @ R10
+02/14/2022 18:12:44 - INFO - =====> Start epoch 24:
+02/14/2022 18:12:45 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 18:12:45 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 18:12:45 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 18:12:45 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 18:12:45 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 18:12:45 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 18:12:45 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 18:12:45 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 18:13:53 - INFO - Epoch: [24], step: [100], lr: 0.000005, batch_loss: 0.0004, avg_loss: 0.0065
+02/14/2022 18:14:59 - INFO - Epoch: [24], step: [200], lr: 0.000005, batch_loss: 0.0008, avg_loss: 0.0073
+02/14/2022 18:16:05 - INFO - Epoch: [24], step: [300], lr: 0.000005, batch_loss: 0.0006, avg_loss: 0.0069
+02/14/2022 18:17:11 - INFO - Epoch: [24], step: [400], lr: 0.000005, batch_loss: 0.0014, avg_loss: 0.0080
+02/14/2022 18:18:17 - INFO - Epoch: [24], step: [500], lr: 0.000005, batch_loss: 0.1030, avg_loss: 0.0087
+02/14/2022 18:19:23 - INFO - Epoch: [24], step: [600], lr: 0.000005, batch_loss: 0.0011, avg_loss: 0.0088
+02/14/2022 18:20:29 - INFO - Epoch: [24], step: [700], lr: 0.000005, batch_loss: 0.0542, avg_loss: 0.0086
+02/14/2022 18:21:35 - INFO - Epoch: [24], step: [800], lr: 0.000005, batch_loss: 0.0009, avg_loss: 0.0088
+02/14/2022 18:22:41 - INFO - Epoch: [24], step: [900], lr: 0.000005, batch_loss: 0.0022, avg_loss: 0.0087
+02/14/2022 18:23:46 - INFO - Epoch: [24], step: [1000], lr: 0.000005, batch_loss: 0.0008, avg_loss: 0.0086
+02/14/2022 18:24:52 - INFO - Epoch: [24], step: [1100], lr: 0.000005, batch_loss: 0.0760, avg_loss: 0.0089
+02/14/2022 18:25:58 - INFO - Epoch: [24], step: [1200], lr: 0.000004, batch_loss: 0.0012, avg_loss: 0.0086
+02/14/2022 18:27:04 - INFO - Epoch: [24], step: [1300], lr: 0.000004, batch_loss: 0.0012, avg_loss: 0.0085
+02/14/2022 18:28:10 - INFO - Epoch: [24], step: [1400], lr: 0.000004, batch_loss: 0.0007, avg_loss: 0.0080
+02/14/2022 18:29:15 - INFO - Epoch: [24], step: [1500], lr: 0.000004, batch_loss: 0.0018, avg_loss: 0.0081
+02/14/2022 18:30:21 - INFO - Epoch: [24], step: [1600], lr: 0.000004, batch_loss: 0.0833, avg_loss: 0.0083
+02/14/2022 18:31:27 - INFO - Epoch: [24], step: [1700], lr: 0.000004, batch_loss: 0.0219, avg_loss: 0.0084
+02/14/2022 18:32:33 - INFO - Epoch: [24], step: [1800], lr: 0.000004, batch_loss: 0.0017, avg_loss: 0.0084
+02/14/2022 18:33:39 - INFO - Epoch: [24], step: [1900], lr: 0.000004, batch_loss: 0.0005, avg_loss: 0.0083
+02/14/2022 18:34:44 - INFO - Epoch: [24], step: [2000], lr: 0.000004, batch_loss: 0.0158, avg_loss: 0.0082
+02/14/2022 18:35:50 - INFO - Epoch: [24], step: [2100], lr: 0.000004, batch_loss: 0.0015, avg_loss: 0.0081
+02/14/2022 18:36:56 - INFO - Epoch: [24], step: [2200], lr: 0.000004, batch_loss: 0.0015, avg_loss: 0.0080
+02/14/2022 18:38:02 - INFO - Epoch: [24], step: [2300], lr: 0.000004, batch_loss: 0.0025, avg_loss: 0.0081
+02/14/2022 18:39:08 - INFO - Epoch: [24], step: [2400], lr: 0.000004, batch_loss: 0.0004, avg_loss: 0.0080
+02/14/2022 18:40:15 - INFO - Epoch: [24], step: [2500], lr: 0.000004, batch_loss: 0.0268, avg_loss: 0.0080
+02/14/2022 18:41:20 - INFO - Epoch: [24], step: [2600], lr: 0.000004, batch_loss: 0.0005, avg_loss: 0.0080
+02/14/2022 18:42:26 - INFO - Epoch: [24], step: [2700], lr: 0.000004, batch_loss: 0.0008, avg_loss: 0.0079
+02/14/2022 18:43:32 - INFO - Epoch: [24], step: [2800], lr: 0.000004, batch_loss: 0.0008, avg_loss: 0.0079
+02/14/2022 18:44:38 - INFO - Epoch: [24], step: [2900], lr: 0.000004, batch_loss: 0.0007, avg_loss: 0.0079
+02/14/2022 18:45:44 - INFO - Epoch: [24], step: [3000], lr: 0.000004, batch_loss: 0.0070, avg_loss: 0.0077
+02/14/2022 18:46:50 - INFO - Epoch: [24], step: [3100], lr: 0.000004, batch_loss: 0.0180, avg_loss: 0.0076
+02/14/2022 18:47:56 - INFO - Epoch: [24], step: [3200], lr: 0.000004, batch_loss: 0.0050, avg_loss: 0.0077
+02/14/2022 18:49:02 - INFO - Epoch: [24], step: [3300], lr: 0.000004, batch_loss: 0.0006, avg_loss: 0.0077
+02/14/2022 18:50:08 - INFO - Epoch: [24], step: [3400], lr: 0.000004, batch_loss: 0.0003, avg_loss: 0.0076
+02/14/2022 18:51:14 - INFO - Epoch: [24], step: [3500], lr: 0.000004, batch_loss: 0.0046, avg_loss: 0.0078
+02/14/2022 18:52:20 - INFO - Epoch: [24], step: [3600], lr: 0.000004, batch_loss: 0.0009, avg_loss: 0.0077
+02/14/2022 18:53:26 - INFO - Epoch: [24], step: [3700], lr: 0.000004, batch_loss: 0.0015, avg_loss: 0.0077
+02/14/2022 18:54:32 - INFO - Epoch: [24], step: [3800], lr: 0.000004, batch_loss: 0.0006, avg_loss: 0.0077
+02/14/2022 18:55:38 - INFO - Epoch: [24], step: [3900], lr: 0.000004, batch_loss: 0.0007, avg_loss: 0.0078
+02/14/2022 18:56:44 - INFO - Epoch: [24], step: [4000], lr: 0.000004, batch_loss: 0.1062, avg_loss: 0.0078
+02/14/2022 18:57:50 - INFO - Epoch: [24], step: [4100], lr: 0.000004, batch_loss: 0.0020, avg_loss: 0.0077
+02/14/2022 18:58:56 - INFO - Epoch: [24], step: [4200], lr: 0.000004, batch_loss: 0.0007, avg_loss: 0.0078
+02/14/2022 19:00:02 - INFO - Epoch: [24], step: [4300], lr: 0.000004, batch_loss: 0.0013, avg_loss: 0.0079
+02/14/2022 19:01:08 - INFO - Epoch: [24], step: [4400], lr: 0.000004, batch_loss: 0.0009, avg_loss: 0.0078
+02/14/2022 19:01:25 - INFO - ** ** Epoch [24] done! Training loss: 0.00780 ** **
+02/14/2022 19:01:25 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:01:25 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:01:25 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:01:25 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 19:01:25 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:01:25 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 19:01:25 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:01:25 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:02:20 - INFO - ** * ** Eval at Epoch [24]! Eval Reults:  ** * **
+02/14/2022 19:02:20 - INFO - I2T Retrieval: 0.8850 @ R1, 0.9890 @ R5, 0.9960 @ R10
+02/14/2022 19:02:20 - INFO - =====> Start epoch 25:
+02/14/2022 19:02:21 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:02:21 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:02:21 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:02:21 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:02:21 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:02:21 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:02:21 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:02:21 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:03:29 - INFO - Epoch: [25], step: [100], lr: 0.000004, batch_loss: 0.0035, avg_loss: 0.0076
+02/14/2022 19:04:35 - INFO - Epoch: [25], step: [200], lr: 0.000004, batch_loss: 0.0397, avg_loss: 0.0071
+02/14/2022 19:05:41 - INFO - Epoch: [25], step: [300], lr: 0.000004, batch_loss: 0.0013, avg_loss: 0.0076
+02/14/2022 19:06:46 - INFO - Epoch: [25], step: [400], lr: 0.000004, batch_loss: 0.0023, avg_loss: 0.0071
+02/14/2022 19:07:52 - INFO - Epoch: [25], step: [500], lr: 0.000004, batch_loss: 0.0013, avg_loss: 0.0078
+02/14/2022 19:08:58 - INFO - Epoch: [25], step: [600], lr: 0.000004, batch_loss: 0.0017, avg_loss: 0.0079
+02/14/2022 19:10:03 - INFO - Epoch: [25], step: [700], lr: 0.000004, batch_loss: 0.0009, avg_loss: 0.0073
+02/14/2022 19:11:09 - INFO - Epoch: [25], step: [800], lr: 0.000004, batch_loss: 0.0013, avg_loss: 0.0071
+02/14/2022 19:12:15 - INFO - Epoch: [25], step: [900], lr: 0.000004, batch_loss: 0.0146, avg_loss: 0.0071
+02/14/2022 19:13:21 - INFO - Epoch: [25], step: [1000], lr: 0.000004, batch_loss: 0.0005, avg_loss: 0.0068
+02/14/2022 19:14:27 - INFO - Epoch: [25], step: [1100], lr: 0.000004, batch_loss: 0.0006, avg_loss: 0.0067
+02/14/2022 19:15:33 - INFO - Epoch: [25], step: [1200], lr: 0.000004, batch_loss: 0.0033, avg_loss: 0.0070
+02/14/2022 19:16:38 - INFO - Epoch: [25], step: [1300], lr: 0.000004, batch_loss: 0.0008, avg_loss: 0.0073
+02/14/2022 19:17:44 - INFO - Epoch: [25], step: [1400], lr: 0.000004, batch_loss: 0.0017, avg_loss: 0.0073
+02/14/2022 19:18:50 - INFO - Epoch: [25], step: [1500], lr: 0.000004, batch_loss: 0.0010, avg_loss: 0.0075
+02/14/2022 19:19:56 - INFO - Epoch: [25], step: [1600], lr: 0.000004, batch_loss: 0.0073, avg_loss: 0.0075
+02/14/2022 19:21:01 - INFO - Epoch: [25], step: [1700], lr: 0.000004, batch_loss: 0.0007, avg_loss: 0.0072
+02/14/2022 19:22:07 - INFO - Epoch: [25], step: [1800], lr: 0.000004, batch_loss: 0.0013, avg_loss: 0.0071
+02/14/2022 19:23:13 - INFO - Epoch: [25], step: [1900], lr: 0.000004, batch_loss: 0.0010, avg_loss: 0.0072
+02/14/2022 19:24:18 - INFO - Epoch: [25], step: [2000], lr: 0.000004, batch_loss: 0.0014, avg_loss: 0.0073
+02/14/2022 19:25:24 - INFO - Epoch: [25], step: [2100], lr: 0.000004, batch_loss: 0.0008, avg_loss: 0.0074
+02/14/2022 19:26:30 - INFO - Epoch: [25], step: [2200], lr: 0.000004, batch_loss: 0.0575, avg_loss: 0.0076
+02/14/2022 19:27:35 - INFO - Epoch: [25], step: [2300], lr: 0.000004, batch_loss: 0.0017, avg_loss: 0.0075
+02/14/2022 19:28:41 - INFO - Epoch: [25], step: [2400], lr: 0.000004, batch_loss: 0.0013, avg_loss: 0.0075
+02/14/2022 19:29:47 - INFO - Epoch: [25], step: [2500], lr: 0.000004, batch_loss: 0.0007, avg_loss: 0.0074
+02/14/2022 19:30:53 - INFO - Epoch: [25], step: [2600], lr: 0.000004, batch_loss: 0.0354, avg_loss: 0.0076
+02/14/2022 19:31:59 - INFO - Epoch: [25], step: [2700], lr: 0.000004, batch_loss: 0.0005, avg_loss: 0.0076
+02/14/2022 19:33:05 - INFO - Epoch: [25], step: [2800], lr: 0.000004, batch_loss: 0.0028, avg_loss: 0.0077
+02/14/2022 19:34:10 - INFO - Epoch: [25], step: [2900], lr: 0.000004, batch_loss: 0.0011, avg_loss: 0.0078
+02/14/2022 19:35:16 - INFO - Epoch: [25], step: [3000], lr: 0.000004, batch_loss: 0.0014, avg_loss: 0.0078
+02/14/2022 19:36:22 - INFO - Epoch: [25], step: [3100], lr: 0.000004, batch_loss: 0.0024, avg_loss: 0.0079
+02/14/2022 19:37:28 - INFO - Epoch: [25], step: [3200], lr: 0.000004, batch_loss: 0.0018, avg_loss: 0.0078
+02/14/2022 19:38:33 - INFO - Epoch: [25], step: [3300], lr: 0.000004, batch_loss: 0.0011, avg_loss: 0.0078
+02/14/2022 19:39:39 - INFO - Epoch: [25], step: [3400], lr: 0.000003, batch_loss: 0.0005, avg_loss: 0.0078
+02/14/2022 19:40:45 - INFO - Epoch: [25], step: [3500], lr: 0.000003, batch_loss: 0.0057, avg_loss: 0.0078
+02/14/2022 19:41:51 - INFO - Epoch: [25], step: [3600], lr: 0.000003, batch_loss: 0.0013, avg_loss: 0.0079
+02/14/2022 19:42:56 - INFO - Epoch: [25], step: [3700], lr: 0.000003, batch_loss: 0.0010, avg_loss: 0.0079
+02/14/2022 19:44:02 - INFO - Epoch: [25], step: [3800], lr: 0.000003, batch_loss: 0.0005, avg_loss: 0.0080
+02/14/2022 19:45:08 - INFO - Epoch: [25], step: [3900], lr: 0.000003, batch_loss: 0.0011, avg_loss: 0.0080
+02/14/2022 19:46:14 - INFO - Epoch: [25], step: [4000], lr: 0.000003, batch_loss: 0.0013, avg_loss: 0.0080
+02/14/2022 19:47:19 - INFO - Epoch: [25], step: [4100], lr: 0.000003, batch_loss: 0.0013, avg_loss: 0.0080
+02/14/2022 19:48:25 - INFO - Epoch: [25], step: [4200], lr: 0.000003, batch_loss: 0.0005, avg_loss: 0.0079
+02/14/2022 19:49:31 - INFO - Epoch: [25], step: [4300], lr: 0.000003, batch_loss: 0.0017, avg_loss: 0.0079
+02/14/2022 19:50:36 - INFO - Epoch: [25], step: [4400], lr: 0.000003, batch_loss: 0.0029, avg_loss: 0.0079
+02/14/2022 19:50:53 - INFO - ** ** Epoch [25] done! Training loss: 0.00790 ** **
+02/14/2022 19:50:54 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:50:54 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:50:54 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:50:54 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:50:54 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:50:54 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:50:54 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:50:54 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:51:49 - INFO - ** * ** Eval at Epoch [25]! Eval Reults:  ** * **
+02/14/2022 19:51:49 - INFO - I2T Retrieval: 0.8860 @ R1, 0.9870 @ R5, 0.9950 @ R10
+02/14/2022 19:51:52 - INFO - ** * ** Saving trained model to /root/paddlejob/workspace/output/finetune_retrieval_22Y_02M_13D_23H/checkpoint-25. ** * **
+02/14/2022 19:51:52 - INFO - =====> Start epoch 26:
+02/14/2022 19:51:54 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:51:54 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:51:54 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:51:54 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:51:54 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:51:54 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:51:54 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:51:54 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 19:53:01 - INFO - Epoch: [26], step: [100], lr: 0.000003, batch_loss: 0.0018, avg_loss: 0.0066
+02/14/2022 19:54:06 - INFO - Epoch: [26], step: [200], lr: 0.000003, batch_loss: 0.0015, avg_loss: 0.0076
+02/14/2022 19:55:12 - INFO - Epoch: [26], step: [300], lr: 0.000003, batch_loss: 0.0018, avg_loss: 0.0091
+02/14/2022 19:56:18 - INFO - Epoch: [26], step: [400], lr: 0.000003, batch_loss: 0.0011, avg_loss: 0.0082
+02/14/2022 19:57:24 - INFO - Epoch: [26], step: [500], lr: 0.000003, batch_loss: 0.0005, avg_loss: 0.0080
+02/14/2022 19:58:30 - INFO - Epoch: [26], step: [600], lr: 0.000003, batch_loss: 0.0007, avg_loss: 0.0079
+02/14/2022 19:59:36 - INFO - Epoch: [26], step: [700], lr: 0.000003, batch_loss: 0.0006, avg_loss: 0.0081
+02/14/2022 20:00:41 - INFO - Epoch: [26], step: [800], lr: 0.000003, batch_loss: 0.0009, avg_loss: 0.0079
+02/14/2022 20:01:47 - INFO - Epoch: [26], step: [900], lr: 0.000003, batch_loss: 0.0009, avg_loss: 0.0083
+02/14/2022 20:02:53 - INFO - Epoch: [26], step: [1000], lr: 0.000003, batch_loss: 0.0013, avg_loss: 0.0085
+02/14/2022 20:03:59 - INFO - Epoch: [26], step: [1100], lr: 0.000003, batch_loss: 0.0011, avg_loss: 0.0083
+02/14/2022 20:05:05 - INFO - Epoch: [26], step: [1200], lr: 0.000003, batch_loss: 0.0139, avg_loss: 0.0083
+02/14/2022 20:06:11 - INFO - Epoch: [26], step: [1300], lr: 0.000003, batch_loss: 0.0005, avg_loss: 0.0085
+02/14/2022 20:07:17 - INFO - Epoch: [26], step: [1400], lr: 0.000003, batch_loss: 0.0006, avg_loss: 0.0083
+02/14/2022 20:08:22 - INFO - Epoch: [26], step: [1500], lr: 0.000003, batch_loss: 0.0029, avg_loss: 0.0080
+02/14/2022 20:09:28 - INFO - Epoch: [26], step: [1600], lr: 0.000003, batch_loss: 0.0005, avg_loss: 0.0079
+02/14/2022 20:10:34 - INFO - Epoch: [26], step: [1700], lr: 0.000003, batch_loss: 0.0007, avg_loss: 0.0078
+02/14/2022 20:11:39 - INFO - Epoch: [26], step: [1800], lr: 0.000003, batch_loss: 0.0008, avg_loss: 0.0075
+02/14/2022 20:12:45 - INFO - Epoch: [26], step: [1900], lr: 0.000003, batch_loss: 0.0006, avg_loss: 0.0076
+02/14/2022 20:13:51 - INFO - Epoch: [26], step: [2000], lr: 0.000003, batch_loss: 0.0013, avg_loss: 0.0075
+02/14/2022 20:14:57 - INFO - Epoch: [26], step: [2100], lr: 0.000003, batch_loss: 0.0013, avg_loss: 0.0075
+02/14/2022 20:16:03 - INFO - Epoch: [26], step: [2200], lr: 0.000003, batch_loss: 0.0014, avg_loss: 0.0074
+02/14/2022 20:17:08 - INFO - Epoch: [26], step: [2300], lr: 0.000003, batch_loss: 0.0012, avg_loss: 0.0075
+02/14/2022 20:18:14 - INFO - Epoch: [26], step: [2400], lr: 0.000003, batch_loss: 0.0024, avg_loss: 0.0074
+02/14/2022 20:19:20 - INFO - Epoch: [26], step: [2500], lr: 0.000003, batch_loss: 0.0013, avg_loss: 0.0073
+02/14/2022 20:20:26 - INFO - Epoch: [26], step: [2600], lr: 0.000003, batch_loss: 0.0008, avg_loss: 0.0072
+02/14/2022 20:21:32 - INFO - Epoch: [26], step: [2700], lr: 0.000003, batch_loss: 0.0017, avg_loss: 0.0072
+02/14/2022 20:22:37 - INFO - Epoch: [26], step: [2800], lr: 0.000003, batch_loss: 0.0010, avg_loss: 0.0073
+02/14/2022 20:23:43 - INFO - Epoch: [26], step: [2900], lr: 0.000003, batch_loss: 0.0005, avg_loss: 0.0074
+02/14/2022 20:24:49 - INFO - Epoch: [26], step: [3000], lr: 0.000003, batch_loss: 0.0768, avg_loss: 0.0075
+02/14/2022 20:25:54 - INFO - Epoch: [26], step: [3100], lr: 0.000003, batch_loss: 0.0009, avg_loss: 0.0075
+02/14/2022 20:27:00 - INFO - Epoch: [26], step: [3200], lr: 0.000003, batch_loss: 0.0006, avg_loss: 0.0075
+02/14/2022 20:28:06 - INFO - Epoch: [26], step: [3300], lr: 0.000003, batch_loss: 0.0015, avg_loss: 0.0074
+02/14/2022 20:29:11 - INFO - Epoch: [26], step: [3400], lr: 0.000003, batch_loss: 0.0011, avg_loss: 0.0074
+02/14/2022 20:30:17 - INFO - Epoch: [26], step: [3500], lr: 0.000003, batch_loss: 0.0014, avg_loss: 0.0073
+02/14/2022 20:31:23 - INFO - Epoch: [26], step: [3600], lr: 0.000003, batch_loss: 0.0013, avg_loss: 0.0072
+02/14/2022 20:32:29 - INFO - Epoch: [26], step: [3700], lr: 0.000003, batch_loss: 0.0007, avg_loss: 0.0072
+02/14/2022 20:33:35 - INFO - Epoch: [26], step: [3800], lr: 0.000003, batch_loss: 0.0010, avg_loss: 0.0072
+02/14/2022 20:34:41 - INFO - Epoch: [26], step: [3900], lr: 0.000003, batch_loss: 0.0011, avg_loss: 0.0072
+02/14/2022 20:35:46 - INFO - Epoch: [26], step: [4000], lr: 0.000003, batch_loss: 0.1014, avg_loss: 0.0072
+02/14/2022 20:36:52 - INFO - Epoch: [26], step: [4100], lr: 0.000003, batch_loss: 0.0010, avg_loss: 0.0072
+02/14/2022 20:37:58 - INFO - Epoch: [26], step: [4200], lr: 0.000003, batch_loss: 0.0024, avg_loss: 0.0072
+02/14/2022 20:39:03 - INFO - Epoch: [26], step: [4300], lr: 0.000003, batch_loss: 0.0008, avg_loss: 0.0072
+02/14/2022 20:40:09 - INFO - Epoch: [26], step: [4400], lr: 0.000003, batch_loss: 0.0008, avg_loss: 0.0074
+02/14/2022 20:40:26 - INFO - ** ** Epoch [26] done! Training loss: 0.00733 ** **
+02/14/2022 20:40:27 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 20:40:27 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 20:40:27 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 20:40:27 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 20:40:27 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 20:40:27 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 20:40:27 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 20:40:27 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 20:41:22 - INFO - ** * ** Eval at Epoch [26]! Eval Reults:  ** * **
+02/14/2022 20:41:22 - INFO - I2T Retrieval: 0.8860 @ R1, 0.9890 @ R5, 0.9960 @ R10
+02/14/2022 20:41:26 - INFO - ** * ** Saving trained model to /root/paddlejob/workspace/output/finetune_retrieval_22Y_02M_13D_23H/checkpoint-26. ** * **
+02/14/2022 20:41:26 - INFO - =====> Start epoch 27:
+02/14/2022 20:41:27 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 20:41:27 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 20:41:27 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 20:41:27 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 20:41:27 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 20:41:27 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 20:41:27 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 20:41:27 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 20:42:34 - INFO - Epoch: [27], step: [100], lr: 0.000003, batch_loss: 0.0724, avg_loss: 0.0102
+02/14/2022 20:43:40 - INFO - Epoch: [27], step: [200], lr: 0.000003, batch_loss: 0.0008, avg_loss: 0.0089
+02/14/2022 20:44:45 - INFO - Epoch: [27], step: [300], lr: 0.000003, batch_loss: 0.0013, avg_loss: 0.0072
+02/14/2022 20:45:51 - INFO - Epoch: [27], step: [400], lr: 0.000003, batch_loss: 0.0013, avg_loss: 0.0076
+02/14/2022 20:46:56 - INFO - Epoch: [27], step: [500], lr: 0.000003, batch_loss: 0.0005, avg_loss: 0.0074
+02/14/2022 20:48:01 - INFO - Epoch: [27], step: [600], lr: 0.000003, batch_loss: 0.0058, avg_loss: 0.0074
+02/14/2022 20:49:06 - INFO - Epoch: [27], step: [700], lr: 0.000003, batch_loss: 0.0010, avg_loss: 0.0071
+02/14/2022 20:50:12 - INFO - Epoch: [27], step: [800], lr: 0.000003, batch_loss: 0.0008, avg_loss: 0.0073
+02/14/2022 20:51:17 - INFO - Epoch: [27], step: [900], lr: 0.000003, batch_loss: 0.0010, avg_loss: 0.0074
+02/14/2022 20:52:23 - INFO - Epoch: [27], step: [1000], lr: 0.000003, batch_loss: 0.0051, avg_loss: 0.0073
+02/14/2022 20:53:28 - INFO - Epoch: [27], step: [1100], lr: 0.000003, batch_loss: 0.0006, avg_loss: 0.0074
+02/14/2022 20:54:34 - INFO - Epoch: [27], step: [1200], lr: 0.000002, batch_loss: 0.0007, avg_loss: 0.0076
+02/14/2022 20:55:39 - INFO - Epoch: [27], step: [1300], lr: 0.000002, batch_loss: 0.0750, avg_loss: 0.0074
+02/14/2022 20:56:45 - INFO - Epoch: [27], step: [1400], lr: 0.000002, batch_loss: 0.0009, avg_loss: 0.0074
+02/14/2022 20:57:50 - INFO - Epoch: [27], step: [1500], lr: 0.000002, batch_loss: 0.0013, avg_loss: 0.0073
+02/14/2022 20:58:56 - INFO - Epoch: [27], step: [1600], lr: 0.000002, batch_loss: 0.0014, avg_loss: 0.0073
+02/14/2022 21:00:01 - INFO - Epoch: [27], step: [1700], lr: 0.000002, batch_loss: 0.0011, avg_loss: 0.0070
+02/14/2022 21:01:06 - INFO - Epoch: [27], step: [1800], lr: 0.000002, batch_loss: 0.0005, avg_loss: 0.0070
+02/14/2022 21:02:12 - INFO - Epoch: [27], step: [1900], lr: 0.000002, batch_loss: 0.0006, avg_loss: 0.0071
+02/14/2022 21:03:17 - INFO - Epoch: [27], step: [2000], lr: 0.000002, batch_loss: 0.0024, avg_loss: 0.0071
+02/14/2022 21:04:22 - INFO - Epoch: [27], step: [2100], lr: 0.000002, batch_loss: 0.0015, avg_loss: 0.0071
+02/14/2022 21:05:28 - INFO - Epoch: [27], step: [2200], lr: 0.000002, batch_loss: 0.0031, avg_loss: 0.0070
+02/14/2022 21:06:33 - INFO - Epoch: [27], step: [2300], lr: 0.000002, batch_loss: 0.0012, avg_loss: 0.0071
+02/14/2022 21:07:38 - INFO - Epoch: [27], step: [2400], lr: 0.000002, batch_loss: 0.0005, avg_loss: 0.0071
+02/14/2022 21:08:43 - INFO - Epoch: [27], step: [2500], lr: 0.000002, batch_loss: 0.0016, avg_loss: 0.0071
+02/14/2022 21:09:48 - INFO - Epoch: [27], step: [2600], lr: 0.000002, batch_loss: 0.0010, avg_loss: 0.0071
+02/14/2022 21:10:54 - INFO - Epoch: [27], step: [2700], lr: 0.000002, batch_loss: 0.0009, avg_loss: 0.0070
+02/14/2022 21:11:59 - INFO - Epoch: [27], step: [2800], lr: 0.000002, batch_loss: 0.0039, avg_loss: 0.0069
+02/14/2022 21:13:04 - INFO - Epoch: [27], step: [2900], lr: 0.000002, batch_loss: 0.0014, avg_loss: 0.0069
+02/14/2022 21:14:10 - INFO - Epoch: [27], step: [3000], lr: 0.000002, batch_loss: 0.0007, avg_loss: 0.0069
+02/14/2022 21:15:15 - INFO - Epoch: [27], step: [3100], lr: 0.000002, batch_loss: 0.0013, avg_loss: 0.0068
+02/14/2022 21:16:21 - INFO - Epoch: [27], step: [3200], lr: 0.000002, batch_loss: 0.0018, avg_loss: 0.0069
+02/14/2022 21:17:26 - INFO - Epoch: [27], step: [3300], lr: 0.000002, batch_loss: 0.0013, avg_loss: 0.0068
+02/14/2022 21:18:31 - INFO - Epoch: [27], step: [3400], lr: 0.000002, batch_loss: 0.0058, avg_loss: 0.0067
+02/14/2022 21:19:37 - INFO - Epoch: [27], step: [3500], lr: 0.000002, batch_loss: 0.0008, avg_loss: 0.0067
+02/14/2022 21:20:42 - INFO - Epoch: [27], step: [3600], lr: 0.000002, batch_loss: 0.0030, avg_loss: 0.0068
+02/14/2022 21:21:48 - INFO - Epoch: [27], step: [3700], lr: 0.000002, batch_loss: 0.0012, avg_loss: 0.0068
+02/14/2022 21:22:53 - INFO - Epoch: [27], step: [3800], lr: 0.000002, batch_loss: 0.0009, avg_loss: 0.0068
+02/14/2022 21:23:58 - INFO - Epoch: [27], step: [3900], lr: 0.000002, batch_loss: 0.0281, avg_loss: 0.0068
+02/14/2022 21:25:03 - INFO - Epoch: [27], step: [4000], lr: 0.000002, batch_loss: 0.0008, avg_loss: 0.0069
+02/14/2022 21:26:08 - INFO - Epoch: [27], step: [4100], lr: 0.000002, batch_loss: 0.0010, avg_loss: 0.0068
+02/14/2022 21:27:13 - INFO - Epoch: [27], step: [4200], lr: 0.000002, batch_loss: 0.0007, avg_loss: 0.0068
+02/14/2022 21:28:19 - INFO - Epoch: [27], step: [4300], lr: 0.000002, batch_loss: 0.0005, avg_loss: 0.0068
+02/14/2022 21:29:24 - INFO - Epoch: [27], step: [4400], lr: 0.000002, batch_loss: 0.0008, avg_loss: 0.0068
+02/14/2022 21:29:40 - INFO - ** ** Epoch [27] done! Training loss: 0.00676 ** **
+02/14/2022 21:29:41 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 21:29:41 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 21:29:41 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 21:29:41 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 21:29:41 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 21:29:41 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 21:29:41 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 21:29:41 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 21:30:36 - INFO - ** * ** Eval at Epoch [27]! Eval Reults:  ** * **
+02/14/2022 21:30:36 - INFO - I2T Retrieval: 0.8830 @ R1, 0.9880 @ R5, 0.9950 @ R10
+02/14/2022 21:30:41 - INFO - ** * ** Saving trained model to /root/paddlejob/workspace/output/finetune_retrieval_22Y_02M_13D_23H/checkpoint-27. ** * **
+02/14/2022 21:30:41 - INFO - =====> Start epoch 28:
+02/14/2022 21:30:42 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 21:30:42 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 21:30:42 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 21:30:42 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 21:30:42 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 21:30:42 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 21:30:42 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 21:30:42 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 21:31:49 - INFO - Epoch: [28], step: [100], lr: 0.000002, batch_loss: 0.0009, avg_loss: 0.0071
+02/14/2022 21:32:55 - INFO - Epoch: [28], step: [200], lr: 0.000002, batch_loss: 0.0011, avg_loss: 0.0062
+02/14/2022 21:34:01 - INFO - Epoch: [28], step: [300], lr: 0.000002, batch_loss: 0.0006, avg_loss: 0.0063
+02/14/2022 21:35:07 - INFO - Epoch: [28], step: [400], lr: 0.000002, batch_loss: 0.0014, avg_loss: 0.0074
+02/14/2022 21:36:12 - INFO - Epoch: [28], step: [500], lr: 0.000002, batch_loss: 0.0301, avg_loss: 0.0074
+02/14/2022 21:37:18 - INFO - Epoch: [28], step: [600], lr: 0.000002, batch_loss: 0.0025, avg_loss: 0.0074
+02/14/2022 21:38:24 - INFO - Epoch: [28], step: [700], lr: 0.000002, batch_loss: 0.0021, avg_loss: 0.0069
+02/14/2022 21:39:30 - INFO - Epoch: [28], step: [800], lr: 0.000002, batch_loss: 0.0020, avg_loss: 0.0073
+02/14/2022 21:40:36 - INFO - Epoch: [28], step: [900], lr: 0.000002, batch_loss: 0.0019, avg_loss: 0.0073
+02/14/2022 21:41:41 - INFO - Epoch: [28], step: [1000], lr: 0.000002, batch_loss: 0.0016, avg_loss: 0.0072
+02/14/2022 21:42:47 - INFO - Epoch: [28], step: [1100], lr: 0.000002, batch_loss: 0.0014, avg_loss: 0.0070
+02/14/2022 21:43:53 - INFO - Epoch: [28], step: [1200], lr: 0.000002, batch_loss: 0.0887, avg_loss: 0.0071
+02/14/2022 21:44:59 - INFO - Epoch: [28], step: [1300], lr: 0.000002, batch_loss: 0.0025, avg_loss: 0.0070
+02/14/2022 21:46:06 - INFO - Epoch: [28], step: [1400], lr: 0.000002, batch_loss: 0.0022, avg_loss: 0.0073
+02/14/2022 21:47:12 - INFO - Epoch: [28], step: [1500], lr: 0.000002, batch_loss: 0.0006, avg_loss: 0.0073
+02/14/2022 21:48:18 - INFO - Epoch: [28], step: [1600], lr: 0.000002, batch_loss: 0.0013, avg_loss: 0.0072
+02/14/2022 21:49:23 - INFO - Epoch: [28], step: [1700], lr: 0.000002, batch_loss: 0.0010, avg_loss: 0.0070
+02/14/2022 21:50:29 - INFO - Epoch: [28], step: [1800], lr: 0.000002, batch_loss: 0.0019, avg_loss: 0.0071
+02/14/2022 21:51:35 - INFO - Epoch: [28], step: [1900], lr: 0.000002, batch_loss: 0.0012, avg_loss: 0.0070
+02/14/2022 21:52:41 - INFO - Epoch: [28], step: [2000], lr: 0.000002, batch_loss: 0.0005, avg_loss: 0.0070
+02/14/2022 21:53:47 - INFO - Epoch: [28], step: [2100], lr: 0.000002, batch_loss: 0.0008, avg_loss: 0.0072
+02/14/2022 21:54:53 - INFO - Epoch: [28], step: [2200], lr: 0.000002, batch_loss: 0.0008, avg_loss: 0.0075
+02/14/2022 21:55:59 - INFO - Epoch: [28], step: [2300], lr: 0.000002, batch_loss: 0.0007, avg_loss: 0.0075
+02/14/2022 21:57:05 - INFO - Epoch: [28], step: [2400], lr: 0.000002, batch_loss: 0.0020, avg_loss: 0.0076
+02/14/2022 21:58:11 - INFO - Epoch: [28], step: [2500], lr: 0.000002, batch_loss: 0.0009, avg_loss: 0.0076
+02/14/2022 21:59:17 - INFO - Epoch: [28], step: [2600], lr: 0.000002, batch_loss: 0.0012, avg_loss: 0.0077
+02/14/2022 22:00:22 - INFO - Epoch: [28], step: [2700], lr: 0.000002, batch_loss: 0.0006, avg_loss: 0.0076
+02/14/2022 22:01:28 - INFO - Epoch: [28], step: [2800], lr: 0.000002, batch_loss: 0.0009, avg_loss: 0.0075
+02/14/2022 22:02:34 - INFO - Epoch: [28], step: [2900], lr: 0.000002, batch_loss: 0.0007, avg_loss: 0.0074
+02/14/2022 22:03:40 - INFO - Epoch: [28], step: [3000], lr: 0.000002, batch_loss: 0.0006, avg_loss: 0.0074
+02/14/2022 22:04:46 - INFO - Epoch: [28], step: [3100], lr: 0.000002, batch_loss: 0.0018, avg_loss: 0.0076
+02/14/2022 22:05:51 - INFO - Epoch: [28], step: [3200], lr: 0.000002, batch_loss: 0.0008, avg_loss: 0.0076
+02/14/2022 22:06:57 - INFO - Epoch: [28], step: [3300], lr: 0.000002, batch_loss: 0.0015, avg_loss: 0.0078
+02/14/2022 22:08:03 - INFO - Epoch: [28], step: [3400], lr: 0.000001, batch_loss: 0.0032, avg_loss: 0.0077
+02/14/2022 22:09:09 - INFO - Epoch: [28], step: [3500], lr: 0.000001, batch_loss: 0.0785, avg_loss: 0.0079
+02/14/2022 22:10:15 - INFO - Epoch: [28], step: [3600], lr: 0.000001, batch_loss: 0.0122, avg_loss: 0.0078
+02/14/2022 22:11:21 - INFO - Epoch: [28], step: [3700], lr: 0.000001, batch_loss: 0.0003, avg_loss: 0.0078
+02/14/2022 22:12:27 - INFO - Epoch: [28], step: [3800], lr: 0.000001, batch_loss: 0.0009, avg_loss: 0.0077
+02/14/2022 22:13:33 - INFO - Epoch: [28], step: [3900], lr: 0.000001, batch_loss: 0.0008, avg_loss: 0.0077
+02/14/2022 22:14:38 - INFO - Epoch: [28], step: [4000], lr: 0.000001, batch_loss: 0.0012, avg_loss: 0.0077
+02/14/2022 22:15:44 - INFO - Epoch: [28], step: [4100], lr: 0.000001, batch_loss: 0.0004, avg_loss: 0.0077
+02/14/2022 22:16:50 - INFO - Epoch: [28], step: [4200], lr: 0.000001, batch_loss: 0.0009, avg_loss: 0.0077
+02/14/2022 22:17:56 - INFO - Epoch: [28], step: [4300], lr: 0.000001, batch_loss: 0.0012, avg_loss: 0.0077
+02/14/2022 22:19:02 - INFO - Epoch: [28], step: [4400], lr: 0.000001, batch_loss: 0.0006, avg_loss: 0.0077
+02/14/2022 22:19:18 - INFO - ** ** Epoch [28] done! Training loss: 0.00768 ** **
+02/14/2022 22:19:19 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 22:19:19 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 22:19:19 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 22:19:19 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 22:19:19 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 22:19:19 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 22:19:19 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 22:19:19 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 22:20:13 - INFO - ** * ** Eval at Epoch [28]! Eval Reults:  ** * **
+02/14/2022 22:20:13 - INFO - I2T Retrieval: 0.8910 @ R1, 0.9880 @ R5, 0.9950 @ R10
+02/14/2022 22:20:18 - INFO - ** * ** Saving trained model to /root/paddlejob/workspace/output/finetune_retrieval_22Y_02M_13D_23H/checkpoint-28. ** * **
+02/14/2022 22:20:18 - INFO - =====> Start epoch 29:
+02/14/2022 22:20:19 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 22:20:19 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 22:20:19 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 22:20:19 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 22:20:19 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 22:20:19 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 22:20:19 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 22:20:19 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 22:21:26 - INFO - Epoch: [29], step: [100], lr: 0.000001, batch_loss: 0.0028, avg_loss: 0.0076
+02/14/2022 22:22:33 - INFO - Epoch: [29], step: [200], lr: 0.000001, batch_loss: 0.0012, avg_loss: 0.0072
+02/14/2022 22:23:39 - INFO - Epoch: [29], step: [300], lr: 0.000001, batch_loss: 0.0015, avg_loss: 0.0067
+02/14/2022 22:24:46 - INFO - Epoch: [29], step: [400], lr: 0.000001, batch_loss: 0.0006, avg_loss: 0.0068
+02/14/2022 22:25:52 - INFO - Epoch: [29], step: [500], lr: 0.000001, batch_loss: 0.0009, avg_loss: 0.0061
+02/14/2022 22:26:58 - INFO - Epoch: [29], step: [600], lr: 0.000001, batch_loss: 0.0010, avg_loss: 0.0069
+02/14/2022 22:28:04 - INFO - Epoch: [29], step: [700], lr: 0.000001, batch_loss: 0.0008, avg_loss: 0.0072
+02/14/2022 22:29:11 - INFO - Epoch: [29], step: [800], lr: 0.000001, batch_loss: 0.0008, avg_loss: 0.0073
+02/14/2022 22:30:17 - INFO - Epoch: [29], step: [900], lr: 0.000001, batch_loss: 0.0003, avg_loss: 0.0070
+02/14/2022 22:31:23 - INFO - Epoch: [29], step: [1000], lr: 0.000001, batch_loss: 0.0006, avg_loss: 0.0070
+02/14/2022 22:32:30 - INFO - Epoch: [29], step: [1100], lr: 0.000001, batch_loss: 0.0004, avg_loss: 0.0068
+02/14/2022 22:33:36 - INFO - Epoch: [29], step: [1200], lr: 0.000001, batch_loss: 0.0182, avg_loss: 0.0067
+02/14/2022 22:34:42 - INFO - Epoch: [29], step: [1300], lr: 0.000001, batch_loss: 0.0007, avg_loss: 0.0067
+02/14/2022 22:35:48 - INFO - Epoch: [29], step: [1400], lr: 0.000001, batch_loss: 0.0004, avg_loss: 0.0067
+02/14/2022 22:36:55 - INFO - Epoch: [29], step: [1500], lr: 0.000001, batch_loss: 0.0006, avg_loss: 0.0067
+02/14/2022 22:38:01 - INFO - Epoch: [29], step: [1600], lr: 0.000001, batch_loss: 0.0047, avg_loss: 0.0065
+02/14/2022 22:39:07 - INFO - Epoch: [29], step: [1700], lr: 0.000001, batch_loss: 0.0013, avg_loss: 0.0064
+02/14/2022 22:40:14 - INFO - Epoch: [29], step: [1800], lr: 0.000001, batch_loss: 0.0010, avg_loss: 0.0066
+02/14/2022 22:41:20 - INFO - Epoch: [29], step: [1900], lr: 0.000001, batch_loss: 0.0022, avg_loss: 0.0065
+02/14/2022 22:42:26 - INFO - Epoch: [29], step: [2000], lr: 0.000001, batch_loss: 0.0008, avg_loss: 0.0065
+02/14/2022 22:43:32 - INFO - Epoch: [29], step: [2100], lr: 0.000001, batch_loss: 0.0020, avg_loss: 0.0064
+02/14/2022 22:44:38 - INFO - Epoch: [29], step: [2200], lr: 0.000001, batch_loss: 0.0107, avg_loss: 0.0063
+02/14/2022 22:45:45 - INFO - Epoch: [29], step: [2300], lr: 0.000001, batch_loss: 0.0007, avg_loss: 0.0065
+02/14/2022 22:46:51 - INFO - Epoch: [29], step: [2400], lr: 0.000001, batch_loss: 0.0010, avg_loss: 0.0067
+02/14/2022 22:47:57 - INFO - Epoch: [29], step: [2500], lr: 0.000001, batch_loss: 0.0012, avg_loss: 0.0067
+02/14/2022 22:49:04 - INFO - Epoch: [29], step: [2600], lr: 0.000001, batch_loss: 0.0012, avg_loss: 0.0067
+02/14/2022 22:50:10 - INFO - Epoch: [29], step: [2700], lr: 0.000001, batch_loss: 0.0005, avg_loss: 0.0066
+02/14/2022 22:51:16 - INFO - Epoch: [29], step: [2800], lr: 0.000001, batch_loss: 0.0053, avg_loss: 0.0068
+02/14/2022 22:52:23 - INFO - Epoch: [29], step: [2900], lr: 0.000001, batch_loss: 0.0018, avg_loss: 0.0069
+02/14/2022 22:53:29 - INFO - Epoch: [29], step: [3000], lr: 0.000001, batch_loss: 0.0016, avg_loss: 0.0069
+02/14/2022 22:54:36 - INFO - Epoch: [29], step: [3100], lr: 0.000001, batch_loss: 0.0059, avg_loss: 0.0068
+02/14/2022 22:55:42 - INFO - Epoch: [29], step: [3200], lr: 0.000001, batch_loss: 0.0006, avg_loss: 0.0068
+02/14/2022 22:56:48 - INFO - Epoch: [29], step: [3300], lr: 0.000001, batch_loss: 0.0006, avg_loss: 0.0068
+02/14/2022 22:57:54 - INFO - Epoch: [29], step: [3400], lr: 0.000001, batch_loss: 0.0020, avg_loss: 0.0069
+02/14/2022 22:59:00 - INFO - Epoch: [29], step: [3500], lr: 0.000001, batch_loss: 0.0007, avg_loss: 0.0069
+02/14/2022 23:00:07 - INFO - Epoch: [29], step: [3600], lr: 0.000001, batch_loss: 0.0005, avg_loss: 0.0070
+02/14/2022 23:01:13 - INFO - Epoch: [29], step: [3700], lr: 0.000001, batch_loss: 0.0014, avg_loss: 0.0069
+02/14/2022 23:02:19 - INFO - Epoch: [29], step: [3800], lr: 0.000001, batch_loss: 0.0006, avg_loss: 0.0069
+02/14/2022 23:03:25 - INFO - Epoch: [29], step: [3900], lr: 0.000001, batch_loss: 0.0035, avg_loss: 0.0069
+02/14/2022 23:04:31 - INFO - Epoch: [29], step: [4000], lr: 0.000001, batch_loss: 0.0009, avg_loss: 0.0070
+02/14/2022 23:05:38 - INFO - Epoch: [29], step: [4100], lr: 0.000001, batch_loss: 0.0015, avg_loss: 0.0070
+02/14/2022 23:06:44 - INFO - Epoch: [29], step: [4200], lr: 0.000001, batch_loss: 0.0010, avg_loss: 0.0070
+02/14/2022 23:07:51 - INFO - Epoch: [29], step: [4300], lr: 0.000001, batch_loss: 0.1652, avg_loss: 0.0070
+02/14/2022 23:08:57 - INFO - Epoch: [29], step: [4400], lr: 0.000001, batch_loss: 0.0034, avg_loss: 0.0070
+02/14/2022 23:09:14 - INFO - ** ** Epoch [29] done! Training loss: 0.00706 ** **
+02/14/2022 23:09:15 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 23:09:15 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 23:09:15 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 23:09:15 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 23:09:15 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 23:09:15 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 23:09:15 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 23:09:15 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 23:10:10 - INFO - ** * ** Eval at Epoch [29]! Eval Reults:  ** * **
+02/14/2022 23:10:10 - INFO - I2T Retrieval: 0.8850 @ R1, 0.9880 @ R5, 0.9950 @ R10
+02/14/2022 23:10:14 - INFO - ** * ** Saving trained model to /root/paddlejob/workspace/output/finetune_retrieval_22Y_02M_13D_23H/checkpoint-29. ** * **
+02/14/2022 23:10:14 - INFO - =====> Start epoch 30:
+02/14/2022 23:10:15 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 23:10:15 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 23:10:15 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 23:10:15 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 23:10:15 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 23:10:15 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 23:10:15 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 23:10:15 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 23:11:23 - INFO - Epoch: [30], step: [100], lr: 0.000001, batch_loss: 0.0010, avg_loss: 0.0077
+02/14/2022 23:12:30 - INFO - Epoch: [30], step: [200], lr: 0.000001, batch_loss: 0.0014, avg_loss: 0.0076
+02/14/2022 23:13:37 - INFO - Epoch: [30], step: [300], lr: 0.000001, batch_loss: 0.0032, avg_loss: 0.0068
+02/14/2022 23:14:44 - INFO - Epoch: [30], step: [400], lr: 0.000001, batch_loss: 0.0010, avg_loss: 0.0068
+02/14/2022 23:15:51 - INFO - Epoch: [30], step: [500], lr: 0.000001, batch_loss: 0.0009, avg_loss: 0.0063
+02/14/2022 23:16:58 - INFO - Epoch: [30], step: [600], lr: 0.000001, batch_loss: 0.0006, avg_loss: 0.0058
+02/14/2022 23:18:05 - INFO - Epoch: [30], step: [700], lr: 0.000001, batch_loss: 0.0020, avg_loss: 0.0061
+02/14/2022 23:19:12 - INFO - Epoch: [30], step: [800], lr: 0.000001, batch_loss: 0.0005, avg_loss: 0.0065
+02/14/2022 23:20:18 - INFO - Epoch: [30], step: [900], lr: 0.000001, batch_loss: 0.0013, avg_loss: 0.0070
+02/14/2022 23:21:25 - INFO - Epoch: [30], step: [1000], lr: 0.000001, batch_loss: 0.0013, avg_loss: 0.0068
+02/14/2022 23:22:32 - INFO - Epoch: [30], step: [1100], lr: 0.000001, batch_loss: 0.0005, avg_loss: 0.0066
+02/14/2022 23:23:39 - INFO - Epoch: [30], step: [1200], lr: 0.000000, batch_loss: 0.0970, avg_loss: 0.0066
+02/14/2022 23:24:46 - INFO - Epoch: [30], step: [1300], lr: 0.000000, batch_loss: 0.0004, avg_loss: 0.0070
+02/14/2022 23:25:53 - INFO - Epoch: [30], step: [1400], lr: 0.000000, batch_loss: 0.0009, avg_loss: 0.0070
+02/14/2022 23:27:00 - INFO - Epoch: [30], step: [1500], lr: 0.000000, batch_loss: 0.0015, avg_loss: 0.0072
+02/14/2022 23:28:07 - INFO - Epoch: [30], step: [1600], lr: 0.000000, batch_loss: 0.0006, avg_loss: 0.0070
+02/14/2022 23:29:14 - INFO - Epoch: [30], step: [1700], lr: 0.000000, batch_loss: 0.0009, avg_loss: 0.0068
+02/14/2022 23:30:21 - INFO - Epoch: [30], step: [1800], lr: 0.000000, batch_loss: 0.0006, avg_loss: 0.0070
+02/14/2022 23:31:27 - INFO - Epoch: [30], step: [1900], lr: 0.000000, batch_loss: 0.0013, avg_loss: 0.0069
+02/14/2022 23:32:34 - INFO - Epoch: [30], step: [2000], lr: 0.000000, batch_loss: 0.0011, avg_loss: 0.0069
+02/14/2022 23:33:41 - INFO - Epoch: [30], step: [2100], lr: 0.000000, batch_loss: 0.0007, avg_loss: 0.0070
+02/14/2022 23:34:47 - INFO - Epoch: [30], step: [2200], lr: 0.000000, batch_loss: 0.0005, avg_loss: 0.0069
+02/14/2022 23:35:54 - INFO - Epoch: [30], step: [2300], lr: 0.000000, batch_loss: 0.0042, avg_loss: 0.0068
+02/14/2022 23:37:01 - INFO - Epoch: [30], step: [2400], lr: 0.000000, batch_loss: 0.0487, avg_loss: 0.0069
+02/14/2022 23:38:08 - INFO - Epoch: [30], step: [2500], lr: 0.000000, batch_loss: 0.0011, avg_loss: 0.0067
+02/14/2022 23:39:15 - INFO - Epoch: [30], step: [2600], lr: 0.000000, batch_loss: 0.0065, avg_loss: 0.0068
+02/14/2022 23:40:21 - INFO - Epoch: [30], step: [2700], lr: 0.000000, batch_loss: 0.0006, avg_loss: 0.0067
+02/14/2022 23:41:28 - INFO - Epoch: [30], step: [2800], lr: 0.000000, batch_loss: 0.0022, avg_loss: 0.0067
+02/14/2022 23:42:35 - INFO - Epoch: [30], step: [2900], lr: 0.000000, batch_loss: 0.0039, avg_loss: 0.0067
+02/14/2022 23:43:41 - INFO - Epoch: [30], step: [3000], lr: 0.000000, batch_loss: 0.0010, avg_loss: 0.0067
+02/14/2022 23:44:48 - INFO - Epoch: [30], step: [3100], lr: 0.000000, batch_loss: 0.0005, avg_loss: 0.0067
+02/14/2022 23:45:55 - INFO - Epoch: [30], step: [3200], lr: 0.000000, batch_loss: 0.0039, avg_loss: 0.0067
+02/14/2022 23:47:02 - INFO - Epoch: [30], step: [3300], lr: 0.000000, batch_loss: 0.0021, avg_loss: 0.0067
+02/14/2022 23:48:08 - INFO - Epoch: [30], step: [3400], lr: 0.000000, batch_loss: 0.0014, avg_loss: 0.0066
+02/14/2022 23:49:15 - INFO - Epoch: [30], step: [3500], lr: 0.000000, batch_loss: 0.0013, avg_loss: 0.0067
+02/14/2022 23:50:21 - INFO - Epoch: [30], step: [3600], lr: 0.000000, batch_loss: 0.0009, avg_loss: 0.0067
+02/14/2022 23:51:28 - INFO - Epoch: [30], step: [3700], lr: 0.000000, batch_loss: 0.0010, avg_loss: 0.0067
+02/14/2022 23:52:34 - INFO - Epoch: [30], step: [3800], lr: 0.000000, batch_loss: 0.0790, avg_loss: 0.0068
+02/14/2022 23:53:41 - INFO - Epoch: [30], step: [3900], lr: 0.000000, batch_loss: 0.0065, avg_loss: 0.0068
+02/14/2022 23:54:48 - INFO - Epoch: [30], step: [4000], lr: 0.000000, batch_loss: 0.0006, avg_loss: 0.0067
+02/14/2022 23:55:54 - INFO - Epoch: [30], step: [4100], lr: 0.000000, batch_loss: 0.0028, avg_loss: 0.0067
+02/14/2022 23:57:01 - INFO - Epoch: [30], step: [4200], lr: 0.000000, batch_loss: 0.0012, avg_loss: 0.0067
+02/14/2022 23:58:07 - INFO - Epoch: [30], step: [4300], lr: 0.000000, batch_loss: 0.0011, avg_loss: 0.0068
+02/14/2022 23:59:14 - INFO - Epoch: [30], step: [4400], lr: 0.000000, batch_loss: 0.0012, avg_loss: 0.0068
+02/14/2022 23:59:31 - INFO - ** ** Epoch [30] done! Training loss: 0.00677 ** **
+02/14/2022 23:59:31 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 23:59:31 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 23:59:31 - INFO - Loading line idx from data/model_0060000/features.lineidx02/14/2022 23:59:31 - INFO - Loading line idx from data/model_0060000/features.lineidx
+
+02/14/2022 23:59:31 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 23:59:31 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 23:59:31 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/14/2022 23:59:31 - INFO - Loading line idx from data/model_0060000/features.lineidx
+02/15/2022 00:00:26 - INFO - ** * ** Eval at Epoch [30]! Eval Reults:  ** * **
+02/15/2022 00:00:26 - INFO - I2T Retrieval: 0.8860 @ R1, 0.9880 @ R5, 0.9950 @ R10
+02/15/2022 00:00:30 - INFO - ** * ** Saving trained model to /root/paddlejob/workspace/output/finetune_retrieval_22Y_02M_13D_23H/checkpoint-30. ** * **

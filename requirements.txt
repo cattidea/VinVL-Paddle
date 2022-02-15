@@ -1,0 +1,4 @@
+paddlenlp>=2.2.1
+paddlepaddle-gpu>=2.2.1
+yacs==0.1.8
+boto3
