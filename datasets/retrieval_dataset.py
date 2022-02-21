@@ -157,6 +157,12 @@ class RetrievalDataset(Dataset):
         img_idx, cap_idx = self.get_image_caption_index(index)
         return 1 if self.image_keys[img_idx] == cap_idx[0] else 0# }}}
 
+    def get_result(self, index):
+        img_idx, cap_idx = self.get_image_caption_index(index)
+        image_id = self.image_keys[img_idx]
+        caption = self.captions[cap_idx[0]][cap_idx[1]]
+        return image_id, caption
+
 
     def _get_od_label(self, image_id):# {{{
         """Fetch object detection labels of the given image.

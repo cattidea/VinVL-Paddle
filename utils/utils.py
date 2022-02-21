@@ -136,3 +136,41 @@ def compute_ranks(dataset, results):# {{{
                     break
             t2i_ranks.append(rank)
     return i2t_ranks, t2i_ranks# }}}
+
+
+def get_retrieval_results(dataset, results):
+    sims = np.array([results[i] for i in range(len(dataset))])
+    images = np.array([dataset.get_result(i)[0] for i in range(len(dataset))])
+    captions = np.array([dataset.get_result(i)[1] for i in range(len(dataset))])
+    if dataset.has_caption_indices:
+        num_captions_per_image = dataset.num_captions_per_image
+    else:
+        num_captions_per_image = len(dataset.image_keys) * dataset.num_captions_per_image
+
+    sims = sims.reshape([-1, num_captions_per_image])  # num_image x num_captions
+    images = images.reshape([-1, num_captions_per_image]) # num_images x num_captions
+    captions = captions.reshape([-1, num_captions_per_image])  # num_images x num_captions
+
+    # Get i2t results
+    i2t_results = {}
+    for i, (sim, cap) in enumerate(zip(sims, captions)):
+        inds = np.argsort(sim)[::-1]
+        tmp_results = []
+        for ind in inds:
+            tmp_results.append(cap[ind])
+        i2t_results[images[i][0]] = tmp_results[:10]
+
+    # Get t2i results
+    t2i_results = {}
+    if not dataset.has_caption_indices:
+        sims = np.swapaxes(sims, 0, 1)  # num_captions x num_images
+        images = np.swapaxes(images, 0, 1)  # num_captions x num_images
+        for t, (sim, image) in enumerate(zip(sims, images)):
+            inds = np.argsort(sim)[::-1]
+            tmp_results = []
+            for ind in inds:
+                tmp_results.append(image[ind])
+            t2i_results[captions[0][t]] = tmp_results
+            
+    return i2t_results, t2i_results
+

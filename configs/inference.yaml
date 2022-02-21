@@ -1,0 +1,23 @@
+INPUT:
+  NUM_CAPTIONS_PER_IMAGE_TRN: 5
+  NUM_CAPTIONS_PER_IMAGE_DEV: 5
+
+DATASET:
+  NAME: 'COCO'
+  DATA_DIR: 'data/coco_ir_paddle/'
+  FEAT_FILE: 'data/model_0060000/features.tsv'
+  TRAIN: 'train'
+  DEV: 'minival'
+  TEST: 'test'
+
+OUTPUT:
+  SAVE_NAME: 'finetune_retrieval'
+  NUM_LABELS: 2
+
+OPTIMIZATION:
+  BATCH_SIZE: 32
+
+EVAL:
+  CHECKPOINT_DIR: 'exp/finetune_retrieval_22Y_02M_13D_23H/checkpoint-30'
+  EVAL_CROSS_IMAGE: True
+  EVAL_IMG_KEYS_FILE: minitest_img_keys_10.tsv
