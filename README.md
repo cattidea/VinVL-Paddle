@@ -128,7 +128,11 @@ python tools/eval_retrieval.py --cfg_file configs/retrieval_test.yaml
 # 执行Step5进行测试
 ```
 
-## 六、代码结构与详细说明
+## 六、 推理程序
+
+我们提供一个推理程序，该程序使用一个由10张图像以及50个标题组成的小型图文检索数据库。详情见[demo.ipynb](https://github.com/cattidea/VinVL-Paddle/blob/main/demo.ipynb)。
+
+## 七、代码结构与详细说明
 
 ```bash
 ├── config                    # 默认配置文件夹
