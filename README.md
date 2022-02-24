@@ -136,6 +136,29 @@ python tools/eval_retrieval.py --cfg_file configs/retrieval_test.yaml
 python tools/inference_retrieval.py --query_img 'data/minitest_images/COCO_val2014_000000028675.jpg' --query_txt 'This messy pizza is covered in cheese and mushrooms'
 ```
 
+输出结果如下:
+
+```
+查询图像: data/minitest_images/COCO_val2014_000000028675.jpg
+检索结果:
+Top1: The motorcycle rider is cruising the street at night.
+Top2: It's a cloudy night for a ride on the motorcycle.
+Top3: the bike is coming down the street with his lights on
+Top4: Two people ride the motorcycle on the city street.
+Top5: Police on a motorcycle drive down a city street.
+
+查询文本:
+This messy pizza is covered in cheese and mushrooms
+检索结果:
+Top[1]: data/minitest_images/COCO_val2014_000000045057.jpg
+Top[2]: data/minitest_images/COCO_val2014_000000028675.jpg
+Top[3]: data/minitest_images/COCO_val2014_000000458755.jpg
+Top[4]: data/minitest_images/COCO_val2014_000000213008.jpg
+Top[5]: data/minitest_images/COCO_val2014_000000415746.jpg
+```
+
+
+
 ## 七、代码结构与详细说明
 
 ```bash

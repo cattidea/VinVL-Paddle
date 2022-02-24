@@ -28,7 +28,6 @@ def main(args):
     if args.query_txt:
         assert args.query_txt in t2i_results, \
             "Please make sure query txt in the data/minmitest_captions.txt"
-        print(t2i_results[args.query_txt])
 
         print('查询文本:')
         print(args.query_txt)
