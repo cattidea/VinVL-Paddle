@@ -1,0 +1,71 @@
+data/minitest_images/COCO_val2014_000000317441.jpg
+A street sign above an orange detour sign.
+A wooden post with a detour sign posted on it
+A street corner has a stoplight and detour sign.
+This shows two street signs that say ninth street and detour
+A bright orange sign showing the way to a detour.
+
+data/minitest_images/COCO_val2014_000000415746.jpg
+Muffins and other pastries on display ground and purchase
+a bunch of baked goods in a plastic shelf
+a bunch of pastries that are in a clear case
+Various muffins and pastries on trays inside plastic cabinets
+Various muffins and pastries lined up in plastic cabinets
+Different types of types of pastries sitting on display together. 
+
+data/minitest_images/COCO_val2014_000000045057.jpg
+This messy pizza is covered in cheese and mushrooms
+A small pizza being served on a white plate.
+A large pizza with cheese and mushrooms on a serving tray.
+A pizza with sauce, mushrooms,and cheese on a plate.
+A thin crust pizza with cheese and mushrooms.
+
+data/minitest_images/COCO_val2014_000000458755.jpg
+Young woman with sheep on straw covered floor.
+A child places his hands on the head and neck of a sheep while another sheep looks at his face.
+A person petting the head of a cute fluffy sheep.
+A child is petting a sheep while another sheep watches.
+A woman kneeling to pet animals while others wait. 
+
+data/minitest_images/COCO_val2014_000000028675.jpg
+the bike is coming down the street with his lights on
+The motorcycle rider is cruising the street at night.
+Two people ride the motorcycle on the city street.
+It's a cloudy night for a ride on the motorcycle.
+Police on a motorcycle drive down a city street.
+
+data/minitest_images/COCO_val2014_000000182279.jpg
+A couple of people standing in a field flying a giant kite.
+A large blue bird balloon flying in the sky.
+Two people are flying a large character kite on the grass.
+Two people in a grassy field with a colorful owl floating in the air near them.
+Men flying a kite that looks like a big blue bird.
+
+data/minitest_images/COCO_val2014_000000163852.jpg
+a square plate with all kinds of vegetables on the plate
+A view of a plate of food , that looks very decorative. 
+A person is holding a board with sliced vegetables.
+a small plate with some vegeatables being held by a person
+Some food that is sitting on a napkin.
+
+data/minitest_images/COCO_val2014_000000213008.jpg
+A couple of chairs and a large bed in a room.
+a tan and white bed some chairs white pillows and a lamp
+That looks like the bed in a hotel room.
+A hotel room with a well-made bed, table,a and two chairs.
+A picture of a hotel room having just been cleaned.
+
+data/minitest_images/COCO_val2014_000000507921.jpg
+Street signage on post near roadway in city environment.
+a no skate boarders sign on the side of the road 
+No skateboarding, littering, and parking street signs 
+A city street with signs stating "no parking" and "no skateboards."
+A No Parking, No Skateboards and No Littering sign on a street side.
+
+data/minitest_images/COCO_val2014_000000131089.jpg
+A young child in the yard holding up a bat.
+A boy raring back with a baseball bat in a yard.
+A little boy has a baseball bat in a yard.
+A boy in black clothes holds a baseball bat over his shoulder near a fence and a tree.
+a little boy playing in his yard with a baseball bat
+

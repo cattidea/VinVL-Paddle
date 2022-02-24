@@ -130,7 +130,11 @@ python tools/eval_retrieval.py --cfg_file configs/retrieval_test.yaml
 
 ## 六、 推理程序
 
-我们提供一个推理程序，该程序使用一个由10张图像以及50个标题组成的小型图文检索数据库。详情见[demo.ipynb](https://github.com/cattidea/VinVL-Paddle/blob/main/demo.ipynb)。
+我们提供了两种推理程序样例。两种样例都使用10张图像以及它们对应的50个标题(每张图像对应５个标题)作为检索数据库。不同的是，第一种推理程序使用了`.ipynb`进行展示，可以将检索结果进行可视化，详情见[demo.ipynb](https://github.com/cattidea/VinVL-Paddle/blob/main/demo.ipynb)。第二种推理程序可以指定查询的图像和文本(但需要的注意的是，查询的图像和文本必须在检索数据库中，见`data/minitest_images`和`data/minitest_captions`)，如下所示
+
+```bash
+python tools/inference_retrieval.py --query_img 'data/minitest_images/COCO_val2014_000000028675.jpg' --query_txt 'This messy pizza is covered in cheese and mushrooms'
+```
 
 ## 七、代码结构与详细说明
 
